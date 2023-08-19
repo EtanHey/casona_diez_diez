@@ -1,8 +1,8 @@
 import React from "react";
 
-const CddDarkLogo = () => {
+const CddDarkLogo = ({ className }: { className?: string }) => {
   return (
-    <div>
+    <div className={className}>
       <svg
         width="104"
         height="104"
