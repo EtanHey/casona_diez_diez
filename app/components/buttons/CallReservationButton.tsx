@@ -6,7 +6,7 @@ const CallReservationButton = () => {
   return (
     <Link className="flex flex-row gap-[6px] place-items-center" href="tel:2025550122">
       <PhoneLogo />
-      <div className="text-[12px] p-0 m-0 text-white">RESERVA UNA HABITACIÓN</div>
+      <div className="text-xs font-light p-0 m-0 text-white">RESERVA UNA HABITACIÓN</div>
     </Link>
   );
 };
