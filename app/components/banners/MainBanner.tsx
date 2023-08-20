@@ -3,7 +3,7 @@ import React from "react";
 const MainBanner = () => {
   return (
     <div className="bg-cdd-black absolute left-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full px-6 py-3 ">
-      <p className="text-center font-extralight text-base text-white">
+      <p className="text-center font-extralight sm:text-base text-sm text-white">
         ANUNCIOS
         <span className="text-cdd-green"> NUEVOS </span>
         Y
