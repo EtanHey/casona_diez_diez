@@ -16,9 +16,9 @@ const HeroImage = () => {
           width={458.30400000000003}
           layout="responsive"
         />
-        <div className="tint fixed top-0 z-10 h-full w-full bg-[#721800] opacity-30"></div>
-        <CddDarkLogo className="absolute left-1/2 top-1/4 z-20 -translate-x-1/2 -translate-y-1/2" />
-        {/* <ReserveButton /> */}
+        <div className="tint fixed top-0 z-0 h-full w-full bg-[#721800] opacity-30"></div>
+        <CddDarkLogo className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2" />
+        <ReserveButton />
       </div>
       <MainBanner />
     </div>
