@@ -8,6 +8,7 @@ const Nav = ({ changeMenuState }: { changeMenuState: () => void }) => {
       <CallReservationButton />
       <MenuButton changeMenuState={changeMenuState} />
     </div>
+    
   );
 };
 
