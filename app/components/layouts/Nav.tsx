@@ -1,6 +1,7 @@
 import React from "react";
 import MenuButton from "../buttons/MenuButton";
 import CallReservationButton from "../buttons/CallReservationButton";
+import { Navbar } from "flowbite-react";
 
 const Nav = ({ changeMenuState }: { changeMenuState: () => void }) => {
   return (
@@ -8,7 +9,6 @@ const Nav = ({ changeMenuState }: { changeMenuState: () => void }) => {
       <CallReservationButton />
       <MenuButton changeMenuState={changeMenuState} />
     </div>
-    
   );
 };
 

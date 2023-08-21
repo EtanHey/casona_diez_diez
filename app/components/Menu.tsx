@@ -15,8 +15,8 @@ const Menu = ({
   const page = pathname?.split("/")[1];
   return (
     <div
-      className={`absolute top-0 z-50 flex h-full w-full transition-opacity duration-1000
-    ${menuState ? "right-0 opacity-100" : "-right-full opacity-0"}
+      className={`absolute top-0 z-50  h-full w-full transition-opacity duration-1000
+    ${menuState ? "flex" : "hidden"}
     `}
     >
       <div className="w-full bg-red-900 opacity-10"></div>
