@@ -1,11 +1,11 @@
 import React from "react";
 import HamburgerLogo from "../svgs/HamburgerLogo";
 
-const MenuButton = () => {
+const MenuButton = ({ changeMenuState }: { changeMenuState: () => void }) => {
   return (
-    <div>
+    <button onClick={changeMenuState}>
       <HamburgerLogo />
-    </div>
+    </button>
   );
 };
 
