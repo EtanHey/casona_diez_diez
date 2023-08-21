@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Times from "./svgs/Times";
 import { usePathname } from "next/navigation";
 
@@ -15,7 +15,7 @@ const Menu = ({
   const page = pathname?.split("/")[1];
   return (
     <div
-      className={`absolute top-0 z-50  h-full w-full transition-opacity duration-1000
+      className={`absolute top-0 z-50 h-full w-full transition-opacity duration-1000
     ${menuState ? "flex" : "hidden"}
     `}
     >
