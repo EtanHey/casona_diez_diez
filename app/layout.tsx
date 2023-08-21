@@ -1,9 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Nav from "./components/layouts/Nav";
-import Menu from "./components/Menu";
-import StateWrapper from "./components/stateful_wrapper/StateWrapper";
+import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -26,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} scrollbar-none`}>
-        <StateWrapper />
+        <MenuStateWrapper />
         {children}
       </body>
     </html>

@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import Nav from "../layouts/Nav";
 import Menu from "../Menu";
 
-const StateWrapper = () => {
+const MenuStateWrapper = () => {
   const [menuState, setMenuState] = useState(false);
 
   const changeMenuState = () => {
     setMenuState(!menuState);
-  }
+  };
   return (
     <>
       <Nav changeMenuState={changeMenuState} />
@@ -17,4 +17,4 @@ const StateWrapper = () => {
   );
 };
 
-export default StateWrapper;
+export default MenuStateWrapper;
