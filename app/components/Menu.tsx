@@ -19,7 +19,7 @@ const Menu = ({
     ${menuState ? "flex" : "hidden"}
     `}
     >
-      <div className="w-full bg-red-900 opacity-10"></div>
+      <div onClick={changeMenuState} className="w-full bg-red-900 opacity-10"></div>
       <div
         className={`bg-cdd-black w-25/40 top-0 flex h-0 min-h-full flex-col items-start gap-5 overflow-y-hidden  p-0 uppercase text-white transition-all duration-1000
 
@@ -29,40 +29,41 @@ const Menu = ({
           <Times />
         </button>
         <div className="wrapper scrollbar-none flex h-0 min-h-full w-full flex-col items-center gap-9 overflow-y-scroll text-sm font-normal">
-          <Link className={`${page === "" ? "text-cdd-red" : ""}`} href="/">
+          <Link onClick={changeMenuState}
+          className={`${page === "" ? "text-cdd-red" : ""}`} href="/">
             HOME PAGE
           </Link>
-          <Link
+          <Link onClick={changeMenuState}
             className={`${page === "services" ? "text-cdd-red" : ""}`}
             href="/services"
           >
             SERVICIOS
           </Link>
-          <Link
+          <Link onClick={changeMenuState}
             className={`${page === "rooms" ? "text-cdd-red" : ""}`}
             href="/rooms"
           >
             Habitaciones
           </Link>
-          <Link
+          <Link onClick={changeMenuState}
             className={`${page === "galary" ? "text-cdd-red" : ""}`}
             href="/galary"
           >
             Galeria
           </Link>
-          <Link
+          <Link onClick={changeMenuState}
             className={`${page === "location" ? "text-cdd-red" : ""}`}
             href="/location"
           >
             Ubicaión
           </Link>
-          <Link
+          <Link onClick={changeMenuState}
             className={`${page === "reviews" ? "text-cdd-red" : ""}`}
             href="/reviews"
           >
             Reseñas
           </Link>
-          <Link
+          <Link onClick={changeMenuState}
             className={`${page === "contact" ? "text-cdd-red" : ""}`}
             href="/contact"
           >

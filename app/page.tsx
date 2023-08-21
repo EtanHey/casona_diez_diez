@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HomeWelcomeSec from "./components/sections/HomeWelcomeSec";
 import HomeMediaSec from "./components/sections/HomeMediaSec";
 import HomeRoomsSec from "./components/sections/HomeRoomsSec";
