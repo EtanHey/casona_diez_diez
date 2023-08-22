@@ -1,12 +1,13 @@
 import React from "react";
-import EnglishHead from "./svgs/EnglishHead";
-import FrenchHead from "./svgs/FrenchHead";
-import ItalianHead from "./svgs/ItalianHead";
-import GermanHead from "./svgs/GermanHead";
-import HebrewHead from "./svgs/HebrewHead";
-import PortugueseHead from "./svgs/PortugueseHead";
+import {
+  EnglishHead,
+  FrenchHead,
+  GermanHead,
+  HebrewHead,
+  ItalianHead,
+  PortugueseHead,
+} from "./svgs/HomeHeadsSVGs";
 import Header from "./Header";
-import ColoredBreak from "./ColoredBreak";
 
 const WelcomeEveryone = () => {
   return (
