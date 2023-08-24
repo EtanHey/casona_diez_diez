@@ -212,8 +212,8 @@ const ItalianHead = () => {
       <path
         d="M28.2105 12.6551C28.2105 12.6551 37.5397 2.24563 58.8195 1.09236C80.0992 -0.0609155 87.0662 9.96751 87.0662 9.96751"
         stroke="#1B0B06"
-        stroke-width="2"
-        stroke-miterlimit="10"
+        strokeWidth="2"
+        strokeMiterlimit="10"
       />
     </svg>
   );
