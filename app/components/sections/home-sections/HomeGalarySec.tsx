@@ -1,23 +1,38 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import Header from "../../Header";
 import ColoredBreak from "../../ColoredBreak";
-import Galary from "../../Galary";
-import { utapi } from "uploadthing/server";
+
 import { PhotoFromServer } from "@/app/types";
+import Galary from "../../galaryComponents";
+import GalaryPrevArrow from "../../galaryComponents/GalaryPrevArrow";
+import GalaryNextArrow from "../../galaryComponents/GalaryNextArrow";
 
-const HomeGalarySec = async () => {
-  const getPhotos = async (): Promise<Array<PhotoFromServer>> => {
-    const listPhotos = await utapi.listFiles();
-    return await utapi.getFileUrls(listPhotos.map((photo) => photo.key));
-  };
-  const photos = await getPhotos();
-
+const HomeGalarySec = ({
+  photos,
+}: {
+  photos: Array<PhotoFromServer>;
+}) => {
+  const [currentPhoto, setCurrentPhoto] = useState(0);
+  const length = photos.length;
+  const prevPhoto = () => {
+    setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1);
+  }
+  const nextPhoto = () => {
+    setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1);
+  }
   return (
     <HomeSectionWrapper>
       <ColoredBreak bg="bg-cdd-yellow" />
-      <Header>Galeria</Header>
-      <Galary photos={photos} />
+      <div className="flex w-full flex-col gap-4">
+        <div className="flex justify-between px-4">
+          <GalaryPrevArrow prevPhoto={prevPhoto} />
+          <Header>Galeria</Header>
+          <GalaryNextArrow nextPhoto={nextPhoto} />
+        </div>
+        <Galary photos={photos} />
+      </div>
     </HomeSectionWrapper>
   );
 };
