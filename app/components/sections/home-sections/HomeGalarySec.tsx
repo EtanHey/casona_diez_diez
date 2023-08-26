@@ -30,7 +30,9 @@ const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
         </div>
         <Galary photos={photos} currentPhoto={currentPhoto} />
       </div>
-        <span className="text-cdd-yellow">{currentPhoto+1}/{photos.length}</span>
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cdd-black text-cdd-yellow">
+        {currentPhoto + 1}/{photos.length}
+      </span>
     </HomeSectionWrapper>
   );
 };
