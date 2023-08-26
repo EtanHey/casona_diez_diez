@@ -14,19 +14,17 @@ const Menu = ({
   const pathname = usePathname();
   const page = pathname?.split("/")[1];
   return (
-    <div
-      className={`fixed top-0 z-50 h-0 min-h-full w-screen justify-end
-    ${menuState ? "flex" : "hidden"}
-    `}
-    >
+    <div className={`fixed top-0 z-50`}>
       <span
         onClick={changeMenuState}
-        className="h-full w-full bg-black opacity-20"
+        className={`${
+          menuState ? "opacity-20" : "opacity-0"
+        } block h-screen w-screen bg-black transition-opacity duration-500`}
       ></span>
       <div
-        className={`min-w-25/40 top-0 flex h-0 min-h-full flex-col items-start gap-5 overflow-y-hidden bg-cdd-black  p-0 uppercase text-white
-        transition-opacity duration-1000
-        ${menuState ? "opacity-100" : "opacity-0"}
+        className={` fixed right-0 top-0 flex h-0 min-h-full min-w-25/40 flex-col items-start gap-5 overflow-y-hidden bg-cdd-black  p-0 uppercase text-white
+        transition-transform duration-1000
+        ${menuState ? "-translate-x-0" : "translate-x-full"}
         `}
       >
         <button onClick={changeMenuState} className="p-[10px]">
