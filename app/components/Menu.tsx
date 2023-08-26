@@ -18,9 +18,10 @@ const Menu = ({
       <span
         onClick={changeMenuState}
         className={`${
-          menuState ? "opacity-20" : "opacity-0"
-        } block h-screen w-screen bg-black transition-opacity duration-500`}
+          menuState ? "block" : "hidden"
+        } block h-screen w-screen bg-black opacity-20 transition-opacity duration-500`}
       ></span>
+
       <div
         className={` fixed right-0 top-0 flex h-0 min-h-full min-w-25/40 flex-col items-start gap-5 overflow-y-hidden bg-cdd-black  p-0 uppercase text-white
         transition-transform duration-1000
