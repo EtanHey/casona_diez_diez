@@ -16,7 +16,7 @@ const SingleReview = ({
     <div
       className={`${
         index === currentReview ? "opacity-100" : "opacity-0"
-      } absolute max-h-80 top-0 overflow-y-clip mx-4 flex flex-col gap-2 rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
+      } absolute h-80 top-0 overflow-y-clip mx-4 flex flex-col gap-2 rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
     >
       <div className="flex items-center gap-4">
         <Image
@@ -44,7 +44,7 @@ const SingleReview = ({
                 )
             : null}
         </div>
-        <p>{review.text}</p>
+        <p className="h-28 text-ellipsis overflow-y-hidden">{review.text}</p>
       </div>
     </div>
   );
