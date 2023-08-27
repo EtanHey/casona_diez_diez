@@ -16,18 +16,18 @@ const SingleReview = ({
     <div
       className={`${
         index === currentReview ? "opacity-100" : "opacity-0"
-      } absolute h-80 top-0 overflow-y-clip mx-4 flex flex-col gap-2 rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
+      } absolute top-0 mx-4 flex h-80 flex-col gap-2 overflow-y-clip rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
     >
       <div className="flex items-center gap-4">
         <Image
           src={review.profile_photo_url}
           alt={`Imagen de ${review.author_name}`}
-          height={50}
-          width={50}
+          height={70}
+          width={70}
         />
-        <h4>{review.author_name}</h4>
+        <h4 className="text-lg">{review.author_name}</h4>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 overflow-y-hidden">
         <div className="flex items-center justify-center">
           {review.rating
             ? Array(5)
@@ -44,7 +44,7 @@ const SingleReview = ({
                 )
             : null}
         </div>
-        <p className="h-28 text-ellipsis overflow-y-hidden">{review.text}</p>
+        <p className="line-clamp-5 md:line-clamp-6">{review.text}</p>
       </div>
     </div>
   );
