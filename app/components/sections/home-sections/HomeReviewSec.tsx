@@ -40,7 +40,7 @@ const HomeReviewSec = ({ reviews }: { reviews?: Array<Review> }) => {
             );
           })}
         </div>
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-cdd-black text-cdd-green">
+        <span className="flex h-12 w-12 mb-8 items-center justify-center rounded-full bg-cdd-black text-cdd-green">
         {currentReview + 1}/{reviews.length}
       </span>
       </div>

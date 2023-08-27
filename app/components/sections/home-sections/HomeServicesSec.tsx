@@ -8,7 +8,7 @@ import {
   CleanLogo,
   WifiLogo,
   SecureLogo,
-  LocationLogo,
+  LocationRedLogo,
   CheckinLogo,
   ToiletLogo,
   KitchenLogo,
@@ -44,7 +44,7 @@ const HomeServicesSec = () => {
             <span>Seguridad 24 Horas</span>
           </HomeServicesItem>
           <HomeServicesItem>
-            <LocationLogo />
+            <LocationRedLogo />
             <span>Ubicacion Privilegiada</span>
           </HomeServicesItem>
           <HomeServicesItem>

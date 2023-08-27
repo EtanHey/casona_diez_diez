@@ -3,7 +3,7 @@ import GrillLogo from "./GrillLogo";
 import CleanLogo from "./CleanLogo";
 import WifiLogo from "./WifiLogo";
 import SecureLogo from "./SecureLogo";
-import LocationLogo from "./LocationLogo";
+import LocationRedLogo from "./LocationRedLogo";
 import CheckinLogo from "./CheckinLogo";
 import ToiletLogo from "./ToiletLogo";
 import KitchenLogo from "./KitchenLogo";
@@ -15,7 +15,7 @@ export {
   CleanLogo,
   WifiLogo,
   SecureLogo,
-  LocationLogo,
+  LocationRedLogo,
   CheckinLogo,
   ToiletLogo,
   KitchenLogo,

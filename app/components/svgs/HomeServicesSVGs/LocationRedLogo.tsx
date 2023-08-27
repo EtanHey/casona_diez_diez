@@ -1,6 +1,6 @@
 import React from "react";
 
-const LocationLogo = () => {
+const LocationRedLogo = () => {
   return (
     <svg
       width="14"
@@ -23,4 +23,4 @@ const LocationLogo = () => {
   );
 };
 
-export default LocationLogo;
+export default LocationRedLogo;
