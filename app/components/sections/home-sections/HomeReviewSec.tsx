@@ -24,7 +24,7 @@ const HomeReviewSec = ({ reviews }: { reviews: Array<Review> }) => {
     <HomeSectionWrapper>
       <ColoredBreak bg="bg-cdd-green" />
       <div className="flex w-full flex-col items-center gap-4">
-        <div className="flex justify-between px-4">
+        <div className="flex justify-between w-full px-4">
           <PrevSliderArrow prevFunc={prevReview} arrowColor="#04986F" />
           <Header>Reseñas</Header>
           <NextSliderArrow nextFunc={nextReview} arrowColor="#04986F" />
