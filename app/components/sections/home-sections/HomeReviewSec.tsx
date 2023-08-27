@@ -6,14 +6,12 @@ import ColoredBreak from "../../ColoredBreak";
 import { Review } from "@/app/types";
 import PrevSliderArrow from "../../PrevSliderArrow";
 import NextSliderArrow from "../../NextSliderArrow";
-import Image from "next/image";
-import StarSvg from "../../svgs/StarSvg";
 import SingleReview from "../../svgs/SingleReview";
 
-const HomeReviewSec = ({ reviews }: { reviews: Array<Review> }) => {
+const HomeReviewSec = ({ reviews }: { reviews?: Array<Review> }) => {
   const [currentReview, setCurrentReview] = useState(0);
-  const length = reviews.length;
   if (!reviews || reviews.length === 0) return null;
+  const length = reviews.length;
   const prevReview = () => {
     setCurrentReview(currentReview === 0 ? length - 1 : currentReview - 1);
   };
