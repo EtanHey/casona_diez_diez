@@ -25,8 +25,8 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
       <HomeWelcomeSec />
       <HomeServicesSec />
-      <HomeGalarySec photos={photos} />
-      <HomeReviewSec reviews={reviews} />
+      {photos && <HomeGalarySec photos={photos} />}
+      {reviews && <HomeReviewSec reviews={reviews} />}
       <HomeMediaSec />
     </main>
   );
