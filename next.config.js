@@ -4,7 +4,10 @@ const nextConfig = {
     serverComponentsExternalPackages: ["mongodb"],
   },
   images: {
-    domains: ["uploadthing-prod.s3.us-west-2.amazonaws.com"],
+    domains: [
+      "uploadthing-prod.s3.us-west-2.amazonaws.com",
+      "lh3.googleusercontent.com",
+    ],
   },
 };
 

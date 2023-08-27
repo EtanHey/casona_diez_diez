@@ -1,6 +1,6 @@
 import React from "react";
 
-const NextArrowSVG = () => {
+const NextArrowSVG = ({ arrowColor }: { arrowColor: string }) => {
   return (
     <svg
       width="27"
@@ -12,7 +12,7 @@ const NextArrowSVG = () => {
       <g filter="url(#filter0_d_27_440)">
         <path
           d="M5 37L22 20.7236L5.56911 5"
-          stroke="#F7A600"
+          stroke={arrowColor}
           strokeWidth="6"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -27,7 +27,7 @@ const NextArrowSVG = () => {
           width="27"
           height="42"
           filterUnits="userSpaceOnUse"
-          colorInterpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feColorMatrix

@@ -6,8 +6,8 @@ import ColoredBreak from "../../ColoredBreak";
 
 import { PhotoFromServer } from "@/app/types";
 import Galary from "../../galaryComponents";
-import GalaryPrevArrow from "../../galaryComponents/GalaryPrevArrow";
-import GalaryNextArrow from "../../galaryComponents/GalaryNextArrow";
+import PrevSliderArrow from "../../PrevSliderArrow";
+import NextSliderArrow from "../../NextSliderArrow";
 
 const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -24,9 +24,9 @@ const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
       <ColoredBreak bg="bg-cdd-yellow" />
       <div className="flex w-full flex-col gap-4">
         <div className="flex justify-between px-4">
-          <GalaryPrevArrow prevPhoto={prevPhoto} />
+          <PrevSliderArrow prevFunc={prevPhoto} arrowColor="#F7A600" />
           <Header>Galeria</Header>
-          <GalaryNextArrow nextPhoto={nextPhoto} />
+          <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
         <Galary photos={photos} currentPhoto={currentPhoto} />
       </div>
