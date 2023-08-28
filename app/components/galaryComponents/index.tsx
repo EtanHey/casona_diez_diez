@@ -7,14 +7,10 @@ const Galary = ({
   photos,
   currentPhoto,
   changeZoom,
-  fill,
-  objectFit,
 }: {
   photos: Array<PhotoFromServer>;
   currentPhoto: number;
   changeZoom: () => void;
-  fill: boolean;
-  objectFit: string;
 }) => {
   return (
     // work on responsiveness - container hight for each breakpoint
@@ -24,7 +20,8 @@ const Galary = ({
           onClick={changeZoom}
           className={` transition-opacity duration-700
             ${index === currentPhoto ? "opacity-100" : "opacity-0"}`}
-          {...{ objectFit, fill }}
+          fill
+          objectFit="cover"
           key={photo.key}
           src={photo.url}
           alt={photo.key}

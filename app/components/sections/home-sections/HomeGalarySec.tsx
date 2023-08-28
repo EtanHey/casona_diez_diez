@@ -9,6 +9,7 @@ import PrevSliderArrow from "../../PrevSliderArrow";
 import NextSliderArrow from "../../NextSliderArrow";
 import Image from "next/image";
 import Modal from "../../Modal";
+import Times from "../../svgs/Times";
 
 const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -33,10 +34,8 @@ const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
           <Header>Galeria</Header>
           <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
-        <div className="relative mb-2 flex h-64 sm:h-72 md:h-96 lg:h-[500px] w-full place-items-center justify-center">
+        <div className="relative mb-2 flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]">
           <Galary
-            fill
-            objectFit="cover"
             photos={photos}
             currentPhoto={currentPhoto}
             changeZoom={changeZoom}
@@ -48,10 +47,15 @@ const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
       </span> */}
       {zoom && (
         <Modal changeZoom={changeZoom}>
-          <Galary
-            photos={photos}
-            currentPhoto={currentPhoto}
-            changeZoom={changeZoom}
+          <button className="absolute top-4 right-4 bg-black/30 p-1 z-50" onClick={changeZoom}>
+            <Times />
+          </button>
+          <Image
+            alt={photos[currentPhoto].key}
+            src={photos[currentPhoto].url}
+            onClick={(ev) => {
+              ev.stopPropagation();
+            }}
             fill
             objectFit="contain"
           />
