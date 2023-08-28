@@ -3,7 +3,7 @@
 import { PhotoFromServer } from "@/app/types";
 import Image from "next/image";
 import React from "react";
-const Galary = ({
+const GalarySlider = ({
   photos,
   currentPhoto,
   changeZoom,
@@ -30,4 +30,4 @@ const Galary = ({
     })
   );
 };
-export default Galary;
+export default GalarySlider;
