@@ -7,12 +7,11 @@ import {
   LocationHallowLogo,
   WazeLogo,
   WhatsappLogo,
-} from "../../svgs/HomeMediaSVGs";
-import MediaButton from "../../MediaButton";
+} from "../svgs/HomeMediaSVGs";
 
-const HomeMediaSec = () => {
+const MediaFooter = () => {
   return (
-    <div className="flex h-full w-full flex-col items-center bg-cdd-black">
+    <footer tabIndex={2} role="contentinfo" className="flex h-full w-full flex-col items-center bg-cdd-black">
       <div className="mt-10 flex h-full w-full flex-col items-center gap-6">
         <CddLightLogo />
         <span className="flex w-[260px] items-center gap-2">
@@ -43,8 +42,8 @@ const HomeMediaSec = () => {
       <span className="pb-5 text-xs font-medium text-white">
         All rights reserved 2023 © Casona Diez Diez
       </span>
-    </div>
+    </footer>
   );
 };
 
-export default HomeMediaSec;
+export default MediaFooter;
