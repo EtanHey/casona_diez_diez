@@ -4,7 +4,7 @@ import CallReservationButton from "../buttons/CallReservationButton";
 
 const Nav = ({ changeMenuState }: { changeMenuState: () => void }) => {
   return (
-    <div className="bg-cdd-black flex h-9 w-full flex-row place-content-between place-items-center px-4 py-2">
+    <div className="bg-cdd-black z-50 fixed flex h-9 w-full flex-row place-content-between place-items-center px-4 py-2">
       <CallReservationButton />
       <MenuButton changeMenuState={changeMenuState} />
     </div>

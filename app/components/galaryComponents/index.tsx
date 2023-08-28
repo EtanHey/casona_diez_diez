@@ -11,13 +11,13 @@ const Galary = ({
 }) => {
   return (
     // work on responsiveness - container hight for each breakpoint
-    <div className="relative flex h-96 w-full place-items-center justify-center">
+    <div className="relative flex h-64 w-full place-items-center justify-center">
       {photos.map((photo, index) => {
         return (
           <Image
             className={` transition-opacity duration-700
             ${index === currentPhoto ? "opacity-100" : "opacity-0"}`}
-            objectFit="contain"
+            objectFit="cover"
             key={photo.key}
             src={photo.url}
             alt={photo.key}
