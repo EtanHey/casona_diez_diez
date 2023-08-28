@@ -1,3 +1,4 @@
+"use client";
 
 import { PhotoFromServer } from "@/app/types";
 import Image from "next/image";
@@ -5,27 +6,31 @@ import React from "react";
 const Galary = ({
   photos,
   currentPhoto,
+  changeZoom,
+  fill,
+  objectFit,
 }: {
   photos: Array<PhotoFromServer>;
   currentPhoto: number;
+  changeZoom: () => void;
+  fill: boolean;
+  objectFit: string;
 }) => {
   return (
     // work on responsiveness - container hight for each breakpoint
-    <div className="relative flex h-64 w-full place-items-center justify-center">
-      {photos.map((photo, index) => {
-        return (
-          <Image
-            className={` transition-opacity duration-700
+    photos.map((photo, index) => {
+      return (
+        <Image
+          onClick={changeZoom}
+          className={` transition-opacity duration-700
             ${index === currentPhoto ? "opacity-100" : "opacity-0"}`}
-            objectFit="cover"
-            key={photo.key}
-            src={photo.url}
-            alt={photo.key}
-            fill={true}
-          />
-        );
-      })}
-    </div>
+          {...{ objectFit, fill }}
+          key={photo.key}
+          src={photo.url}
+          alt={photo.key}
+        />
+      );
+    })
   );
 };
 export default Galary;

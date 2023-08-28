@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import Header from "../../Header";
 import ColoredBreak from "../../ColoredBreak";
-
 import { PhotoFromServer } from "@/app/types";
 import Galary from "../../galaryComponents";
 import PrevSliderArrow from "../../PrevSliderArrow";
 import NextSliderArrow from "../../NextSliderArrow";
+import Image from "next/image";
+import Modal from "../../Modal";
 
 const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -19,6 +20,10 @@ const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   const nextPhoto = () => {
     setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1);
   };
+  const [zoom, setZoom] = useState(false);
+  const changeZoom = () => {
+    setZoom(!zoom);
+  };
   return (
     <HomeSectionWrapper>
       <ColoredBreak bg="bg-cdd-yellow" />
@@ -28,11 +33,30 @@ const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
           <Header>Galeria</Header>
           <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
-        <Galary photos={photos} currentPhoto={currentPhoto} />
+        <div className="relative flex h-64 w-full place-items-center justify-center">
+          <Galary
+            fill
+            objectFit="cover"
+            photos={photos}
+            currentPhoto={currentPhoto}
+            changeZoom={changeZoom}
+          />
+        </div>
       </div>
       {/* <span className="mt-2 flex h-12 w-12 items-center justify-center rounded-full bg-cdd-black text-cdd-yellow">
         {currentPhoto + 1}/{photos.length}
       </span> */}
+      {zoom && (
+        <Modal changeZoom={changeZoom}>
+          <Galary
+            photos={photos}
+            currentPhoto={currentPhoto}
+            changeZoom={changeZoom}
+            fill
+            objectFit="contain"
+          />
+        </Modal>
+      )}
     </HomeSectionWrapper>
   );
 };
