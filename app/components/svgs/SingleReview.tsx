@@ -1,3 +1,4 @@
+
 import { Review } from "@/app/types";
 import Image from "next/image";
 import React from "react";
@@ -7,16 +8,21 @@ const SingleReview = ({
   review,
   index,
   currentReview,
+  seeMore,
+  handleSeeMore,
 }: {
   review: Review;
   index: number;
   currentReview: number;
+  seeMore: boolean;
+  handleSeeMore: () => void;
 }) => {
+  if (currentReview !== index) return null;
   return (
     <div
-      className={`${
-        index === currentReview ? "opacity-100" : "opacity-0"
-      } absolute top-0 mx-4 flex h-80 flex-col gap-2 overflow-y-clip rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
+      className={`${index === currentReview ? "opacity-100" : "opacity-0"} ${
+        seeMore ? "h-fit" : "h-80"
+      } relative top-0 mx-4 flex flex-col gap-2 overflow-y-clip rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
     >
       <div className="flex items-center gap-4">
         <Image
@@ -44,7 +50,21 @@ const SingleReview = ({
                 )
             : null}
         </div>
-        <p className="line-clamp-5 md:line-clamp-6">{review.text}</p>
+        <p
+          className={
+            seeMore ? "line-clamp-none" : `line-clamp-5 md:line-clamp-6`
+          }
+        >
+          {review.text.length > 153 && (
+            <button
+              className="absolute bottom-3 text-blue-500"
+              onClick={handleSeeMore}
+            >
+              {seeMore ? "Ver menos" : "Ver más"}
+            </button>
+          )}
+          {review.text}
+        </p>
       </div>
     </div>
   );
