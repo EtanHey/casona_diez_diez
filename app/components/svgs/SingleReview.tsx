@@ -21,7 +21,7 @@ const SingleReview = ({
   return (
     <div
       className={`${index === currentReview ? "opacity-100" : "opacity-0"} ${
-        seeMore ? "h-fit" : "h-80"
+        seeMore ? "h-fit" : "h-80 lg:h-fit"
       } relative top-0 mx-4 flex flex-col gap-2 overflow-y-clip rounded-[48px] p-10 shadow-[2.0px_4.0px_2.0px_0px] shadow-cdd-green/25`}
     >
       <div className="flex items-center gap-4">
@@ -52,12 +52,12 @@ const SingleReview = ({
         </div>
         <p
           className={
-            seeMore ? "line-clamp-none" : `line-clamp-5 md:line-clamp-6`
+            seeMore ? "line-clamp-none" : `line-clamp-5 lg:line-clamp-6 `
           }
         >
           {review.text.length > 153 && (
             <button
-              className="absolute bottom-3 text-blue-500"
+              className="absolute lg:hidden bottom-3 text-blue-500"
               onClick={handleSeeMore}
             >
               {seeMore ? "Ver menos" : "Ver más"}
