@@ -25,9 +25,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} h-screen scrollbar-none`}>
+      <body className={`${poppins.className} scrollbar-none h-screen`}>
         <MenuStateWrapper />
-        {children}
+        <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+"use client";
 import { PhotoFromServer } from "@/app/types";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -7,7 +8,6 @@ import NextSliderArrow from "../NextSliderArrow";
 import PrevSliderArrow from "../PrevSliderArrow";
 import Times from "../svgs/Times";
 import GalarySlider from "./GalarySlider";
-
 
 const Galary = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
