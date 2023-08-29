@@ -4,13 +4,11 @@ import React from "react";
 import Times from "./svgs/Times";
 import { usePathname } from "next/navigation";
 
-const Menu = ({
-  menuState,
-  changeMenuState,
-}: {
+type MenuProps = {
   menuState: boolean;
   changeMenuState: () => void;
-}) => {
+};
+const Menu = ({ menuState, changeMenuState }: MenuProps) => {
   const pathname = usePathname();
   const page = pathname?.split("/")[1];
   return (

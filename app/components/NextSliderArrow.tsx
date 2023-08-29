@@ -1,13 +1,15 @@
 import React from "react";
 import NextArrowSVG from "./svgs/NextArrowSVG";
 
+type NextSliderArrowProps = {
+  nextFunc: () => void;
+  arrowColor: string;
+}
+
 const NextSliderArrow = ({
   nextFunc,
   arrowColor,
-}: {
-  nextFunc: () => void;
-  arrowColor: string;
-}) => {
+}:NextSliderArrowProps) => {
   return (
     <button onClick={nextFunc}>
       <NextArrowSVG arrowColor={arrowColor} />

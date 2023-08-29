@@ -1,17 +1,13 @@
 "use client";
 
-import { PhotoFromServer } from "@/app/types";
 import Image from "next/image";
 import React from "react";
+import { GalarySliderProps } from ".";
 const GalarySlider = ({
   photos,
   currentPhoto,
   changeZoom,
-}: {
-  photos: Array<PhotoFromServer>;
-  currentPhoto: number;
-  changeZoom: () => void;
-}) => {
+}: GalarySliderProps) => {
   return (
     // work on responsiveness - container hight for each breakpoint
     photos.map((photo, index) => {
@@ -22,7 +18,7 @@ const GalarySlider = ({
             ${index === currentPhoto ? "opacity-100" : "opacity-0"}`}
           fill
           sizes="( max-width: 768px ) 100vw,"
-          style={{objectFit:"cover"}}
+          style={{ objectFit: "cover" }}
           key={photo.key}
           src={photo.url}
           alt={photo.key}

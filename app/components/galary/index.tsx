@@ -9,7 +9,15 @@ import PrevSliderArrow from "../PrevSliderArrow";
 import Times from "../svgs/Times";
 import GalarySlider from "./GalarySlider";
 
-const Galary = ({ photos }: { photos: Array<PhotoFromServer> }) => {
+type GalaryProps = {
+  photos: Array<PhotoFromServer>;
+};
+
+export type GalarySliderProps = GalaryProps & {
+  currentPhoto: number;
+  changeZoom: () => void;
+};
+const Galary = ({ photos }: GalaryProps) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const length = photos.length;
   if (!photos || photos.length === 0) return null;

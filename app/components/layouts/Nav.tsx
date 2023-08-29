@@ -2,9 +2,11 @@ import React from "react";
 import MenuButton from "../buttons/MenuButton";
 import CallReservationButton from "../buttons/CallReservationButton";
 
-const Nav = ({ changeMenuState }: { changeMenuState: () => void }) => {
+export type MenuToggleProps = { changeMenuState: () => void };
+
+const Nav = ({ changeMenuState }: MenuToggleProps) => {
   return (
-    <div className="bg-cdd-black z-50 fixed flex h-9 w-full flex-row place-content-between place-items-center px-4 py-2">
+    <div className="fixed z-50 flex h-9 w-full flex-row place-content-between place-items-center bg-cdd-black px-4 py-2">
       <CallReservationButton />
       <MenuButton changeMenuState={changeMenuState} />
     </div>
