@@ -196,6 +196,9 @@ const config: Config = {
         9: "9",
         10: "10",
       },
+      fontSize:{
+        "2xs": "10px",
+      }
     },
   },
   plugins: [require("@tailwindcss/line-clamp")],
