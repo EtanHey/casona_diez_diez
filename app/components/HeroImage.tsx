@@ -6,6 +6,7 @@ import ReserveButton from "./buttons/ReserveButton";
 import MainBanner from "./banners/MainBanner";
 import { usePathname } from "next/navigation";
 import { PhotoFromServer } from "../types";
+import Link from "next/link";
 
 const HeroImage = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   const pathname = usePathname();
@@ -25,7 +26,12 @@ const HeroImage = ({ photos }: { photos: Array<PhotoFromServer> }) => {
           style={{ objectFit: "cover" }}
         />
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
-        <CddDarkLogo className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2" />
+        <Link
+          href="/"
+          className="absolute rounded-full left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2"
+        >
+          <CddDarkLogo />
+        </Link>
         <ReserveButton />
       </div>
       <MainBanner />
