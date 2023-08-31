@@ -16,7 +16,6 @@ export const getPhotos = async (): Promise<Array<PhotoFromServer>> => {
 };
 
 export default async function Home() {
-  
   const photos = await getPhotos();
   const getReviews = async (): Promise<Array<Review>> => {
     try {
