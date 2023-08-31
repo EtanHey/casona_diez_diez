@@ -33,7 +33,7 @@ export default async function RootLayout({
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage photos={photos} />
-          <div className="mt-16 w-full">{children}</div>
+          <div className="mb-8 mt-16 w-full">{children}</div>
           <MediaFooter />
         </main>
       </body>

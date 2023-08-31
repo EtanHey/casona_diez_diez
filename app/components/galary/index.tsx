@@ -39,7 +39,7 @@ const Galary = ({ photos }: GalaryProps) => {
           <Header>Galeria</Header>
           <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
-        <div className="relative mb-8 flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]">
+        <div className="relative flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]">
           <GalarySlider
             photos={photos}
             currentPhoto={currentPhoto}
