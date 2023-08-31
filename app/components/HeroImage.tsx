@@ -1,12 +1,23 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import CddDarkLogo from "./svgs/CddDarkLogo";
 import ReserveButton from "./buttons/ReserveButton";
 import MainBanner from "./banners/MainBanner";
+import { usePathname } from "next/navigation";
+import { PhotoFromServer } from "../types";
 
-const HeroImage = () => {
+const HeroImage = ({ photos }: { photos: Array<PhotoFromServer> }) => {
+  // const pathname = usePathname();
+  // const page = pathname?.split("/")[1];
+  // const photo = photos.find((photo) => photo.key.includes(`${page}`));
+  // console.log(photos);
+  console.log(photos);
+
+  // console.log(photo);
+
   return (
-    <div className="h-full w-full mt-9">
+    <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-fit max-h-80 w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:w-fit">
         <Image
           className="md:-translate-y-1/4 lg:-translate-y-1/2 xl:-translate-y-1/3"

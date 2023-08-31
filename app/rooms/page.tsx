@@ -1,6 +1,4 @@
 import React from "react";
-import MediaFooter from "../components/sections/MediaFooter";
-import HeroImage from "../components/HeroImage";
 import Galary from "../components/galary";
 import { getPhotos } from "../page";
 import Header from "../components/Header";
@@ -14,10 +12,7 @@ const Rooms = async () => {
   const photos = await getPhotos();
   return (
     <>
-      <HeroImage />
-      <span className="mt-14">
-        <Header>Habitaciones</Header>
-      </span>
+      <Header>Habitaciones</Header>
       <div className="flex h-full w-full flex-col text-center">
         <ColoredBreak bg="bg-cdd-red" />
         <div className="flex h-full w-full flex-col gap-4">
@@ -63,7 +58,6 @@ const Rooms = async () => {
       </div>
 
       <Galary photos={photos} />
-      <MediaFooter />
     </>
   );
 };
