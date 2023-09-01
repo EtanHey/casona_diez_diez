@@ -2,13 +2,14 @@ import Header from "@/app/components/Header";
 import React from "react";
 import HeartSVG from "../components/svgs/HeartSVG";
 import ColoredBreak from "../components/ColoredBreak";
+import MapComponent from "../components/MapComponent";
 
 const Location = () => {
   return (
     <>
       <Header>UBICACIÓN</Header>
 
-      <div className="flex w-full flex-col place-content-center items-center">
+      <div className="mb-4 flex w-full flex-col place-content-center items-center">
         <div className="mb-8 flex w-full place-content-center items-center gap-2">
           <HeartSVG />
           <p className="text-sm font-medium uppercase">en el santelmo</p>
@@ -33,21 +34,25 @@ const Location = () => {
         <ColoredBreak bg="bg-cdd-red" />
         <div className="flex gap-3 px-4">
           <div className="flex flex-col gap-1">
-            <h5 className="text-cdd-red max-w-[60px] text-xs">DESDE EL AEROPUERTO</h5>
+            <h5 className="max-w-[60px] text-xs text-cdd-red">
+              DESDE EL AEROPUERTO
+            </h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod
             </p>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="text-cdd-red max-w-[60px] text-xs">DESDE RETIRO</h5>
+            <h5 className="max-w-[60px] text-xs text-cdd-red">DESDE RETIRO</h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod
             </p>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="text-cdd-red max-w-[60px] text-xs">DESDE AEROPARQUE</h5>
+            <h5 className="max-w-[60px] text-xs text-cdd-red">
+              DESDE AEROPARQUE
+            </h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod
@@ -55,6 +60,10 @@ const Location = () => {
           </div>
         </div>
       </div>
+      <MapComponent />
+      <p className="px-4 text-center text-sm font-light mt-8">
+        TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES
+      </p>
     </>
   );
 };
