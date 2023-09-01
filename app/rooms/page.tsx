@@ -14,7 +14,7 @@ const Rooms = async () => {
     <>
       <Header>Habitaciones</Header>
       <div className="flex h-full w-full flex-col text-center">
-        <ColoredBreak bg="bg-cdd-red" />
+        <ColoredBreak  bg="bg-cdd-red" />
         <div className="flex h-full w-full flex-col gap-4">
           <h2 className="text-lg font-light">HABITACIONES DE 1, 2 o 3 CAMAS</h2>
           <div className="flex flex-row place-content-around items-end">
@@ -24,7 +24,7 @@ const Rooms = async () => {
             <Clean fill="#FC1E32" />
           </div>
         </div>
-        <ColoredBreak bg="bg-cdd-green" />
+        <ColoredBreak  bg="bg-cdd-green" />
         <div className="flex h-full w-full flex-col gap-4">
           <h2 className="text-lg font-light">
             HABITACIONES DE 1, 2, 3, 4 o 5 CAMAS{" "}
@@ -36,7 +36,7 @@ const Rooms = async () => {
             <Clean fill="#04986F" />
           </div>
         </div>
-        <ColoredBreak bg="bg-cdd-yellow" />
+        <ColoredBreak  bg="bg-cdd-yellow" />
         <div className="flex h-full w-full flex-col gap-4">
           <h2 className="text-lg font-light">HABITACIONES DE 1 o 2 CAMAS </h2>
           <div className="flex flex-row place-content-around items-end">
@@ -45,7 +45,7 @@ const Rooms = async () => {
             <Clean fill="#F7A600" />
           </div>
         </div>
-        <ColoredBreak bg="bg-cdd-red" />
+        <ColoredBreak  bg="bg-cdd-red" />
         <div className="flex h-full w-full flex-col gap-4">
           <h2 className="text-lg font-light">HABITACIONES DE 1, 2 o 3 CAMAS</h2>
           <div className="flex flex-row place-content-around items-end">
@@ -54,7 +54,7 @@ const Rooms = async () => {
             <Clean fill="#FC1E32" />
           </div>
         </div>
-        <ColoredBreak bg="bg-cdd-red" />
+        <ColoredBreak  bg="bg-cdd-red" />
       </div>
 
       <Galary photos={photos} />

@@ -45,6 +45,7 @@ const config: Config = {
         "31/40": "77.5%",
         "32/40": "80%",
         "33/40": "82.5%",
+        "33.5/40": "83.75%",
         "34/40": "85%",
         "35/40": "87.5%",
         "36/40": "90%",
@@ -196,9 +197,9 @@ const config: Config = {
         9: "9",
         10: "10",
       },
-      fontSize:{
+      fontSize: {
         "2xs": "10px",
-      }
+      },
     },
   },
   plugins: [require("@tailwindcss/line-clamp")],
