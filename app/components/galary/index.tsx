@@ -21,10 +21,12 @@ const Galary = ({ photos }: GalaryProps) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const length = photos.length;
   if (!photos || photos.length === 0) return null;
-  const prevPhoto = () => {
+  const prevPhoto = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    ev.stopPropagation();
     setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1);
   };
-  const nextPhoto = () => {
+  const nextPhoto = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    ev.stopPropagation();
     setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1);
   };
   const [zoom, setZoom] = useState(false);
@@ -52,7 +54,12 @@ const Galary = ({ photos }: GalaryProps) => {
         {currentPhoto + 1}/{photos.length}
     </span> */}
       {zoom && (
-        <Modal changeZoom={changeZoom}>
+        <Modal
+          changeZoom={changeZoom}
+          prevFunc={prevPhoto}
+          nextFunc={nextPhoto}
+          arrowColor="#F7A600"
+        >
           <button
             className="absolute right-4 top-4 z-50 bg-black/30 p-1"
             onClick={changeZoom}

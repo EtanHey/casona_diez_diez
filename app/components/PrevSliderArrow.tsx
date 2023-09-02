@@ -1,8 +1,8 @@
 import React from "react";
 import PrevArrowSVG from "./svgs/PrevArrowSVG";
 
-type PrevSliderArrowProps = {
-  prevFunc: () => void;
+export type PrevSliderArrowProps = {
+  prevFunc: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   arrowColor: string;
 }
 
@@ -11,7 +11,7 @@ const PrevSliderArrow = ({
   arrowColor,
 }:PrevSliderArrowProps) => {
   return (
-    <button onClick={prevFunc}>
+    <button className="z-50 h-fit" onClick={prevFunc}>
       <PrevArrowSVG arrowColor={arrowColor} />
     </button>
   );

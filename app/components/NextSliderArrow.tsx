@@ -1,17 +1,14 @@
 import React from "react";
 import NextArrowSVG from "./svgs/NextArrowSVG";
 
-type NextSliderArrowProps = {
-  nextFunc: () => void;
+export type NextSliderArrowProps = {
+  nextFunc: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   arrowColor: string;
-}
+};
 
-const NextSliderArrow = ({
-  nextFunc,
-  arrowColor,
-}:NextSliderArrowProps) => {
+const NextSliderArrow = ({ nextFunc, arrowColor }: NextSliderArrowProps) => {
   return (
-    <button onClick={nextFunc}>
+    <button className="z-50 h-fit" onClick={nextFunc}>
       <NextArrowSVG arrowColor={arrowColor} />
     </button>
   );
