@@ -28,8 +28,8 @@ const page = () => {
         </span>
       </div>
       <form className="flex place-items-center flex-col h-fit w-full gap-4">
-        <div className=" w-full flex-col gap-2 bg-cdd-green p-4">
-          <span className="flex flex-col gap-1">
+        <div className="w-full flex flex-col gap-2 bg-cdd-green p-4">
+          <div className="flex flex-col gap-1">
             <label className="text-lg text-white" htmlFor="name">
               Nombre
             </label>
@@ -39,8 +39,8 @@ const page = () => {
               name="name"
               id="name"
             />
-          </span>
-          <span className="flex flex-col gap-1">
+          </div>
+          <div className="flex flex-col gap-1">
             <label className="text-lg text-white" htmlFor="email">
               E-mail
             </label>
@@ -50,8 +50,8 @@ const page = () => {
               name="email"
               id="email"
             />
-          </span>
-          <span className="flex flex-col gap-1">
+          </div>
+          <div className="flex flex-col gap-1">
             <label className="text-lg text-white" htmlFor="title">
               Titulo
             </label>
@@ -61,8 +61,8 @@ const page = () => {
               name="title"
               id="title"
             />
-          </span>
-          <span className="flex flex-col gap-1">
+          </div>
+          <div className="flex flex-col gap-1">
             <label className="text-lg text-white" htmlFor="message">
               Mensaje
             </label>
@@ -72,7 +72,7 @@ const page = () => {
               name="message"
               id="message"
             />
-          </span>
+          </div>
         </div>
         <button className="font-extrabold py-[10px] px-8 text-white rounded-full bg-cdd-red w-fit">Enviame un Mensaje</button>
       </form>
