@@ -39,7 +39,7 @@ const MediaFooter = () => {
           </button>
         </span>
       </div>
-      <span className="pb-5 text-xs font-medium text-white">
+      <span className="pb-5 text-xs font-medium leading-[18px] text-white">
         All rights reserved 2023 © Casona Diez Diez
       </span>
     </footer>
