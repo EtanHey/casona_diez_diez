@@ -11,7 +11,7 @@ const PrevSliderArrow = ({
   arrowColor,
 }:PrevSliderArrowProps) => {
   return (
-    <button className="z-50 h-fit" onClick={prevFunc}>
+    <button className="z-40 h-fit" onClick={prevFunc}>
       <PrevArrowSVG arrowColor={arrowColor} />
     </button>
   );

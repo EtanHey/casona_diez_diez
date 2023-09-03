@@ -8,7 +8,7 @@ export type NextSliderArrowProps = {
 
 const NextSliderArrow = ({ nextFunc, arrowColor }: NextSliderArrowProps) => {
   return (
-    <button className="z-50 h-fit" onClick={nextFunc}>
+    <button className="z-40 h-fit" onClick={nextFunc}>
       <NextArrowSVG arrowColor={arrowColor} />
     </button>
   );

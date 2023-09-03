@@ -20,7 +20,7 @@ export default async function Home() {
   const getReviews = async (): Promise<Array<Review>> => {
     try {
       const placeId = process.env.PLACE_ID;
-      const GoogleKey = process.env.GOOGLE_API_KEY;
+      const GoogleKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${GoogleKey}`,
       );

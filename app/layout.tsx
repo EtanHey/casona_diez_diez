@@ -29,7 +29,7 @@ export default async function RootLayout({
   const photos = await getPhotos();
   return (
     <html lang="en">
-      <body className={`${poppins.className} scrollbar-none h-screen`}>
+      <body className={`${poppins.className} scrollbar-none scroll-smooth h-screen`}>
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage photos={photos} />
