@@ -8,10 +8,15 @@ import {
   WazeLogo,
   WhatsappLogo,
 } from "../svgs/HomeMediaSVGs";
+import Link from "next/link";
 
 const MediaFooter = () => {
   return (
-    <footer tabIndex={2} role="contentinfo" className="flex h-full w-full flex-col items-center bg-cdd-black">
+    <footer
+      tabIndex={2}
+      role="contentinfo"
+      className="flex h-full w-full flex-col items-center bg-cdd-black"
+    >
       <div className="mt-10 flex h-full w-full flex-col items-center gap-6">
         <CddLightLogo />
         <span className="flex w-[260px] items-center gap-2">
@@ -21,22 +26,30 @@ const MediaFooter = () => {
           </p>
         </span>
         <span className="mb-12 flex flex-col gap-6">
-          <button className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#05C8F7] font-medium text-white">
+          <Link
+            href={
+              "https://www.waze.com/ul?ll=-34.619862%2C-58.3772628&navigate=yes&zoom=17"
+            }
+            target="_blank"
+            className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#05C8F7] font-medium text-white"
+          >
             <WazeLogo />
             <p>Navigate to us!</p>
-          </button>
-          <button className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#25D366] font-medium text-white">
+          </Link>
+          <Link
+          href={"https://api.whatsapp.com/send?phone=17179629684"}
+          className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#25D366] font-medium text-white">
             <WhatsappLogo />
             <p>Whatapp</p>
-          </button>
-          <button className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#4267B2] font-medium text-white">
+          </Link>
+          <Link href={"https://www.facebook.com/casonadiezdiez"} className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#4267B2] font-medium text-white">
             <FacebookLogo />
             <p>Facebook</p>
-          </button>
-          <button className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-white font-medium text-cdd-red">
+          </Link>
+          <Link href={"mailto:etan@heyman.net"} className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-white font-medium text-cdd-red">
             <EmailLogo />
             <p>Email</p>
-          </button>
+          </Link>
         </span>
       </div>
       <span className="pb-5 text-xs font-medium leading-[18px] text-white">
