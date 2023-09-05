@@ -4,7 +4,7 @@ import { MenuToggleProps } from "../layouts/Nav";
 
 const MenuButton = ({ changeMenuState }: MenuToggleProps) => {
   return (
-    <button onClick={changeMenuState}>
+    <button className="lg:hidden" onClick={changeMenuState}>
       <HamburgerLogo />
     </button>
   );
