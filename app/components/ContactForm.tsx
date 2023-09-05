@@ -1,7 +1,14 @@
 "use client";
-import React, { BaseSyntheticEvent } from "react";
+import React, { BaseSyntheticEvent, useEffect, useState } from "react";
 
 const ContactForm = () => {
+  // to help with lastpass plugin:
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  if (!isClient) return null;
+
   const handleEmailSend = async (ev: BaseSyntheticEvent) => {
     ev.preventDefault();
     let { name, email, title, message } = ev.target.elements;
@@ -13,18 +20,18 @@ const ContactForm = () => {
       method: "POST",
       body: JSON.stringify({ name, email, title, message }),
     });
-    console.log('here');
-    
+    console.log("here");
+
     const emailSent = await res.json();
-    console.log('res.json()',await res.json());
-    console.log('emailSent',emailSent);
+    console.log("res.json()", await res.json());
+    console.log("emailSent", emailSent);
   };
   return (
     <form
       onSubmit={handleEmailSend}
       className="flex h-fit w-full flex-col place-items-center gap-4"
     >
-      <div className="flex w-full flex-col gap-2 bg-cdd-green p-4">
+      <div className="flex w-full  flex-col gap-2 bg-cdd-green p-4">
         <div className="flex flex-col gap-1">
           <label className="text-lg text-white" htmlFor="name">
             Nombre

@@ -24,6 +24,7 @@ const LoginForm = () => {
       <span className="flex w-full flex-col items-stretch text-sm">
         <label htmlFor="id">Correo electrónico/nombre de usuario:</label>
         <input
+          data-lpignore="true"
           className="text-base text-cdd-black"
           type="text"
           name="id"
