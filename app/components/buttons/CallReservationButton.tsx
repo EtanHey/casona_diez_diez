@@ -4,9 +4,15 @@ import Link from "next/link";
 
 const CallReservationButton = () => {
   return (
-    <Link className="flex flex-row gap-[6px] place-items-center" href="tel:2025550122">
+    <Link
+      className="flex flex-row place-items-center gap-[6px]"
+      href="tel:2025550122"
+      target="_blank"
+    >
       <PhoneLogo />
-      <div className="text-xs font-light p-0 m-0 text-white">RESERVA UNA HABITACIÓN</div>
+      <div className="m-0 p-0 text-xs font-light text-white">
+        RESERVA UNA HABITACIÓN
+      </div>
     </Link>
   );
 };

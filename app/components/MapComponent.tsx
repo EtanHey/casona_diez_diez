@@ -1,15 +1,23 @@
 "use client";
 import React, { useCallback, useState } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  InfoBox,
+  InfoWindow,
+} from "@react-google-maps/api";
 const GoogleApiKey = `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`;
 const containerStyle = {
-  width: "400px",
-  height: "400px",
+  minWidth: "400px",
+  minHeight: "400px",
+  width: "100%",
+  height: "100%",
 };
 
 const center = {
-  lat: -34.61985,
-  lng: -58.37708,
+  lat: -34.6198612,
+  lng: -58.3773398,
 };
 
 function MyComponent() {
@@ -33,10 +41,15 @@ function MyComponent() {
   }, []);
 
   return isLoaded ? (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={15}
+      onLoad={onLoad}
+    >
       {/* Child components, such as markers, info windows, etc. */}
       <>
-        <Marker position={center} />
+        <Marker clickable position={center} />
       </>
     </GoogleMap>
   ) : (

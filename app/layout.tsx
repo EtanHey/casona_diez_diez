@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   description: `Developed by Etan Joseph Heyman,
     initial design by Natalia Aguilera Meza,
     refined by Dor Zohar`,
+  icons:{
+    icon:"/favicon-32x32.png",
+    apple:"/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest", 
+  themeColor:"#ffffff",
 };
 
 export default async function RootLayout({
@@ -29,7 +35,13 @@ export default async function RootLayout({
   const photos = await getPhotos();
   return (
     <html lang="en">
-      <body className={`${poppins.className} scrollbar-none scroll-smooth h-screen`}>
+      <head>
+        <link rel="mask-icon" href="" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+      </head>
+      <body
+        className={`${poppins.className} scrollbar-none h-screen scroll-smooth`}
+      >
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage photos={photos} />

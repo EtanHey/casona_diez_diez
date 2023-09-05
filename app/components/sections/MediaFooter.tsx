@@ -37,16 +37,26 @@ const MediaFooter = () => {
             <p>Navigate to us!</p>
           </Link>
           <Link
-          href={"https://api.whatsapp.com/send?phone=17179629684"}
-          className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#25D366] font-medium text-white">
+            href={"https://api.whatsapp.com/send?phone=17179629684"}
+            target="_blank"
+            className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#25D366] font-medium text-white"
+          >
             <WhatsappLogo />
             <p>Whatapp</p>
           </Link>
-          <Link href={"https://www.facebook.com/casonadiezdiez"} className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#4267B2] font-medium text-white">
+          <Link
+            href={"https://www.facebook.com/casonadiezdiez"}
+            target="_blank"
+            className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-[#4267B2] font-medium text-white"
+          >
             <FacebookLogo />
             <p>Facebook</p>
           </Link>
-          <Link href={"mailto:etan@heyman.net"} className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-white font-medium text-cdd-red">
+          <Link
+            href={"mailto:etan@heyman.net"}
+            target="_blank"
+            className="flex h-12 w-48 items-center justify-center gap-2 rounded-full bg-white font-medium text-cdd-red"
+          >
             <EmailLogo />
             <p>Email</p>
           </Link>
