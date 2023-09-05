@@ -37,13 +37,13 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
           >
             HOME PAGE
           </Link>
-          <Link
+          {/* <Link
             onClick={changeMenuState}
             className={`${page === "services" ? "text-cdd-red" : ""}`}
             href="/services"
           >
             SERVICIOS
-          </Link>
+          </Link> */}
           <Link
             onClick={changeMenuState}
             className={`${page === "rooms" ? "text-cdd-red" : ""}`}
@@ -51,13 +51,13 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
           >
             Habitaciones
           </Link>
-          <Link
+          {/* <Link
             onClick={changeMenuState}
             className={`${page === "galary" ? "text-cdd-red" : ""}`}
             href="/galary"
           >
             Galeria
-          </Link>
+          </Link> */}
           <Link
             onClick={changeMenuState}
             className={`${page === "location" ? "text-cdd-red" : ""}`}
@@ -65,13 +65,13 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
           >
             Ubicaión
           </Link>
-          <Link
+          {/* <Link
             onClick={changeMenuState}
             className={`${page === "reviews" ? "text-cdd-red" : ""}`}
             href="/reviews"
           >
             Reseñas
-          </Link>
+          </Link> */}
           <Link
             onClick={changeMenuState}
             className={`${page === "contact" ? "text-cdd-red" : ""}`}
