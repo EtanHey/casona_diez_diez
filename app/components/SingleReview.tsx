@@ -2,7 +2,7 @@
 import { Review } from "@/app/types";
 import Image from "next/image";
 import React from "react";
-import StarSvg from "./StarSvg";
+import StarSvg from "./svgs/StarSvg";
 
 const SingleReview = ({
   review,
@@ -40,7 +40,7 @@ const SingleReview = ({
                 .fill(review.rating)
                 .map((_, index) =>
                   review.rating ? (
-                    <div>
+                    <div key={index}>
                       <StarSvg
                         key={index}
                         full={review.rating - 1 < index ? false : true}

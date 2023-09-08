@@ -6,7 +6,7 @@ import ColoredBreak from "../../ColoredBreak";
 import { Review } from "@/app/types";
 import PrevSliderArrow from "../../PrevSliderArrow";
 import NextSliderArrow from "../../NextSliderArrow";
-import SingleReview from "../../svgs/SingleReview";
+import SingleReview from "../../SingleReview";
 
 const HomeReviewSec = ({ reviews }: { reviews?: Array<Review> }) => {
   const [currentReview, setCurrentReview] = useState(0);

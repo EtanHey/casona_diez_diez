@@ -33,6 +33,11 @@ const Gallery = ({ photos }: GalleryProps) => {
   const changeZoom = () => {
     setZoom(!zoom);
   };
+  const changePhoto = (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    ev.preventDefault();
+
+    // setCurrentPhoto(Number(ev.currentTarget.id));
+  };
   return (
     <>
       <div className="flex w-full flex-col gap-4">
@@ -41,7 +46,10 @@ const Gallery = ({ photos }: GalleryProps) => {
           <Header>Galeria</Header>
           <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
-        <div className="relative flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]">
+        <div
+          onMouseUp={changePhoto}
+          className="relative flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]"
+        >
           <GallerySlider
             photos={photos}
             currentPhoto={currentPhoto}
