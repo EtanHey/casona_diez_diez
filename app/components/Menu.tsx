@@ -53,8 +53,8 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
           </Link>
           {/* <Link
             onClick={changeMenuState}
-            className={`${page === "galary" ? "text-cdd-red" : ""}`}
-            href="/galary"
+            className={`${page === "gallery" ? "text-cdd-red" : ""}`}
+            href="/gallery"
           >
             Galeria
           </Link> */}

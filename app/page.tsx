@@ -1,5 +1,5 @@
 import { utapi } from "uploadthing/server";
-import HomeGalarySec from "./components/sections/home-sections/HomeGalarySec";
+import HomeGallerySec from "./components/sections/home-sections/HomeGallerySec";
 import HomeReviewSec from "./components/sections/home-sections/HomeReviewSec";
 import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec";
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
@@ -37,7 +37,7 @@ export default async function Home() {
     <>
       <HomeWelcomeSec />
       <HomeServicesSec />
-      {photos && photos.length > 0 && <HomeGalarySec photos={photos} />}
+      {photos && photos.length > 0 && <HomeGallerySec photos={photos} />}
       {reviews && reviews.length > 0 && <HomeReviewSec reviews={reviews} />}
     </>
   );

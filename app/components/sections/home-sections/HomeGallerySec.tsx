@@ -3,15 +3,15 @@ import React from "react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import ColoredBreak from "../../ColoredBreak";
 import { PhotoFromServer } from "@/app/types";
-import Galary from "../../galary";
+import Gallery from "../../gallery";
 
-const HomeGalarySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
+const HomeGallerySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
   return (
     <HomeSectionWrapper>
       <ColoredBreak bg="bg-cdd-yellow" />
-      <Galary photos={photos} />
+      <Gallery photos={photos} />
     </HomeSectionWrapper>
   );
 };
 
-export default HomeGalarySec;
+export default HomeGallerySec;

@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import React from "react";
-import { GalarySliderProps } from ".";
-const GalarySlider = ({
+import { GallerySliderProps } from ".";
+const GallerySlider = ({
   photos,
   currentPhoto,
   changeZoom,
-}: GalarySliderProps) => {
+}: GallerySliderProps) => {
   return (
     // work on responsiveness - container hight for each breakpoint
     photos.map((photo, index) => {
@@ -27,4 +27,4 @@ const GalarySlider = ({
     })
   );
 };
-export default GalarySlider;
+export default GallerySlider;
