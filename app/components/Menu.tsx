@@ -29,13 +29,13 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
         <button onClick={changeMenuState} className="p-[10px]">
           <Times />
         </button>
-        <div className="wrapper scrollbar-none flex h-0 min-h-full w-full flex-col items-center gap-9 overflow-y-scroll text-sm font-normal">
+        <div className="wrapper uppercase scrollbar-none flex h-0 min-h-full w-full flex-col items-center gap-9 overflow-y-scroll text-sm font-normal">
           <Link
             onClick={changeMenuState}
             className={`${page === "" ? "text-cdd-red" : ""}`}
             href="/"
           >
-            HOME PAGE
+            Inicio
           </Link>
           {/* <Link
             onClick={changeMenuState}
