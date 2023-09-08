@@ -13,7 +13,7 @@ const GallerySlider = ({
     photos.map((photo, index) => {
       return (
         <Image
-          onClick={changeZoom}
+          // onClick={changeZoom}
           className={` transition-opacity duration-700
             ${index === currentPhoto ? "opacity-100" : "opacity-0"}`}
           fill

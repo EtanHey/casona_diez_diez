@@ -19,25 +19,45 @@ export type GallerySliderProps = GalleryProps & {
 };
 const Gallery = ({ photos }: GalleryProps) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
+  // const [slideStartingPoint, setSlideStartingPoint] = useState(0);
+  // const [slideEndingPoint, setSlideEndingPoint] = useState(0);
   const length = photos.length;
   if (!photos || photos.length === 0) return null;
-  const prevPhoto = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const prevPhoto = (ev: React.MouseEvent<HTMLElement, MouseEvent>) => {
     ev.stopPropagation();
     setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1);
   };
-  const nextPhoto = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const nextPhoto = (ev: React.MouseEvent<HTMLElement, MouseEvent>) => {
     ev.stopPropagation();
     setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1);
   };
   const [zoom, setZoom] = useState(false);
   const changeZoom = () => {
-    setZoom(!zoom);
-  };
-  const changePhoto = (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    ev.preventDefault();
+    // const difference = slideEndingPoint - slideStartingPoint;
+    // console.log(difference);
 
-    // setCurrentPhoto(Number(ev.currentTarget.id));
+    // if (difference < 10 && difference > -10) {
+    setZoom(!zoom);
+    // }
   };
+  // const handleSlideStartingPoint = (
+  //   ev: any,
+  // ) => {
+  //   ev.preventDefault();
+  //   const startingPoint = ev.clientX;
+  //   setSlideStartingPoint(startingPoint);
+  // };
+  // const changeSlide = (ev: any) => {
+  //   const endingPoint = ev.clientX;
+  //   setSlideEndingPoint(endingPoint);
+  //   const difference = endingPoint - slideStartingPoint;
+  //   if (difference > 10) {
+  //     nextPhoto(ev);
+  //   }
+  //   if (difference < -10) {
+  //     prevPhoto(ev);
+  //   }
+  // };
   return (
     <>
       <div className="flex w-full flex-col gap-4">
@@ -47,7 +67,9 @@ const Gallery = ({ photos }: GalleryProps) => {
           <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
         <div
-          onMouseUp={changePhoto}
+          // onPointerDown={handleSlideStartingPoint}
+          // onPointerUp={changeSlide}
+          onClick={changeZoom}
           className="relative flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]"
         >
           <GallerySlider
