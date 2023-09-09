@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Times from "./svgs/Times";
 import { usePathname } from "next/navigation";
+import NavigationMenu from "./NavigationMenu";
 
 type MenuProps = {
   menuState: boolean;
@@ -12,7 +13,7 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
   const pathname = usePathname();
   const page = pathname?.split("/")[1];
   return (
-    <div className={`fixed top-0 z-50`}>
+    <div className={`fixed top-0 z-50 md:hidden`}>
       <span
         onClick={changeMenuState}
         className={`${
@@ -29,57 +30,7 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
         <button onClick={changeMenuState} className="p-[10px]">
           <Times />
         </button>
-        <div className="wrapper uppercase scrollbar-none flex h-0 min-h-full w-full flex-col items-center gap-9 overflow-y-scroll text-sm font-normal">
-          <Link
-            onClick={changeMenuState}
-            className={`${page === "" ? "text-cdd-red" : ""}`}
-            href="/"
-          >
-            Inicio
-          </Link>
-          {/* <Link
-            onClick={changeMenuState}
-            className={`${page === "services" ? "text-cdd-red" : ""}`}
-            href="/services"
-          >
-            SERVICIOS
-          </Link> */}
-          <Link
-            onClick={changeMenuState}
-            className={`${page === "rooms" ? "text-cdd-red" : ""}`}
-            href="/rooms"
-          >
-            Habitaciones
-          </Link>
-          {/* <Link
-            onClick={changeMenuState}
-            className={`${page === "gallery" ? "text-cdd-red" : ""}`}
-            href="/gallery"
-          >
-            Galeria
-          </Link> */}
-          <Link
-            onClick={changeMenuState}
-            className={`${page === "location" ? "text-cdd-red" : ""}`}
-            href="/location"
-          >
-            Ubicaión
-          </Link>
-          {/* <Link
-            onClick={changeMenuState}
-            className={`${page === "reviews" ? "text-cdd-red" : ""}`}
-            href="/reviews"
-          >
-            Reseñas
-          </Link> */}
-          <Link
-            onClick={changeMenuState}
-            className={`${page === "contact" ? "text-cdd-red" : ""}`}
-            href="/contact"
-          >
-            Contacto
-          </Link>
-        </div>
+        <NavigationMenu changeMenuState={changeMenuState} />
       </div>
     </div>
   );
