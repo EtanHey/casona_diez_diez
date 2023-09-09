@@ -8,7 +8,6 @@ const NavigationMenu = ({
   changeMenuState?: () => void;
 }) => {
   const page = usePathname()?.split("/")[1];
-
   return (
     <div
       className={`wrapper scrollbar-none ${

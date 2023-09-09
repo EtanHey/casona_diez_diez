@@ -5,7 +5,6 @@ import Menu from "../Menu";
 
 const MenuStateWrapper = () => {
   const [menuState, setMenuState] = useState(false);
-
   const changeMenuState = () => {
     setMenuState(!menuState);
   };
