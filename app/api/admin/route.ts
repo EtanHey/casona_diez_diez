@@ -8,10 +8,12 @@ export async function POST(req: NextRequest) {
     const db = client.db("casonaDiezDiez");
     const result = await db
       .collection("users")
-      .findOne({ username }, { projection: { password: 0 } });
+      .findOne({ username, password }, { projection: { password: 0 } });
+    console.log(result);
+
     if (result) {
       const user = result.username;
-      return new Response(JSON.stringify({ user }), {
+      return new Response(JSON.stringify({ ok: true }), {
         status: 200,
       });
     }
