@@ -1,19 +1,31 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { BaseSyntheticEvent } from "react";
 
 const LoginForm = () => {
+  const router = useRouter();
   const handleSubmit = async (event: BaseSyntheticEvent) => {
     event.preventDefault();
-    console.log(event);
-    const username = event.target.elements.id.value;
-    const password = event.target.elements.password.value;
-    console.log(username, password);
-    const res = await fetch("/api/admin", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-    });
-    const user = await res.json();
-    console.log(user);
+    try {
+      const username = event.target.elements.id.value;
+      const password = event.target.elements.password.value;
+      const res = await fetch("/api/admin", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+      });
+      const { ok, admin, error } = await res.json();
+      if (ok) {
+        let date = new Date();
+        date.setTime(date.getTime() + 5 * 60 * 1000);
+        document.cookie = `admin=${admin};expires=${date.toUTCString()}`;
+        router.push("/admin/dashboard");
+      } else {
+        throw error;
+      }
+    } catch (error) {
+      console.log(error);
+      alert(error);
+    }
   };
 
   return (
