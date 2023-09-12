@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 import jwt from "jwt-simple";
 const secret = process.env.JWT_SECRET;
 
-export async function POST(req: NextRequest, res: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
     const { username, password } = await req.json();
     const client = await clientPromise;
@@ -27,3 +27,4 @@ export async function POST(req: NextRequest, res: NextRequest) {
     });
   }
 }
+

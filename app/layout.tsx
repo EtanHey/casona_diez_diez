@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   description: `Developed by Etan Joseph Heyman,
     initial design by Natalia Aguilera Meza,
     refined by Dor Zohar`,
-  icons:{
-    icon:"/favicon-32x32.png",
-    apple:"/apple-touch-icon.png",
+  icons: {
+    icon: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest", 
-  themeColor:"#ffffff",
+  manifest: "/site.webmanifest",
+  themeColor: "#ffffff",
 };
 
 export default async function RootLayout({

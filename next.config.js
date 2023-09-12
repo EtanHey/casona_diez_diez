@@ -2,7 +2,6 @@
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["mongodb"],
-
   },
   images: {
     domains: [

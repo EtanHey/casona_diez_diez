@@ -1,13 +1,9 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { PhotoFromServer } from "@/app/types";
+import AdminPhotoNameInput from "./AdminPhotoNameInput";
 
 const AdminPhotoComponent = ({ photo }: { photo: PhotoFromServer }) => {
-  const [name, setName] = useState("");
-  useEffect(() => {
-    setName(photo.key.split("_")[1].split(".")[0]);
-  }, [photo]);
   return (
     <div className="flex flex-col place-items-center gap-1">
       <div
@@ -22,13 +18,7 @@ const AdminPhotoComponent = ({ photo }: { photo: PhotoFromServer }) => {
           src={photo.url}
         />
       </div>
-      <input
-        type="text"
-        defaultValue={name}
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-      />
+      <AdminPhotoNameInput photo={photo} />
     </div>
   );
 };
