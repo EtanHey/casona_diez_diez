@@ -2,11 +2,15 @@
 
 // You need to import our styles for the button to look right. Best to import in the root /layout.tsx but this is fine
 import "@uploadthing/react/styles.css";
-import { UploadButton, UploadDropzone, Uploader } from "../utils";
+import { UploadButton, UploadDropzone, Uploader } from "../../../utils";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-24 p-24">
+      {/* galary */}
+      <div className="h-96 w-96">
+        
+      </div>
       <UploadButton
         content={{
           button: "Elija el archivo",

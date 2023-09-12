@@ -15,9 +15,11 @@ const LoginForm = () => {
       });
       const { ok, admin, error } = await res.json();
       if (ok) {
-        let date = new Date();
-        date.setTime(date.getTime() + 5 * 60 * 1000);
-        document.cookie = `admin=${admin};expires=${date.toUTCString()}`;
+        // set timed cookies
+        // let date = new Date();
+        // date.setTime(date.getTime() + 5 * 60 * 1000);
+        // document.cookie = `admin=${admin};expires=${date.toUTCString()}`;
+        document.cookie = `admin=${admin}`;
         router.push("/admin/dashboard");
       } else {
         throw error;
