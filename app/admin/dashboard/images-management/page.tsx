@@ -1,16 +1,27 @@
 "use client";
-
 // You need to import our styles for the button to look right. Best to import in the root /layout.tsx but this is fine
 import "@uploadthing/react/styles.css";
-import { UploadButton, UploadDropzone, Uploader } from "../../../utils";
+import { UploadButton, UploadDropzone } from "../../../utils";
+import { PhotoFromServer } from "@/app/types";
+import AdminPhotoComponent from "@/app/components/adminComponents/AdminPhotoComponent";
 
-export default function Home() {
+export default function page({
+  params,
+}: {
+  params: { photos?: PhotoFromServer[] };
+}) {
+  const photos = params.photos ?? [];
   return (
-    <main className="flex min-h-screen flex-col items-center gap-24 p-24">
+    <main className="flex min-h-screen w-full flex-col items-center gap-24">
       {/* galary */}
-      <div className="h-96 w-96">
-        
-      </div>
+      {photos && (
+        <div className="flex h-screen w-full flex-wrap justify-center gap-2 overflow-y-scroll">
+          {photos.map((photo) => (
+            <AdminPhotoComponent key={photo.key} photo={photo} />
+          ))}
+        </div>
+      )}
+
       <UploadButton
         content={{
           button: "Elija el archivo",
