@@ -1,6 +1,7 @@
 import React from "react";
 import jwt from "jwt-simple";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 const secret = process.env.JWT_SECRET;
 const checkAdminCookie = () => {
   const cookie = cookies().get("admin");
@@ -10,7 +11,7 @@ const checkAdminCookie = () => {
 };
 const page = () => {
   const adminLoggedIn = checkAdminCookie();
-  if (!adminLoggedIn) throw new Error("User not found");
+  if (!adminLoggedIn) redirect("/admin");
   return <div>admin dashboard page</div>;
 };
 

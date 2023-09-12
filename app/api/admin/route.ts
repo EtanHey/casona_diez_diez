@@ -1,6 +1,5 @@
 import clientPromise from "@/lib/mongodb";
-import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
+import { NextRequest } from "next/server";
 import jwt from "jwt-simple";
 const secret = process.env.JWT_SECRET;
 
