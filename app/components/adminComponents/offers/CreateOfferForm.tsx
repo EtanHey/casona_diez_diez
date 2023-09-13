@@ -2,14 +2,17 @@
 import React from "react";
 
 const CreateOfferForm = () => {
-  const handleCreateOffer = async(ev: React.BaseSyntheticEvent) => {
+  const handleCreateOffer = async (ev: React.BaseSyntheticEvent) => {
     ev.preventDefault();
     const newOffer = ev.target.newOffer.value;
     const result = await fetch("/api/admin/dashboard/offers", {
       method: "POST",
       body: JSON.stringify({ newOffer }),
-    })
-    console.log(result);
+    });
+    if (result.status === 200) {
+      ev.target.reset();
+      alert("Offer created")
+    }
   };
   return (
     <form

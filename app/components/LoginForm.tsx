@@ -14,6 +14,7 @@ const LoginForm = () => {
         body: JSON.stringify({ username, password }),
       });
       const { ok, admin, error } = await res.json();
+      
       if (ok) {
         // set timed cookies
         // let date = new Date();

@@ -1,4 +1,5 @@
 import clientPromise from "@/lib/mongodb";
+import { FindCursor } from "mongodb";
 import { NextRequest } from "next/server";
 const connectToCollection = async () => {
   const client = await clientPromise;
@@ -28,9 +29,11 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   try {
+
     const collection = await connectToCollection();
     const result = collection.find({});
     console.log(result);
+    FindCursor
 
     if (result) {
       return new Response(JSON.stringify(result), {

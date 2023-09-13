@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {  } from "next/navigation";
+import {} from "next/navigation";
 
 export default function Error() {
   const router = useRouter();
@@ -12,10 +12,10 @@ export default function Error() {
 
       <button
         onClick={() => {
-          router.push("/admin");
+          router.refresh();
         }}
       >
-        Log in
+        retry
       </button>
     </div>
   );
