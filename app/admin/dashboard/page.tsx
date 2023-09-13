@@ -3,8 +3,19 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
-      <Link href="/admin/dashboard/images-management">Images management</Link>
+    <div className="flex flex-col items-center gap-2">
+      <Link
+        className="rounded-full bg-cdd-yellow px-4 py-2"
+        href="/admin/dashboard/images"
+      >
+        Images management
+      </Link>
+      <Link
+        className="rounded-full bg-cdd-yellow px-4 py-2"
+        href="/admin/dashboard/offers"
+      >
+        Offers management
+      </Link>
     </div>
   );
 };

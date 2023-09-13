@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { PhotoFromServer } from "@/app/types";
 import AdminPhotoNameInput from "./AdminPhotoNameInput";
@@ -14,7 +14,7 @@ const AdminPhotoComponent = ({ photo }: { photo: PhotoFromServer }) => {
         key={photo.key}
         className="relative box-content h-36 w-36 rounded-xl border border-black"
       >
-        <AdminPhotoDeleteButton setDeleted={setDeleted}  photo={photo} />
+        <AdminPhotoDeleteButton setDeleted={setDeleted} photo={photo} />
         <Image
           alt={"photo"}
           fill

@@ -3,7 +3,7 @@ import React from "react";
 import AdminPhotoComponent from "./AdminPhotoComponent";
 
 export async function handleDeletePhoto(fileKey: string) {
-  const res = await fetch("/api/admin/dashboard/images-management", {
+  const res = await fetch("/api/admin/dashboard/images", {
     method: "DELETE",
     body: JSON.stringify({ fileKey }),
   });

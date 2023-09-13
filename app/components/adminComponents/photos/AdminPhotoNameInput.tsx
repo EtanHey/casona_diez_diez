@@ -12,7 +12,7 @@ const AdminPhotoNameInput = ({ photo }: { photo: PhotoFromServer }) => {
     fileKey: string;
     newName: string;
   }) => {
-    const res = await fetch("/api/admin/dashboard/images-management", {
+    const res = await fetch("/api/admin/dashboard/images", {
       method: "PUT",
       body: JSON.stringify({ fileKey, newName }),
     });
