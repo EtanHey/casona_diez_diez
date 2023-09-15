@@ -5,7 +5,7 @@ const layout = async ({
 }: {
   children: React.ReactNode;
 }) => {
-  return <>{children}</>;
+  return <div>{children}</div>;
 };
 
 export default layout;

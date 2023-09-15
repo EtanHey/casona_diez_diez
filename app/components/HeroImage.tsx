@@ -7,8 +7,15 @@ import MainBanner from "./banners/MainBanner";
 import { usePathname } from "next/navigation";
 import { PhotoFromServer } from "../types";
 import Link from "next/link";
+import { Offer } from "@prisma/client";
 
-const HeroImage = ({ photos }: { photos: Array<PhotoFromServer> }) => {
+const HeroImage = ({
+  photos,
+  offer,
+}: {
+  photos: Array<PhotoFromServer>;
+  offer: { offer?: Offer; error?: Error };
+}) => {
   const pathname = usePathname();
   const page = pathname?.split("/")[1];
   const photo = photos.find(
@@ -28,13 +35,13 @@ const HeroImage = ({ photos }: { photos: Array<PhotoFromServer> }) => {
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
         <Link
           href="/"
-          className="absolute rounded-full left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2"
+          className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full"
         >
           <CddDarkLogo />
         </Link>
         <ReserveButton />
       </div>
-      <MainBanner />
+      <MainBanner offer={offer} />
     </div>
   );
 };

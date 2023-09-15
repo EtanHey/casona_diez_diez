@@ -17,10 +17,12 @@ export async function updateOffer(offer: Offer) {
   try {
     const updatedOffer = await prisma.offer.update({
       where: { id: offer.id },
-      data: { ...offer },
+      data: { text: offer.text },
     });
     return { offer: updatedOffer };
   } catch (error) {
+    console.log(error);
+
     return { error };
   }
 }

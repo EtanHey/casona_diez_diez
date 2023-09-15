@@ -5,6 +5,7 @@ import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
 import HeroImage from "./components/HeroImage";
 import MediaFooter from "./components/sections/MediaFooter";
 import { getPhotos } from "./page";
+import { getOffer } from "@/lib/prisma";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -33,6 +34,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const photos = await getPhotos();
+  const offer = await getOffer();
   return (
     <html lang="en">
       <head>
@@ -44,7 +46,7 @@ export default async function RootLayout({
       >
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
-          <HeroImage photos={photos} />
+          <HeroImage offer={offer} photos={photos} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}
           <MediaFooter />
