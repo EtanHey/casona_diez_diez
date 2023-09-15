@@ -3,8 +3,6 @@ import React, { BaseSyntheticEvent, useEffect, useState } from "react";
 import { EmailSending } from "../types";
 
 const ContactForm = () => {
-  // to help with lastpass plugin:
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
@@ -13,6 +11,7 @@ const ContactForm = () => {
   useEffect(() => {
     setTimeout(() => setEmailSent(EmailSending.EMPTY), 5000);
   }, [emailSent]);
+  // to help with lastpass plugin:
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
