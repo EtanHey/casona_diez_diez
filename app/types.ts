@@ -14,3 +14,9 @@ export type Review = {
   rating?: number;
 };
 
+export enum EmailSending {
+  EMPTY = "empty",
+  SENDING = "sending",
+  SENT = "sent",
+  ERROR = "error",
+}
