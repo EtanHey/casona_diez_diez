@@ -66,7 +66,7 @@ const ContactForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="w-full rounded-full p-[10px] shadow-[0px_1.0px_2.0px_0px] shadow-black/[15%]"
-            type="text"
+            type="email"
             name="email"
             id="email"
           />
