@@ -33,12 +33,14 @@ const HeroImage = ({
             `${photo.url}`
           }
           alt="Loby picture"
-          fill
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-          placeholder="blur"
-          blurDataURL={LobyImage.default.src}
-          priority={true}
+          // fill
+          // sizes="100vw"
+          // style={{ objectFit: "cover" }}
+          // placeholder="blur"
+          // blurDataURL={LobyImage.default.src}
+          // priority={true}
+          width={458}
+          height={303}
         />
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
         <Link
