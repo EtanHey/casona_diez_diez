@@ -28,8 +28,8 @@ const HeroImage = ({
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
           src={
-            LobyImage.default.src
-            // `${photo ? photo.url : photos[0].url}`
+            // LobyImage.default.src
+            `${photo ? photo.url : photos[0].url}`
           }
           alt="Loby picture"
           fill
