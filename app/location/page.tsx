@@ -3,32 +3,32 @@ import React from "react";
 import HeartSVG from "../components/svgs/HeartSVG";
 import ColoredBreak from "../components/ColoredBreak";
 import MapComponent from "../components/MapComponent";
+import PublicPageWrapper from "../components/PublicPageWrapper";
 
 const Location = () => {
   return (
-    <>
+    <PublicPageWrapper>
       <Header>UBICACIÓN</Header>
-
       <div className="mb-4 flex w-full flex-col place-content-center items-center">
         <div className="mb-8 flex w-full place-content-center items-center gap-2">
           <HeartSVG />
           <p className="text-sm font-medium uppercase">en el santelmo</p>
         </div>
-        <div className="w-33.5/40 flex flex-col text-center">
+        <div className="flex w-33.5/40 flex-col text-center">
           <p className="text-base font-semibold">
             Piedras 1010 e/ Carlos Calvo
           </p>
         </div>
         <ColoredBreak small bg="bg-cdd-red" />
-        <p className="w-33.5/40 flex flex-col text-center text-sm">
+        <p className="flex w-33.5/40 flex-col text-center text-sm">
           A tres cuadras de la feria de los domingos
         </p>
         <ColoredBreak small bg="bg-cdd-red" />
-        <p className="w-33.5/40 flex flex-col px-6 text-center text-sm">
+        <p className="flex w-33.5/40 flex-col px-6 text-center text-sm">
           A dos cuadras de la estación de subte de la linea C
         </p>
         <ColoredBreak small bg="bg-cdd-red" />
-        <p className="w-33.5/40 flex flex-col px-6 text-center text-sm">
+        <p className="flex w-33.5/40 flex-col px-6 text-center text-sm">
           A tres cuadras de la avenida 9 de julio
         </p>
         <ColoredBreak bg="bg-cdd-red" />
@@ -61,10 +61,10 @@ const Location = () => {
         </div>
       </div>
       <MapComponent />
-      <p className="px-4 text-center text-sm font-light mt-8">
+      <p className="mt-8 px-4 text-center text-sm font-light">
         TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES
       </p>
-    </>
+    </PublicPageWrapper>
   );
 };
 

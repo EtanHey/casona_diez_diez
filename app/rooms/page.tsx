@@ -7,11 +7,12 @@ import PrivateBathrooms from "../components/rooms/PrivateBathrooms";
 import Balcony from "../components/rooms/Balcony";
 import AC from "../components/rooms/AC";
 import Clean from "../components/rooms/Clean";
+import PublicPageWrapper from "../components/PublicPageWrapper";
 
 const Rooms = async () => {
   const photos = await getPhotos();
   return (
-    <>
+    <PublicPageWrapper>
       <Header>Habitaciones</Header>
       <div className="flex h-full w-full flex-col text-center">
         <ColoredBreak bg="bg-cdd-red" />
@@ -58,7 +59,7 @@ const Rooms = async () => {
       </div>
 
       <Gallery photos={photos} />
-    </>
+    </PublicPageWrapper>
   );
 };
 

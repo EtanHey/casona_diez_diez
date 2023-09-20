@@ -12,7 +12,7 @@ const checkAdminCookie = () => {
 const layout = ({ children }: { children: React.ReactNode }) => {
   const admin = checkAdminCookie();
   return (
-    <div className="flex w-full flex-col gap-2">
+    <div className="flex w-full h-screen flex-col gap-72 py-20">
       <AdminIndicator admin={admin} />
       {children}
     </div>
