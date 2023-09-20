@@ -6,6 +6,9 @@ import HeroImage from "./components/HeroImage";
 import MediaFooter from "./components/sections/MediaFooter";
 import { getPhotos } from "./page";
 import { getOffer } from "@/lib/prisma";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthing/core";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -44,6 +47,7 @@ export default async function RootLayout({
       <body
         className={`${poppins.className} scrollbar-none h-screen scroll-smooth`}
       >
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage offer={offer} photos={photos} />
