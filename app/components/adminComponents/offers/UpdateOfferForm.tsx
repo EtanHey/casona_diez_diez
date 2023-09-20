@@ -1,9 +1,10 @@
 "use client";
 import { Offer } from "@prisma/client";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
 const UpdateOfferForm = ({ offer }: { offer: Offer }) => {
+  const [value, setValue] = useState(offer.text);
   const router = useRouter();
   const handleUpdateOffer = async (ev: React.BaseSyntheticEvent) => {
     ev.preventDefault();
@@ -25,6 +26,8 @@ const UpdateOfferForm = ({ offer }: { offer: Offer }) => {
       <div className="flex flex-col">
         <label htmlFor="newOffer">Offerta nueva:</label>
         <textarea
+          defaultValue={value}
+          onChange={(e) => setValue(e.target.value)}
           className="rounded-xl"
           rows={2}
           name="newOffer"
