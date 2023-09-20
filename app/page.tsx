@@ -5,15 +5,18 @@ import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
 import { PhotoFromServer, Review } from "./types";
 
-// export const getPhotos = async (): Promise<Array<PhotoFromServer>> => {
-//   try {
-//     const listPhotos = await utapi.listFiles();
-//     return await utapi.getFileUrls(listPhotos.map((photo) => photo.key));
-//   } catch (error) {
-//     console.log(error, "getPhotos error");
-//     return [];
-//   }
-// };
+export const getPhotos = async (): Promise<any> => {
+  try {
+    const listPhotos = await utapi.listFiles();
+    const imageList = await utapi.getFileUrls(
+      listPhotos.map((photo) => photo.key),
+    );
+    return imageList;
+  } catch (error) {
+    console.log(error, "getPhotos error");
+    return [];
+  }
+};
 
 export default async function Home() {
   // const photos = await getPhotos();
@@ -32,12 +35,13 @@ export default async function Home() {
     }
   };
   const reviews = await getReviews();
-  
+  const photos = await getPhotos();
+
   return (
     <>
       <HomeWelcomeSec />
       <HomeServicesSec />
-      {/* {photos && photos.length > 0 && <HomeGallerySec photos={photos} />} */}
+      {photos && photos.length > 0 && <HomeGallerySec photos={photos} />}
       {reviews && reviews.length > 0 && <HomeReviewSec reviews={reviews} />}
     </>
   );
