@@ -32,7 +32,7 @@ export default async function Home() {
     }
   };
   const reviews = await getReviews();
-
+  
   return (
     <>
       <HomeWelcomeSec />
