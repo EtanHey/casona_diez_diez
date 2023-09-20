@@ -23,7 +23,7 @@ const HeroImage = ({
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
   );
   console.log(photo);
-  
+
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
@@ -33,6 +33,7 @@ const HeroImage = ({
           fill
           sizes="( max-width: 768px ) 100vw, ( max-width: 1024px ) 50vw, 100vw"
           style={{ objectFit: "cover" }}
+          priority={true}
         />
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
         <Link
