@@ -1,6 +1,6 @@
 import React from "react";
 import Gallery from "../components/gallery";
-import { getPhotos } from "../page";
+// import { getPhotos } from "../page";
 import Header from "../components/Header";
 import ColoredBreak from "../components/ColoredBreak";
 import PrivateBathrooms from "../components/rooms/PrivateBathrooms";
@@ -9,7 +9,7 @@ import AC from "../components/rooms/AC";
 import Clean from "../components/rooms/Clean";
 
 const Rooms = async () => {
-  const photos = await getPhotos();
+  // const photos = await getPhotos();
   return (
     <>
       <Header>Habitaciones</Header>
@@ -57,7 +57,7 @@ const Rooms = async () => {
         <ColoredBreak bg="bg-cdd-red" />
       </div>
 
-      <Gallery photos={photos} />
+      {/* <Gallery photos={photos} /> */}
     </>
   );
 };
