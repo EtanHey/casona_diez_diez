@@ -41,7 +41,7 @@ const HeroImage = ({
         </Link>
         <ReserveButton />
       </div>
-      {offer && <MainBanner offer={offer} />}
+      <MainBanner offer={offer} />
     </div>
   );
 };
