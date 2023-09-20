@@ -4,7 +4,6 @@ import { Poppins } from "next/font/google";
 import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
 import HeroImage from "./components/HeroImage";
 import MediaFooter from "./components/sections/MediaFooter";
-import { getPhotos } from "./page";
 import { getOffer } from "@/lib/prisma";
 
 const poppins = Poppins({
