@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {} from "next/navigation";
 
 export default function Error() {
   const router = useRouter();

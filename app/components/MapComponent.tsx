@@ -4,8 +4,6 @@ import {
   GoogleMap,
   useJsApiLoader,
   Marker,
-  InfoBox,
-  InfoWindow,
 } from "@react-google-maps/api";
 const GoogleApiKey = `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`;
 const containerStyle = {

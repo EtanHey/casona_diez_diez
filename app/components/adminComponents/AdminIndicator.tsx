@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+
 const AdminIndicator = ({ admin }: { admin: string }) => {
   const pathName = usePathname();
   const router = useRouter();
