@@ -22,11 +22,12 @@ const HeroImage = ({
     (photo) =>
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
   );
+  
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
-          src={`${photo ? photo.url : "/hero_picture.jpg"}`}
+          src={`${photo ? photo.url : "/hero_image.jpg"}`}
           alt="Loby picture"
           fill
           sizes="( max-width: 768px ) 100vw, ( max-width: 1024px ) 50vw, 100vw"
