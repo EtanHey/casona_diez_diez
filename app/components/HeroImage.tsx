@@ -9,19 +9,20 @@ import { PhotoFromServer } from "../types";
 import Link from "next/link";
 import { Offer } from "@prisma/client";
 import * as LobyImage from "../../public/hero_image.jpg";
+
 const HeroImage = ({
-  photos,
+  photo,
   offer,
 }: {
-  photos: Array<PhotoFromServer>;
+  photo: PhotoFromServer;
   offer: { offer?: Offer; error?: Error };
 }) => {
-  const pathname = usePathname();
-  const page = pathname?.split("/")[1];
-  const photo = photos.find(
-    (photo) =>
-      photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
-  );
+  // const pathname = usePathname();
+  // const page = pathname?.split("/")[1];
+  // const photo = photos.find(
+  //   (photo) =>
+  //     photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
+  // );
 
   return (
     <div className="mt-9 h-full w-full">
@@ -29,7 +30,7 @@ const HeroImage = ({
         <Image
           src={
             // LobyImage.default.src
-            `${photo ? photo.url : photos[0].url}`
+            `${photo.url}`
           }
           alt="Loby picture"
           fill
