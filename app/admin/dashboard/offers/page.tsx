@@ -1,5 +1,8 @@
+import BackButton from "@/app/components/BackButton";
 import UpdateOfferForm from "@/app/components/adminComponents/offers/UpdateOfferForm";
+
 import { getOffer } from "@/lib/prisma";
+import Link from "next/link";
 import React from "react";
 export type Offer = {
   _id: string;
@@ -11,6 +14,7 @@ const page = async () => {
   if ((error && !offer) || error || !offer) throw error;
   return (
     <div className="flex w-full flex-col items-center">
+      <BackButton />
       <UpdateOfferForm offer={offer} />
       <div className="w-full">
         <h3 className="text-xl font-bold underline">Oferta actual:</h3>
