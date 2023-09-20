@@ -14,7 +14,7 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
   const admin = checkAdminCookie();
 
   return (
-    <div className="flex h-full w-full flex-col">
+    <div className="flex h-full w-full gap-10 flex-col">
       <AdminIndicator admin={admin} />
       {children}
     </div>

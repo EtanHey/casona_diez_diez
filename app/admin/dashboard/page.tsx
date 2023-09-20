@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-8">
       <Link
         className="rounded-full bg-cdd-yellow px-4 py-2"
         href="/admin/dashboard/images"
