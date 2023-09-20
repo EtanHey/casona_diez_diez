@@ -17,6 +17,7 @@ const HeroImage = ({
   offer: { offer?: Offer; error?: Error };
 }) => {
   const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
   const page = pathname?.split("/")[1];
   const photo = photos.find(
     (photo) =>
@@ -31,6 +32,8 @@ const HeroImage = ({
           fill
           sizes="( max-width: 768px ) 100vw, ( max-width: 1024px ) 50vw, 100vw"
           style={{ objectFit: "cover" }}
+          placeholder="blur"
+          blurDataURL="/hero_picture.jpg"
         />
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
         <Link

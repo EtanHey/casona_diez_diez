@@ -3,11 +3,11 @@ import React from "react";
 import HeartSVG from "../components/svgs/HeartSVG";
 import ColoredBreak from "../components/ColoredBreak";
 import MapComponent from "../components/MapComponent";
-import PublicPageWrapper from "../components/PublicPageWrapper";
+
 
 const Location = () => {
   return (
-    <PublicPageWrapper>
+    <>
       <Header>UBICACIÓN</Header>
       <div className="mb-4 flex w-full flex-col place-content-center items-center">
         <div className="mb-8 flex w-full place-content-center items-center gap-2">
@@ -64,7 +64,7 @@ const Location = () => {
       <p className="mt-8 px-4 text-center text-sm font-light">
         TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES
       </p>
-    </PublicPageWrapper>
+    </>
   );
 };
 
