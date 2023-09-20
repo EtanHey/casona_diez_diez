@@ -3,12 +3,11 @@ import React, { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 const AdminIndicator = ({ admin }: { admin: string }) => {
   const pathName = usePathname();
+  const router = useRouter();
   useEffect(() => {
     if (!admin && pathName !== "/admin") {
-      const router = useRouter();
       router.push("/admin");
     } else if (admin && pathName === "/admin") {
-      const router = useRouter();
       router.push("/admin/dashboard");
     }
   }, [admin]);
