@@ -28,12 +28,12 @@ const HeroImage = ({
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
           src={
-            LobyImage.default.src
-            // `${photo ? photo.url : photos[0].url}`
+            // LobyImage.default.src
+            `${photo ? photo.url : photos[0].url}`
           }
           alt="Loby picture"
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="100vw"
           style={{ objectFit: "cover" }}
           placeholder="blur"
           blurDataURL={LobyImage.default.src}
