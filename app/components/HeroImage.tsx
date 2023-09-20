@@ -10,12 +10,28 @@ import Link from "next/link";
 import { Offer } from "@prisma/client";
 import * as LobyImage from "../../public/hero_image.jpg";
 
-const HeroImage = ({ offer }: { offer: { offer?: Offer; error?: Error } }) => {
+const HeroImage = ({
+  photo,
+  offer,
+}: {
+  photo: PhotoFromServer;
+  offer: { offer?: Offer; error?: Error };
+}) => {
+  // const pathname = usePathname();
+  // const page = pathname?.split("/")[1];
+  // const photo = photos.find(
+  //   (photo) =>
+  //     photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
+  // );
+
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
-          src={LobyImage.default.src}
+          src={
+            // LobyImage.default.src
+            `${photo.url}`
+          }
           alt="Loby picture"
           fill
           sizes="100vw"
