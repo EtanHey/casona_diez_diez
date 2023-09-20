@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { PhotoFromServer } from "../types";
 import Link from "next/link";
 import { Offer } from "@prisma/client";
-
+import * as LobyImage from "../../public/hero_image.jpg";
 const HeroImage = ({
   photos,
   offer,
@@ -22,17 +22,21 @@ const HeroImage = ({
     (photo) =>
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
   );
-  console.log(photo);
 
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
-          src={`${photo ? photo.url : "/hero_image.jpg"}`}
+          src={
+            LobyImage.default.src
+            // `${photo ? photo.url : photos[0].url}`
+          }
           alt="Loby picture"
           fill
-          sizes="( max-width: 768px ) 100vw, ( max-width: 1024px ) 50vw, 100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
+          placeholder="blur"
+          blurDataURL={LobyImage.default.src}
           priority={true}
         />
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
