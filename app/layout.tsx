@@ -8,6 +8,7 @@ import { getOffer } from "@/lib/prisma";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { getPhotos } from "./page";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -35,6 +36,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const photos = await getPhotos();
   const offer = await getOffer();
   return (
     <html lang="en">
@@ -48,7 +50,7 @@ export default async function RootLayout({
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
-          <HeroImage offer={offer} />
+          <HeroImage offer={offer} photos={photos} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}
           <MediaFooter />

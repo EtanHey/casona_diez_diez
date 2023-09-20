@@ -2,11 +2,13 @@
 
 import AdminPhotosLibrary from "@/app/components/adminComponents/photos/AdminPhotosLibrary";
 import AdminPhotoUploader from "@/app/components/adminComponents/photos/AdminPhotoUploader";
+import BackButton from "@/app/components/BackButton";
 
 export default function page() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center gap-24">
       {/* galary */}
+      <BackButton />
       <AdminPhotosLibrary />
       <AdminPhotoUploader />
     </main>

@@ -3,8 +3,6 @@ import { PhotoFromServer } from "@/app/types";
 import React from "react";
 
 const AdminPhotoNameInput = ({ photo }: { photo: PhotoFromServer }) => {
-  console.log("photo", photo);
-
   const handleRenamingPhoto = async ({
     fileKey,
     newName,

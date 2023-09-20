@@ -1,6 +1,7 @@
-// import { getPhotos } from "@/app/page";
+import { getPhotos } from "@/app/page";
 import React from "react";
 import AdminPhotoComponent from "./AdminPhotoComponent";
+import { PhotoFromServer } from "@/app/types";
 
 export async function handleDeletePhoto(fileKey: string) {
   const res = await fetch("/api/admin/dashboard/images", {
@@ -10,12 +11,12 @@ export async function handleDeletePhoto(fileKey: string) {
   console.log("res.json()", await res.json());
 }
 const AdminPhotosLibrary = async () => {
-  // const photos = await getPhotos();
+  const photos = await getPhotos();
   return (
-    <div className="flex h-screen w-full flex-wrap justify-center gap-2 overflow-y-scroll">
-      {/* {photos.map((photo) => (
+    <div className="scrollbar-none flex h-screen w-full flex-wrap justify-center gap-2 overflow-y-scroll">
+      {photos.map((photo: PhotoFromServer) => (
         <AdminPhotoComponent key={photo.key} photo={photo} />
-      ))} */}
+      ))}
     </div>
   );
 };

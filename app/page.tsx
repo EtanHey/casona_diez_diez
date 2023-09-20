@@ -3,9 +3,9 @@ import HomeGallerySec from "./components/sections/home-sections/HomeGallerySec";
 import HomeReviewSec from "./components/sections/home-sections/HomeReviewSec";
 import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec";
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
-import { PhotoFromServer, Review } from "./types";
+import {  Review } from "./types";
 
- const getPhotos = async (): Promise<any> => {
+export const getPhotos = async (): Promise<any> => {
   try {
     const listPhotos = await utapi.listFiles();
     const imageList = await utapi.getFileUrls(
