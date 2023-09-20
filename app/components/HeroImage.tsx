@@ -29,7 +29,6 @@ const HeroImage = ({
           src={`${photo ? photo.url : "/hero_picture.jpg"}`}
           alt="Loby picture"
           fill
-          sizes="100vw"
           style={{ objectFit: "cover" }}
         />
         <div className="tint fixed top-0 z-0  h-full w-full bg-[#721800] opacity-30"></div>
