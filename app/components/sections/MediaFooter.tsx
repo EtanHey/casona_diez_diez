@@ -22,7 +22,7 @@ const MediaFooter = () => {
         <span className="flex w-[260px] items-center gap-2">
           <LocationHallowLogo />
           <p className="text-sm font-medium text-white">
-            Urquiza Gral Justo Jose De 6923, Rosario, Santa Fe, Argentina
+            Piedras 1010, San telmo, Buenos aires - Capital Federal, Argentina
           </p>
         </span>
         <span className="mb-12 flex flex-col gap-6">
