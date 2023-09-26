@@ -102,7 +102,7 @@ const ContactForm = () => {
         disabled={name && email && title && message ? false : true}
         type="submit"
         className={`${
-          name && email && title && message ? "bg-cdd-red" : "bg-gray-500"
+          name && email && title && message ? "bg-cdd-red" : "bg-cdd-red/40"
         } w-fit rounded-full px-8 py-[10px] font-semibold text-white`}
       >
         {emailSent === EmailSending.ERROR && "x"}
