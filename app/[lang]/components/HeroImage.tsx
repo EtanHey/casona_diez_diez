@@ -18,7 +18,9 @@ const HeroImage = ({
 }) => {
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
-  const page = pathname?.split("/")[1];
+  const page = pathname?.split("/")[2];
+
+  
   const photo = photos.find(
     (photo) =>
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
