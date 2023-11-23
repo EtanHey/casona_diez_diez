@@ -41,6 +41,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple" href="/apple-touch-icon.png" />
         <link rel="mask-icon" href="" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
       </head>
