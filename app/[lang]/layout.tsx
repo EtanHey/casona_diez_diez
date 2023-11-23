@@ -10,7 +10,6 @@ import HeroImage from "./components/HeroImage";
 import MediaFooter from "./components/sections/MediaFooter";
 import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
 
-
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],

@@ -31,18 +31,12 @@ import negotiator from "negotiator";
 
 function getLocale(request: NextRequest): string | undefined {
   const negotiatorHeaders: Record<string, string> = {};
-
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
-console.log(request.headers);
 
   
   // @ts-ignore locales are readonly
   const locales: string[] = i18n.locales;
   const languages = new negotiator({ headers: negotiatorHeaders }).languages();
-  console.log("languages", languages);
-  console.log("locales", locales);
-  console.log("i18n.defaultLocale", i18n.defaultLocale);
-
   const locale = matchLocale(languages, locales, i18n.defaultLocale);
   return locale;
 }
