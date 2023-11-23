@@ -32,10 +32,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  params: { lang },
   children,
 }: {
-  params: { lang: string };
   children: React.ReactNode;
 }) {
   const photos = await getPhotos();
@@ -53,7 +51,6 @@ export default async function RootLayout({
         <MenuStateWrapper />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage offer={offer} photos={photos} />
-          <div className=" fixed top-1/2 bg-red-500 h-20 w-20">lang: {lang}</div>
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}
           <MediaFooter />

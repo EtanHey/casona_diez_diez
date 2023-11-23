@@ -9,7 +9,7 @@ import {
   HebrewHead,
   PortugueseHead,
 } from "../../svgs/HomeHeadsSVGs";
-import { getDictionary } from "@/app/[lang]/dictionary";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
 const HomeWelcomeSec = async ({ locale }: { locale: string }) => {
   const dict = await getDictionary(locale);

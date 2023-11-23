@@ -4,7 +4,7 @@ import HomeReviewSec from "./components/sections/home-sections/HomeReviewSec";
 import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec";
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
 import { Review } from "./types";
-import { getDictionary } from "./dictionary";
+import { getDictionary } from "./dictionaries";
 
 export const getPhotos = async (): Promise<any> => {
   try {
