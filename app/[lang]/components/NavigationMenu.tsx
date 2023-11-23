@@ -7,7 +7,8 @@ const NavigationMenu = ({
 }: {
   changeMenuState?: () => void;
 }) => {
-  const page = usePathname()?.split("/")[1];
+  const page = usePathname()?.split("/")[2];
+  const lang = usePathname()?.split("/")[1];
   return (
     <div
       className={`wrapper scrollbar-none ${
@@ -17,7 +18,7 @@ const NavigationMenu = ({
       <Link
         onClick={changeMenuState}
         className={`${page === "" ? "text-cdd-red" : ""}`}
-        href="/"
+        href={`/${lang}/`}
       >
         {/* HOME PAGE */}
         Inicio
@@ -25,21 +26,21 @@ const NavigationMenu = ({
       <Link
         onClick={changeMenuState}
         className={`${page === "rooms" ? "text-cdd-red" : ""}`}
-        href="/rooms"
+        href={`/${lang}/rooms`}
       >
         Habitaciones
       </Link>
       <Link
         onClick={changeMenuState}
         className={`${page === "location" ? "text-cdd-red" : ""}`}
-        href="/location"
+        href={`/${lang}/location`}
       >
         Ubicaión
       </Link>
       <Link
         onClick={changeMenuState}
         className={`${page === "contact" ? "text-cdd-red" : ""}`}
-        href="/contact"
+        href={`/${lang}/contact`}
       >
         Contacto
       </Link>

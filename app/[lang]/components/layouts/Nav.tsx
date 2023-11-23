@@ -5,7 +5,9 @@ import NavigationMenu from "../NavigationMenu";
 
 export type MenuToggleProps = { changeMenuState: () => void };
 
-const Nav = ({ changeMenuState }: MenuToggleProps) => {
+const Nav = ({ changeMenuState }: MenuToggleProps, params:{lang:string}) => {
+
+  
   return (
     <div className="fixed z-[50] flex h-9 w-full flex-row place-content-between place-items-center bg-cdd-black px-4 py-2">
       <CallReservationButton />
