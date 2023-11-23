@@ -4,7 +4,6 @@ import HeartSVG from "../components/svgs/HeartSVG";
 import ColoredBreak from "../components/ColoredBreak";
 import MapComponent from "../components/MapComponent";
 
-
 const Location = () => {
   return (
     <>
@@ -37,10 +36,11 @@ const Location = () => {
             <h5 className="max-w-[60px] text-xs text-cdd-red">
               DESDE EL AEROPUERTO
             </h5>
-            <p className="text-xs">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod
-            </p>
+            <ul className="text-xs">
+              {" "}
+              <li>30 KM en carro o taxi (24 horas)</li>
+              <li>Tenemos servicio de transporte</li>
+            </ul>
           </div>
           <div className="flex flex-col gap-1">
             <h5 className="max-w-[60px] text-xs text-cdd-red">DESDE RETIRO</h5>
