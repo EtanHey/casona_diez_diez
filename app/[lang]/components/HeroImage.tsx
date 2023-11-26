@@ -12,9 +12,13 @@ import { Offer } from "@prisma/client";
 const HeroImage = ({
   photos,
   offer,
+  dict: {
+    home: { reserveButtonText },
+  },
 }: {
   photos: Array<PhotoFromServer>;
   offer: { offer?: Offer; error?: Error };
+  dict: { home: { reserveButtonText: string } };
 }) => {
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
@@ -23,7 +27,7 @@ const HeroImage = ({
     (photo) =>
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
   );
-  
+
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
@@ -43,7 +47,7 @@ const HeroImage = ({
         >
           <CddDarkLogo />
         </Link>
-        <ReserveButton />
+        <ReserveButton text={reserveButtonText} />
       </div>
       <MainBanner offer={offer} />
     </div>

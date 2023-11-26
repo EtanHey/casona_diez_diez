@@ -10,6 +10,8 @@
     "callReservation": "Reserve a room"
   },
   "home": {
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "welcomeSubText": "We are opening our doors in the heart of Rosario, Argentina. Welcome!",
+    "reserveButtonText": "Reservations"
   }
 }

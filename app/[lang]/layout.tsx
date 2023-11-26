@@ -33,7 +33,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  children, params: { lang },
+  children,
+  params: { lang },
 }: {
   children: React.ReactNode;
   params: { lang: string };
@@ -55,7 +56,7 @@ export default async function RootLayout({
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <MenuStateWrapper navDict={dict.nav} />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
-          <HeroImage offer={offer} photos={photos} />
+          <HeroImage offer={offer} photos={photos} dict={dict} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}
           <MediaFooter />

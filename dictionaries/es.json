@@ -11,6 +11,8 @@
   },
 
   "home": {
-    "welcome": "Bienvenidos"
+    "welcome": "Bienvenidos",
+    "welcomeSubText": "¡Abrimos las puertas de nuestra casona familiar en el corazón de Rosario, Argentina! ¡Bienvenidos!",
+    "reserveButtonText": "Reservas"
   }
 }
