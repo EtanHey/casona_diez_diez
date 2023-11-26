@@ -16,12 +16,12 @@ const Nav = ({
 }) => {
   return (
     <div className="fixed z-[50] flex h-9 w-full flex-row place-content-between place-items-center bg-cdd-black px-4 py-2">
-      <LocaleSwitcher />
-      <CallReservationButton navDict={navDict} />
+      <span className="flex flex-row gap-6">
+        <LocaleSwitcher />
+        <CallReservationButton navDict={navDict} />
+      </span>
       <MenuButton changeMenuState={changeMenuState} />
-      <NavigationMenu
-        navDict={navDict}
-      />
+      <NavigationMenu navDict={navDict} />
     </div>
   );
 };
