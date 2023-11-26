@@ -1,6 +1,13 @@
 {
-  "common":{
+  "common": {
     "currentLanguage": "English"
+  },
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "contact": "Contact",
+    "location": "Location",
+    "callReservation": "Reserve a room"
   },
   "home": {
     "welcome": "Welcome"

@@ -1,9 +1,16 @@
 {
-  "common":{
+  "common": {
     "currentLanguage": "Español"
   },
-    "home": {
-      "welcome": "Bienvenidos"
-    }
+  "nav": {
+    "home": "Inicio",
+    "rooms": "Habitaciones",
+    "contact": "Contacto",
+    "location": "Ubicación",
+    "callReservation": "Reserva una habitación"
+  },
+
+  "home": {
+    "welcome": "Bienvenidos"
   }
-  
+}

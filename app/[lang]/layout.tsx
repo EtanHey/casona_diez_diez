@@ -9,6 +9,7 @@ import { ourFileRouter } from "./api/uploadthing/core";
 import HeroImage from "./components/HeroImage";
 import MediaFooter from "./components/sections/MediaFooter";
 import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
+import { getDictionary } from "./dictionaries";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -32,12 +33,14 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  children,
+  children, params: { lang },
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   const photos = await getPhotos();
   const offer = await getOffer();
+  const dict = await getDictionary(lang);
   return (
     <html lang="en">
       <head>
@@ -50,7 +53,7 @@ export default async function RootLayout({
         className={`${poppins.className} scrollbar-none h-screen scroll-smooth`}
       >
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-        <MenuStateWrapper />
+        <MenuStateWrapper navDict={dict.nav} />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage offer={offer} photos={photos} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>

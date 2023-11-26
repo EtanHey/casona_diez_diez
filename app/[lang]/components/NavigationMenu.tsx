@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { NavDictType } from "./stateful_wrapper/MenuStateWrapper";
 
 const NavigationMenu = ({
   changeMenuState,
+  navDict,
 }: {
   changeMenuState?: () => void;
+  navDict: NavDictType;
 }) => {
   const page = usePathname()?.split("/")[2];
   const lang = usePathname()?.split("/")[1];
+
   return (
     <div
       className={`wrapper scrollbar-none ${
@@ -21,28 +25,28 @@ const NavigationMenu = ({
         href={`/${lang}/`}
       >
         {/* HOME PAGE */}
-        Inicio
+        {navDict.home}
       </Link>
       <Link
         onClick={changeMenuState}
         className={`${page === "rooms" ? "text-cdd-red" : ""}`}
         href={`/${lang}/rooms`}
       >
-        Habitaciones
+        {navDict.rooms}
       </Link>
       <Link
         onClick={changeMenuState}
         className={`${page === "location" ? "text-cdd-red" : ""}`}
         href={`/${lang}/location`}
       >
-        Ubicaión
+        {navDict.location}
       </Link>
       <Link
         onClick={changeMenuState}
         className={`${page === "contact" ? "text-cdd-red" : ""}`}
         href={`/${lang}/contact`}
       >
-        Contacto
+        {navDict.contact}
       </Link>
     </div>
   );
