@@ -21,7 +21,7 @@ const NavigationMenu = ({
     >
       <Link
         onClick={changeMenuState}
-        className={`${page === "" ? "text-cdd-red" : ""}`}
+        className={`${page === "" || page === undefined ? "text-cdd-red" : ""}`}
         href={`/${lang}/`}
       >
         {/* HOME PAGE */}
