@@ -40,7 +40,7 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
           {locationDictionary.nineOfJulyAvenue}
         </p>
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="flex gap-3 px-4">
+        <div className="grid grid-cols-3 gap-3 sm:px-14 px-4">
           <div className="flex flex-col gap-1">
             <h5 className="max-w-[60px] text-xs text-cdd-red">
               DESDE EL AEROPUERTO
