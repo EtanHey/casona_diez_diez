@@ -40,7 +40,7 @@ export default async function RootLayout({
   params: { lang: string };
 }) {
   const photos = await getPhotos();
-  const offer = await getOffer();
+  const offer = await getOffer(lang);
   const dict = await getDictionary(lang);
   return (
     <html lang="en">

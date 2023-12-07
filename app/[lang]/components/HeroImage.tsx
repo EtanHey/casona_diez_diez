@@ -13,12 +13,12 @@ const HeroImage = ({
   photos,
   offer,
   dict: {
-    home: { reserveButtonText },
+    common: { reserveButtonText },
   },
 }: {
   photos: Array<PhotoFromServer>;
   offer: { offer?: Offer; error?: Error };
-  dict: { home: { reserveButtonText: string } };
+  dict: { common: { reserveButtonText: string } };
 }) => {
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;

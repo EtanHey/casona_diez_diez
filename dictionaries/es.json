@@ -1,6 +1,7 @@
 {
   "common": {
-    "currentLanguage": "Español"
+    "currentLanguage": "Español",
+    "reserveButtonText": "Reservas"
   },
   "nav": {
     "home": "Inicio",
@@ -12,7 +13,6 @@
 
   "home": {
     "welcome": "Bienvenidos",
-    "welcomeSubText": "¡Abrimos las puertas de nuestra casona familiar en el corazón de Rosario, Argentina! ¡Bienvenidos!",
-    "reserveButtonText": "Reservas"
+    "welcomeSubText": "¡Abrimos las puertas de nuestra casona familiar en el corazón de Rosario, Argentina! ¡Bienvenidos!"
   }
 }

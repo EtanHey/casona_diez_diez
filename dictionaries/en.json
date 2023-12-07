@@ -1,6 +1,7 @@
 {
   "common": {
-    "currentLanguage": "English"
+    "currentLanguage": "English",
+    "reserveButtonText": "Reservations"
   },
   "nav": {
     "home": "Home",
@@ -11,7 +12,6 @@
   },
   "home": {
     "welcome": "Welcome",
-    "welcomeSubText": "We are opening our doors in the heart of Rosario, Argentina. Welcome!",
-    "reserveButtonText": "Reservations"
+    "welcomeSubText": "We are opening our doors in the heart of Rosario, Argentina. Welcome!"
   }
 }

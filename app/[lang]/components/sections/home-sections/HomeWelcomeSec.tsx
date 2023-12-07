@@ -27,9 +27,7 @@ const HomeWelcomeSec = async ({ locale }: { locale: string }) => {
           <PortugueseHead />
         </div>
         <p className="text-center text-sm">
-          {/* Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod */}
-          {/* ¡Bienvenidos a nuestro rincón familiar en Rosario, Argentina! */}
+
           {dict.home.welcomeSubText}
         </p>
       </div>
