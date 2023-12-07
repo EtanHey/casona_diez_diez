@@ -5,12 +5,15 @@ import ContactEmailLogo from "../components/svgs/contactSVGs/ContactEmailLogo";
 import ContactLocationLogo from "../components/svgs/contactSVGs/ContactLocationLogo";
 import ContactPhoneLogo from "../components/svgs/contactSVGs/ContactPhoneLogo";
 import ContactWhatsappLogo from "../components/svgs/contactSVGs/ContactWhatsappLogo";
+import { getDictionary } from "../dictionaries";
 
 
-const page = () => {
+const page = async({ params: { lang } }: { params: { lang: string } }) => {
+  const dict = await getDictionary(lang);
+  const contactDictionary = dict.contact;
   return (
     <>
-      <Header>Contacto</Header>
+      <Header>{contactDictionary.mainText}</Header>
       <div className="mb-[70px] mt-6 flex flex-col gap-6 px-[68px]">
         <span className="flex items-center gap-2">
           <ContactPhoneLogo />
@@ -29,7 +32,7 @@ const page = () => {
           <p>Piedras 1010/SanTelmo</p>
         </span>
       </div>
-      <ContactForm />
+      <ContactForm dict={contactDictionary.contactForm} />
     </>
   );
 };

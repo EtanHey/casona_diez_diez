@@ -56,6 +56,33 @@
     "twoBlocksFrom": "A dos cuadras de la ",
     "sundayFair": "feria de los domingos",
     "lineC": "estación de subte de la linea C",
-    "nineOfJulyAvenue": "avenida 9 de julio"
+    "nineOfJulyAvenue": "avenida 9 de julio",
+
+    "fromAirport": {
+      "mainText": "DESDE EL AEROPUERTO",
+      "firstTransportationOption": "30 KM en carro o taxi (24 horas)",
+      "secondTransportationOption": "Tenemos servicio de transporte"
+    },
+    "fromAiropark": {
+      "mainText": "DESDE AEROPARQUE",
+      "firstTransportationOption": "",
+      "secondTransportationOption": ""
+    },
+    "fromRetiro": {
+      "mainText": "DESDE RETIRO",
+      "firstTransportationOption": "",
+      "secondTransportationOption": ""
+    },
+    "mapSubText": "TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES"
+  },
+  "contact": {
+    "mainText": "Contacto",
+    "contactForm": {
+      "name": "nombre",
+      "email": "Coreo electronico",
+      "title": "titulo",
+      "message": "mensaje",
+      "submit":"Enviame un Mensaje"
+    }
   }
 }

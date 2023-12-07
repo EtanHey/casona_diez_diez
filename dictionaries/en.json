@@ -55,6 +55,32 @@
     "twoBlocksFrom": "two blocks away from ",
     "sundayFair": "the sunday fair",
     "lineC": "the subway station of line C",
-    "nineOfJulyAvenue": "avenue 9 de julio"
+    "nineOfJulyAvenue": "avenue 9 de julio",
+    "fromAirport": {
+      "mainText": "From the Airport",
+      "firstTransportationOption": "30 KM on foot or taxi (24 hours)",
+      "secondTransportationOption": "we have transportation services"
+    },
+    "fromAiropark": {
+      "mainText": "From the Airopark",
+      "firstTransportationOption": "",
+      "secondTransportationOption": ""
+    },
+    "fromRetiro": {
+      "mainText": "From Retiro",
+      "firstTransportationOption": "",
+      "secondTransportationOption": ""
+    },
+    "mapSubText": "WE INVITE YOU TO DISCOVER THE MOST CULTURAL NEIGHBORHOOD OF BUENOS AIRES"
+  },
+  "contact": {
+    "mainText": "Contact",
+    "contactForm": {
+      "name": "Name",
+      "email": "E-mail",
+      "title": "Title",
+      "message": "Message",
+      "submit": "Send me a message"
+    }
   }
 }

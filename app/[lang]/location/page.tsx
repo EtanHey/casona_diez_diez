@@ -40,19 +40,26 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
           {locationDictionary.nineOfJulyAvenue}
         </p>
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="grid grid-cols-3 gap-3 sm:px-14 px-4">
+        <div className="grid grid-cols-3 gap-3 px-4 sm:px-8 md:px-14">
           <div className="flex flex-col gap-1">
             <h5 className="max-w-[60px] text-xs text-cdd-red">
-              DESDE EL AEROPUERTO
+              {locationDictionary.fromAirport.mainText}
             </h5>
-            <ul className="text-xs">
+            <ul className="list-square text-xs">
               {" "}
-              <li>30 KM en carro o taxi (24 horas)</li>
-              <li>Tenemos servicio de transporte</li>
+              <li>
+                {" "}
+                {locationDictionary.fromAirport.firstTransportationOption}
+              </li>
+              <li>
+                {locationDictionary.fromAirport.secondTransportationOption}
+              </li>
             </ul>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] text-xs text-cdd-red">DESDE RETIRO</h5>
+            <h5 className="max-w-[60px] text-xs text-cdd-red">
+              {locationDictionary.fromRetiro.mainText}
+            </h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod
@@ -60,7 +67,7 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
           </div>
           <div className="flex flex-col gap-1">
             <h5 className="max-w-[60px] text-xs text-cdd-red">
-              DESDE AEROPARQUE
+              {locationDictionary.fromAiropark.mainText}
             </h5>
             <p className="text-xs">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
@@ -71,7 +78,7 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
       </div>
       <MapComponent />
       <p className="mt-8 px-4 text-center text-sm font-light">
-        TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES
+        {locationDictionary.mapSubText}
       </p>
     </>
   );
