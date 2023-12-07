@@ -46,5 +46,15 @@
     "airConditioner": "Air Conditioner",
     "balcony": "Balcony",
     "cleaningService": "Cleaning Service"
+  },
+  "location": {
+    "mainText": "Location",
+    "subText": "in san telmo",
+    "onStreet": "on",
+    "threeBlocksFrom": "Three blocks away from ",
+    "twoBlocksFrom": "two blocks away from ",
+    "sundayFair": "the sunday fair",
+    "lineC": "the subway station of line C",
+    "nineOfJulyAvenue": "avenue 9 de julio"
   }
 }

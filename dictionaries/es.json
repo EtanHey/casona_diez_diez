@@ -47,5 +47,15 @@
     "airConditioner": "Aire A.",
     "balcony": "BALCÓN",
     "cleaningService": "Servicio de limpieza"
+  },
+  "location": {
+    "mainText": "ubicación",
+    "subText": "en el san telmo",
+    "onStreet": "e/",
+    "threeBlocksFrom": "A tres cuadras de la ",
+    "twoBlocksFrom": "A dos cuadras de la ",
+    "sundayFair": "feria de los domingos",
+    "lineC": "estación de subte de la linea C",
+    "nineOfJulyAvenue": "avenida 9 de julio"
   }
 }
