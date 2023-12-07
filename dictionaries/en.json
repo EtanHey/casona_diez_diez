@@ -36,5 +36,15 @@
     "reviewSection": {
       "mainText": "Reviews"
     }
+  },
+  "rooms": {
+    "rooms": "Rooms",
+    "of": "of",
+    "or": "or",
+    "beds": "Beds",
+    "privateBathrooms": "Private Bathrooms",
+    "airConditioner": "Air Conditioner",
+    "balcony": "Balcony",
+    "cleaningService": "Cleaning Service"
   }
 }

@@ -37,5 +37,15 @@
     "reviewSection": {
       "mainText": "Reseñas"
     }
+  },
+  "rooms": {
+    "rooms": "Habitaciones",
+    "of": "de",
+    "or": "o",
+    "beds": "camas",
+    "privateBathrooms": "baño privado",
+    "airConditioner": "Aire A.",
+    "balcony": "BALCÓN",
+    "cleaningService": "Servicio de limpieza"
   }
 }
