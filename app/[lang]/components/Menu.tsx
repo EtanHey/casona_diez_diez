@@ -2,7 +2,8 @@
 import React from "react";
 import Times from "./svgs/Times";
 import NavigationMenu from "./NavigationMenu";
-import { NavDictType } from "./layouts/Nav";
+import { NavDictType } from "./stateful_wrapper/MenuStateWrapper";
+
 
 
 type MenuProps = {
