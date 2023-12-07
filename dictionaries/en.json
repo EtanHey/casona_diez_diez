@@ -11,7 +11,22 @@
     "callReservation": "Reserve a room"
   },
   "home": {
-    "welcome": "Welcome",
-    "welcomeSubText": "We are opening our doors in the heart of Rosario, Argentina. Welcome!"
+    "welcomeSection": {
+      "mainText": "Welcome",
+      "subText": "We are opening our doors in the heart of Rosario, Argentina. Welcome!"
+    },
+    "servicesSection": {
+      "mainText": "Services",
+      "acText": "AIR CONDITIONER",
+      "grillText": "Terrace with grill",
+      "cleanText": "Housekeeping",
+      "wifiText": "Free WIFI",
+      "secureText": "24 Hour Security",
+      "locationText": "Prime Location",
+      "checkInText": "Check in 24 hours",
+      "toiletText": "Ensuite rooms",
+      "kitchenText": "Community kitchen",
+      "balconyText": "Rooms with balcony"
+    }
   }
 }

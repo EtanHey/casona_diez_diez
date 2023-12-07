@@ -12,7 +12,22 @@
   },
 
   "home": {
-    "welcome": "Bienvenidos",
-    "welcomeSubText": "¡Abrimos las puertas de nuestra casona familiar en el corazón de Rosario, Argentina! ¡Bienvenidos!"
+    "welcomeSection": {
+      "mainText": "Bienvenidos",
+      "subText": "¡Abrimos las puertas de nuestra casona familiar en el corazón de Rosario, Argentina! ¡Bienvenidos!"
+    },
+    "servicesSection": {
+      "mainText": "Servicios",
+      "acText": "ACONDICIONADOR DE AIRE",
+      "grillText": "TERRAZA CON PARRILLA",
+      "cleanText": "Servicio de limpieza",
+      "wifiText": "Wifi gratis",
+      "secureText": "Seguridad 24 Horas",
+      "locationText": "Ubicacion Privilegiada",
+      "checkInText": "Check in las 24hs",
+      "toiletText": "Habitaciones en suite",
+      "kitchenText": "Cocina Comunitaria",
+      "balconyText": "Habitaciones con balcon"
+    }
   }
 }

@@ -33,31 +33,9 @@ const Gallery = ({ photos }: GalleryProps) => {
   };
   const [zoom, setZoom] = useState(false);
   const changeZoom = () => {
-    // const difference = slideEndingPoint - slideStartingPoint;
-    // console.log(difference);
-
-    // if (difference < 10 && difference > -10) {
     setZoom(!zoom);
-    // }
   };
-  // const handleSlideStartingPoint = (
-  //   ev: any,
-  // ) => {
-  //   ev.preventDefault();
-  //   const startingPoint = ev.clientX;
-  //   setSlideStartingPoint(startingPoint);
-  // };
-  // const changeSlide = (ev: any) => {
-  //   const endingPoint = ev.clientX;
-  //   setSlideEndingPoint(endingPoint);
-  //   const difference = endingPoint - slideStartingPoint;
-  //   if (difference > 10) {
-  //     nextPhoto(ev);
-  //   }
-  //   if (difference < -10) {
-  //     prevPhoto(ev);
-  //   }
-  // };
+  
   return (
     <>
       <div className="flex w-full flex-col gap-4">
@@ -67,8 +45,6 @@ const Gallery = ({ photos }: GalleryProps) => {
           <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
         </div>
         <div
-          // onPointerDown={handleSlideStartingPoint}
-          // onPointerUp={changeSlide}
           onClick={changeZoom}
           className="relative flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]"
         >

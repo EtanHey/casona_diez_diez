@@ -4,7 +4,6 @@ import HomeReviewSec from "./components/sections/home-sections/HomeReviewSec";
 import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec";
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
 import { Review } from "./types";
-import { getDictionary } from "./dictionaries";
 
 export const getPhotos = async (): Promise<any> => {
   try {
@@ -41,11 +40,10 @@ export default async function Home({
   };
   const reviews = await getReviews();
   const photos = await getPhotos();
-
   return (
     <>
       <HomeWelcomeSec locale={lang} />
-      <HomeServicesSec />
+      <HomeServicesSec locale={lang} />
       {photos && photos.length > 0 && <HomeGallerySec photos={photos} />}
       {reviews && reviews.length > 0 && <HomeReviewSec reviews={reviews} />}
     </>

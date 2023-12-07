@@ -16,7 +16,7 @@ const HomeWelcomeSec = async ({ locale }: { locale: string }) => {
 
   return (
     <div className="flex flex-col">
-      <Header>{dict.home.welcome}!</Header>
+      <Header>{dict.home.welcomeSection.mainText}!</Header>
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-3 items-end justify-items-center gap-y-4">
           <EnglishHead />
@@ -27,8 +27,7 @@ const HomeWelcomeSec = async ({ locale }: { locale: string }) => {
           <PortugueseHead />
         </div>
         <p className="text-center text-sm">
-
-          {dict.home.welcomeSubText}
+          {dict.home.welcomeSection.subText}
         </p>
       </div>
     </div>
