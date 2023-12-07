@@ -8,7 +8,18 @@ import PrevSliderArrow from "../../PrevSliderArrow";
 import NextSliderArrow from "../../NextSliderArrow";
 import SingleReview from "../../SingleReview";
 
-const HomeReviewSec = ({ reviews }: { reviews?: Array<Review> }) => {
+export type ReviewDict = {
+  mainText: string;
+  previousButtonText: string;
+  nextButtonText: string;
+};
+const HomeReviewSec = ({
+  reviews,
+  dict,
+}: {
+  dict: ReviewDict;
+  reviews?: Array<Review>;
+}) => {
   const [currentReview, setCurrentReview] = useState(0);
   if (!reviews || reviews.length === 0) return null;
   const length = reviews.length;
@@ -29,9 +40,17 @@ const HomeReviewSec = ({ reviews }: { reviews?: Array<Review> }) => {
       <ColoredBreak bg="bg-cdd-green" />
       <div className="flex w-full flex-col items-center gap-4">
         <div className="flex w-full justify-between px-4">
-          <PrevSliderArrow prevFunc={prevReview} arrowColor="#04986F" />
-          <Header>Reseñas</Header>
-          <NextSliderArrow nextFunc={nextReview} arrowColor="#04986F" />
+          <PrevSliderArrow
+            prevAriaRoledescription={dict.previousButtonText}
+            prevFunc={prevReview}
+            arrowColor="#04986F"
+          />
+          <Header>{dict.mainText}</Header>
+          <NextSliderArrow
+            nextAriaRoledescription={dict.nextButtonText}
+            nextFunc={nextReview}
+            arrowColor="#04986F"
+          />
         </div>
         {/* Reviews */}
         <div className="relative flex h-fit w-full flex-col place-items-center justify-center gap-4">

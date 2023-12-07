@@ -1,7 +1,9 @@
 {
   "common": {
     "currentLanguage": "Español",
-    "reserveButtonText": "Reservas"
+    "reserveButtonText": "Reservas",
+    "previousButtonText": "Previa",
+    "nextButtonText": "próxima"
   },
   "nav": {
     "home": "Inicio",
@@ -28,6 +30,12 @@
       "toiletText": "Habitaciones en suite",
       "kitchenText": "Cocina Comunitaria",
       "balconyText": "Habitaciones con balcon"
+    },
+    "gallerySection": {
+      "mainText": "Galería"
+    },
+    "reviewSection": {
+      "mainText": "Reseñas"
     }
   }
 }

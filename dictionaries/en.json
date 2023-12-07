@@ -1,7 +1,9 @@
 {
   "common": {
     "currentLanguage": "English",
-    "reserveButtonText": "Reservations"
+    "reserveButtonText": "Reservations",
+    "previousButtonText": "Previous",
+    "nextButtonText": "Next"
   },
   "nav": {
     "home": "Home",
@@ -27,6 +29,12 @@
       "toiletText": "Ensuite rooms",
       "kitchenText": "Community kitchen",
       "balconyText": "Rooms with balcony"
+    },
+    "gallerySection": {
+      "mainText": "Gallery"
+    },
+    "reviewSection": {
+      "mainText": "Reviews"
     }
   }
 }

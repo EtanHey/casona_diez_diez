@@ -9,7 +9,14 @@ import PrevSliderArrow from "../PrevSliderArrow";
 import Times from "../svgs/Times";
 import GallerySlider from "./GallerySlider";
 
+export type GalleryDict = {
+  mainText: string;
+  previousButtonText: string;
+  nextButtonText: string;
+};
+
 type GalleryProps = {
+  dict: GalleryDict;
   photos: Array<PhotoFromServer>;
 };
 
@@ -17,7 +24,7 @@ export type GallerySliderProps = GalleryProps & {
   currentPhoto: number;
   changeZoom: () => void;
 };
-const Gallery = ({ photos }: GalleryProps) => {
+const Gallery = ({ dict, photos }: GalleryProps) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   // const [slideStartingPoint, setSlideStartingPoint] = useState(0);
   // const [slideEndingPoint, setSlideEndingPoint] = useState(0);
@@ -35,20 +42,29 @@ const Gallery = ({ photos }: GalleryProps) => {
   const changeZoom = () => {
     setZoom(!zoom);
   };
-  
+
   return (
     <>
       <div className="flex w-full flex-col gap-4">
         <div className="flex justify-between px-4">
-          <PrevSliderArrow prevFunc={prevPhoto} arrowColor="#F7A600" />
-          <Header>Galeria</Header>
-          <NextSliderArrow nextFunc={nextPhoto} arrowColor="#F7A600" />
+          <PrevSliderArrow
+            prevAriaRoledescription={dict.previousButtonText}
+            prevFunc={prevPhoto}
+            arrowColor="#F7A600"
+          />
+          <Header>{dict.mainText}</Header>
+          <NextSliderArrow
+            nextAriaRoledescription={dict.nextButtonText}
+            nextFunc={nextPhoto}
+            arrowColor="#F7A600"
+          />
         </div>
         <div
           onClick={changeZoom}
           className="relative flex h-64 w-full place-items-center justify-center sm:h-72 md:h-96 lg:h-[500px]"
         >
           <GallerySlider
+            dict={dict}
             photos={photos}
             currentPhoto={currentPhoto}
             changeZoom={changeZoom}
@@ -65,6 +81,8 @@ const Gallery = ({ photos }: GalleryProps) => {
           prevFunc={prevPhoto}
           nextFunc={nextPhoto}
           arrowColor="#F7A600"
+          nextAriaRoledescription={dict.nextButtonText}
+          prevAriaRoledescription={dict.previousButtonText}
         >
           <button
             className="absolute right-4 top-4 z-50 bg-black/30 p-1"
