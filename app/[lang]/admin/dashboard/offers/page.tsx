@@ -9,8 +9,8 @@ export type Offer = {
   offer: string;
 };
 
-const page = async () => {
-  const { offer, error } = await getOffer();
+const page = async ({ params:{ lang} }: { params: { lang: string } }) => {
+  const { offer, error } = await getOffer(lang);
   if ((error && !offer) || error || !offer) throw error;
   return (
     <div className="flex w-full flex-col items-center">
