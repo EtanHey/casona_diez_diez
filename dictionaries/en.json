@@ -58,18 +58,18 @@
     "nineOfJulyAvenue": "avenue 9 de julio",
     "fromAirport": {
       "mainText": "From the Airport",
-      "firstTransportationOption": "30 KM on foot or taxi (24 hours)",
+      "firstTransportationOption": "30 KM in car or taxi (24 hours)",
+      "secondTransportationOption": "we have transportation services"
+    },
+    "fromRetiro": {
+      "mainText": "From Retiro",
+      "firstTransportationOption": "25 minutes in train or taxi, 3.5 km walk (50 minutes)",
       "secondTransportationOption": "we have transportation services"
     },
     "fromAiropark": {
       "mainText": "From the Airopark",
-      "firstTransportationOption": "",
-      "secondTransportationOption": ""
-    },
-    "fromRetiro": {
-      "mainText": "From Retiro",
-      "firstTransportationOption": "",
-      "secondTransportationOption": ""
+      "firstTransportationOption": "11 KM - 50 minutes in train, 30 minutes in taxi",
+      "secondTransportationOption": "we have transportation services"
     },
     "mapSubText": "WE INVITE YOU TO DISCOVER THE MOST CULTURAL NEIGHBORHOOD OF BUENOS AIRES"
   },

@@ -40,7 +40,7 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
           {locationDictionary.nineOfJulyAvenue}
         </p>
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="grid grid-cols-3 gap-3 px-4 sm:px-8 md:px-14">
+        <div className="grid grid-cols-3 gap-3 px-4 sm:gap-6 sm:px-8 md:gap-10 md:px-14">
           <div className="flex flex-col gap-1">
             <h5 className="max-w-[60px] text-xs text-cdd-red">
               {locationDictionary.fromAirport.mainText}
@@ -60,19 +60,31 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
             <h5 className="max-w-[60px] text-xs text-cdd-red">
               {locationDictionary.fromRetiro.mainText}
             </h5>
-            <p className="text-xs">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod
-            </p>
+            <ul className="list-square text-xs">
+              {" "}
+              <li>
+                {" "}
+                {locationDictionary.fromRetiro.firstTransportationOption}
+              </li>
+              <li>
+                {locationDictionary.fromRetiro.secondTransportationOption}
+              </li>
+            </ul>
           </div>
           <div className="flex flex-col gap-1">
             <h5 className="max-w-[60px] text-xs text-cdd-red">
               {locationDictionary.fromAiropark.mainText}
             </h5>
-            <p className="text-xs">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod
-            </p>
+            <ul className="list-square text-xs">
+              {" "}
+              <li>
+                {" "}
+                {locationDictionary.fromAiropark.firstTransportationOption}
+              </li>
+              <li>
+                {locationDictionary.fromAiropark.secondTransportationOption}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
