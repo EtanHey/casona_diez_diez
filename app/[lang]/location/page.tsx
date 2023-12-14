@@ -40,9 +40,9 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
           {locationDictionary.nineOfJulyAvenue}
         </p>
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="grid grid-cols-3 gap-3 px-4 sm:gap-6 sm:px-8 md:gap-10 md:px-14">
+        <div className="grid sm:grid-cols-3 sm:grid-rows-1 w-full gap-3 grid-rows-3 px-14 sm:gap-6 sm:px-8 md:gap-10 md:px-14">
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] whitespace-nowrap text-xs text-cdd-red">
+            <h5 className="max-w-[60px] whitespace-nowrap text-xs sm:text-base text-cdd-red">
               {locationDictionary.fromAirport.mainText}
             </h5>
             <ul className="list-square text-xs">
@@ -57,7 +57,7 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
             </ul>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] whitespace-nowrap text-xs text-cdd-red">
+            <h5 className="max-w-[60px] whitespace-nowrap text-xs sm:text-base text-cdd-red">
               {locationDictionary.fromRetiro.mainText}
             </h5>
             <ul className="list-square text-xs">
@@ -72,7 +72,7 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
             </ul>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] whitespace-nowrap text-xs text-cdd-red">
+            <h5 className="max-w-[60px] whitespace-nowrap  text-xs sm:text-base text-cdd-red">
               {locationDictionary.fromAiropark.mainText}
             </h5>
             <ul className="list-square text-xs">
