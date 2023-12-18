@@ -1,8 +1,86 @@
 {
-  "common":{
-    "currentLanguage": "English"
+  "common": {
+    "currentLanguage": "English",
+    "reserveButtonText": "Reservations",
+    "previousButtonText": "Previous",
+    "nextButtonText": "Next"
+  },
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "contact": "Contact",
+    "location": "Location",
+    "callReservation": "Reserve a room"
   },
   "home": {
-    "welcome": "Welcome"
+    "welcomeSection": {
+      "mainText": "Welcome",
+      "subText": "We are opening our doors in the heart of San Telmo, Argentina. Welcome!"
+    },
+    "servicesSection": {
+      "mainText": "Services",
+      "acText": "AIR CONDITIONER",
+      "grillText": "Terrace with grill",
+      "cleanText": "Housekeeping",
+      "wifiText": "Free WIFI",
+      "secureText": "24 Hour Security",
+      "locationText": "Prime Location",
+      "checkInText": "Check in 24 hours",
+      "toiletText": "Ensuite rooms",
+      "kitchenText": "Community kitchen",
+      "balconyText": "Rooms with balcony"
+    },
+    "gallerySection": {
+      "mainText": "Gallery"
+    },
+    "reviewSection": {
+      "mainText": "Reviews"
+    }
+  },
+  "rooms": {
+    "rooms": "Rooms",
+    "of": "of",
+    "or": "or",
+    "beds": "Beds",
+    "privateBathrooms": "Private Bathrooms",
+    "airConditioner": "Air Conditioner",
+    "balcony": "Balcony",
+    "cleaningService": "Cleaning Service"
+  },
+  "location": {
+    "mainText": "Location",
+    "subText": "in san telmo",
+    "onStreet": "on",
+    "threeBlocksFrom": "Three blocks away from ",
+    "twoBlocksFrom": "two blocks away from ",
+    "sundayFair": "the sunday fair",
+    "lineC": "the subway station of line C",
+    "nineOfJulyAvenue": "avenue 9 de julio",
+    "fromAirport": {
+      "mainText": "From the Airport",
+      "firstTransportationOption": "30 KM in car or taxi (24 hours)",
+      "secondTransportationOption": "we have transportation services"
+    },
+    "fromRetiro": {
+      "mainText": "From Retiro",
+      "firstTransportationOption": "25 minutes in train or taxi, 3.5 km walk (50 minutes)",
+      "secondTransportationOption": "we have transportation services"
+    },
+    "fromAiropark": {
+      "mainText": "From the Airopark",
+      "firstTransportationOption": "11 KM - 50 minutes in train, 30 minutes in taxi",
+      "secondTransportationOption": "we have transportation services"
+    },
+    "mapSubText": "WE INVITE YOU TO DISCOVER THE MOST CULTURAL NEIGHBORHOOD OF BUENOS AIRES"
+  },
+  "contact": {
+    "mainText": "Contact",
+    "contactForm": {
+      "name": "Name",
+      "email": "E-mail",
+      "title": "Title",
+      "message": "Message",
+      "submit": "Send me a message"
+    }
   }
 }

@@ -3,13 +3,19 @@ import React from "react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import ColoredBreak from "../../ColoredBreak";
 import { PhotoFromServer } from "@/app/[lang]/types";
-import Gallery from "../../gallery";
+import Gallery, { GalleryDict } from "../../gallery";
 
-const HomeGallerySec = ({ photos }: { photos: Array<PhotoFromServer> }) => {
+const HomeGallerySec = ({
+  dict,
+  photos,
+}: {
+  dict: GalleryDict;
+  photos: Array<PhotoFromServer>;
+}) => {
   return (
     <HomeSectionWrapper>
       <ColoredBreak bg="bg-cdd-yellow" />
-      <Gallery photos={photos} />
+      <Gallery dict={dict} photos={photos} />
     </HomeSectionWrapper>
   );
 };

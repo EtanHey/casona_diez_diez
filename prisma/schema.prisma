@@ -10,6 +10,7 @@ datasource db {
 model Offer {
   id   String @id @default(auto()) @map("_id") @db.ObjectId
   text String
+  lang String
 }
 
 model User {

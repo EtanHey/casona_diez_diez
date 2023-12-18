@@ -2,7 +2,14 @@
 import React, { BaseSyntheticEvent, useEffect, useState } from "react";
 import { EmailSending } from "../types";
 
-const ContactForm = () => {
+type ContactDict = {
+  name: string;
+  email: string;
+  title: string;
+  message: string;
+  submit: string;
+};
+const ContactForm = ({ dict }: { dict: ContactDict }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
@@ -47,7 +54,7 @@ const ContactForm = () => {
       <div className="flex w-full  flex-col gap-2 bg-cdd-green p-4">
         <div className="flex flex-col gap-1">
           <label className="text-lg text-white" htmlFor="name">
-            Nombre
+            {dict.name}
           </label>
           <input
             onChange={(e) => setName(e.target.value)}
@@ -60,7 +67,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-lg text-white" htmlFor="email">
-            E-mail
+            {dict.email}
           </label>
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -73,7 +80,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-lg text-white" htmlFor="title">
-            Titulo
+            {dict.title}
           </label>
           <input
             onChange={(e) => setTitle(e.target.value)}
@@ -86,7 +93,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-lg text-white" htmlFor="message">
-            Mensaje
+            {dict.message}
           </label>
           <textarea
             onChange={(e) => setMessage(e.target.value)}
@@ -108,7 +115,7 @@ const ContactForm = () => {
         {emailSent === EmailSending.ERROR && "x"}
         {emailSent === EmailSending.SENT && "✓"}
         {emailSent === EmailSending.SENDING && "..."}
-        {emailSent === EmailSending.EMPTY && "Enviame un Mensaje"}
+        {emailSent === EmailSending.EMPTY && `${dict.submit}`}
       </button>
     </form>
   );

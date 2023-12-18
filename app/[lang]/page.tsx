@@ -41,13 +41,31 @@ export default async function Home({
   };
   const reviews = await getReviews();
   const photos = await getPhotos();
-
+  const dict = await getDictionary(lang);
   return (
     <>
       <HomeWelcomeSec locale={lang} />
-      <HomeServicesSec />
-      {photos && photos.length > 0 && <HomeGallerySec photos={photos} />}
-      {reviews && reviews.length > 0 && <HomeReviewSec reviews={reviews} />}
+      <HomeServicesSec locale={lang} />
+      {photos && photos.length > 0 && (
+        <HomeGallerySec
+          dict={{
+            mainText: dict.home.gallerySection.mainText,
+            nextButtonText: dict.common.nextButtonText,
+            previousButtonText: dict.common.previousButtonText,
+          }}
+          photos={photos}
+        />
+      )}
+      {reviews && reviews.length > 0 && (
+        <HomeReviewSec
+          dict={{
+            mainText: dict.home.reviewSection.mainText,
+            nextButtonText: dict.common.nextButtonText,
+            previousButtonText: dict.common.previousButtonText,
+          }}
+          reviews={reviews}
+        />
+      )}
     </>
   );
 }

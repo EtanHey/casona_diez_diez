@@ -1,8 +1,9 @@
 import React from "react";
 import PhoneLogo from "../svgs/PhoneLogo";
 import Link from "next/link";
+import { NavDictType } from "../stateful_wrapper/MenuStateWrapper";
 
-const CallReservationButton = () => {
+const CallReservationButton = ({ navDict }: { navDict: NavDictType }) => {
   return (
     <Link
       className="flex flex-row place-items-center gap-[6px]"
@@ -11,7 +12,7 @@ const CallReservationButton = () => {
     >
       <PhoneLogo />
       <div className="m-0 p-0 text-xs font-light text-white">
-        RESERVA UNA HABITACIÓN
+        {navDict.callReservation}
       </div>
     </Link>
   );

@@ -1,3 +1,4 @@
 export type VariedColorsSVGProps = {
-    fill: string;
-  }
+  text: string;
+  fill: string;
+};

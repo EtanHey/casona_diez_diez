@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
-    "@prisma/client": "^5.3.0",
+    "@prisma/client": "^5.7.0",
     "@react-google-maps/api": "^2.19.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/node": "20.5.1",
@@ -38,6 +38,6 @@
     "concurrently": "^8.2.0",
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "prisma": "^5.3.0"
+    "prisma": "^5.7.0"
   }
 }

@@ -2,12 +2,16 @@
 import React from "react";
 import Times from "./svgs/Times";
 import NavigationMenu from "./NavigationMenu";
+import { NavDictType } from "./stateful_wrapper/MenuStateWrapper";
+
+
 
 type MenuProps = {
   menuState: boolean;
   changeMenuState: () => void;
+  navDict: NavDictType;
 };
-const Menu = ({ menuState, changeMenuState }: MenuProps) => {
+const Menu = ({ menuState, changeMenuState, navDict }: MenuProps) => {
   return (
     <div className={`fixed top-0 z-50 md:hidden`}>
       <span
@@ -25,7 +29,7 @@ const Menu = ({ menuState, changeMenuState }: MenuProps) => {
         <button onClick={changeMenuState} className="p-[10px]">
           <Times />
         </button>
-        <NavigationMenu changeMenuState={changeMenuState} />
+        <NavigationMenu navDict={navDict} changeMenuState={changeMenuState} />
       </div>
     </div>
   );

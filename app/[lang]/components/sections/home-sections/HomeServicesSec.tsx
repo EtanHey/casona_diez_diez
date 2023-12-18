@@ -15,53 +15,55 @@ import {
   BalconyLogo,
 } from "@/app/[lang]/components/svgs/HomeServicesSVGs";
 import HomeServicesItem from "../../HomeServicesItem";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
-const HomeServicesSec = () => {
+const HomeServicesSec = async ({ locale }: { locale: string }) => {
+  const dict = await getDictionary(locale);
   return (
     <HomeSectionWrapper>
       <ColoredBreak bg="bg-cdd-red" />
       <div className="flex flex-col gap-4">
-        <Header>Servicios</Header>
+        <Header>{dict.home.servicesSection.mainText}</Header>
         <div className="mx-4 grid grid-cols-2 justify-center gap-x-14 gap-y-4">
           <HomeServicesItem>
             <ACLogo />
-            <span>ACONDICIONADOR DE AIRE</span>
+            <span>{dict.home.servicesSection.acText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <GrillLogo />
-            <span>TERRAZA CON PARRILLA</span>
+            <span>{dict.home.servicesSection.grillText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <CleanLogo />
-            <span>Servicio de limpieza</span>
+            <span>{dict.home.servicesSection.cleanText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <WifiLogo />
-            <span>Wifi gratis</span>
+            <span>{dict.home.servicesSection.wifiText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <SecureLogo />
-            <span>Seguridad 24 Horas</span>
+            <span>{dict.home.servicesSection.secureText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <LocationRedLogo />
-            <span>Ubicacion Privilegiada</span>
+            <span>{dict.home.servicesSection.locationText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <CheckinLogo />
-            <span>Check in las 24hs</span>
+            <span>{dict.home.servicesSection.checkInText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <ToiletLogo />
-            <span>Habitaciones en suite</span>
+            <span>{dict.home.servicesSection.toiletText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <KitchenLogo />
-            <span>Cocina Comunitaria</span>
+            <span>{dict.home.servicesSection.kitchenText}</span>
           </HomeServicesItem>
           <HomeServicesItem>
             <BalconyLogo />
-            <span>Habitaciones con balcon</span>
+            <span>{dict.home.servicesSection.balconyText}</span>
           </HomeServicesItem>
         </div>
       </div>

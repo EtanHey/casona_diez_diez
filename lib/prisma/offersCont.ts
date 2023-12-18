@@ -1,12 +1,16 @@
 import { Offer } from "@prisma/client";
 import prisma from ".";
 
-export async function getOffer(): Promise<{
+export async function getOffer(lang: string): Promise<{
   offer?: Offer;
   error?: any;
 }> {
   try {
-    const offer = await prisma.offer.findFirstOrThrow();
+    const offers = await prisma.offer.findMany();
+    const currentOffer = offers.findIndex((predicate) =>
+      predicate.lang.startsWith(lang),
+    );
+    const offer = offers[currentOffer] || offers[0];
     return { offer };
   } catch (error) {
     return { error };

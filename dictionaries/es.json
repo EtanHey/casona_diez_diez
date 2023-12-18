@@ -1,9 +1,88 @@
 {
-  "common":{
-    "currentLanguage": "Español"
+  "common": {
+    "currentLanguage": "Español",
+    "reserveButtonText": "Reservas",
+    "previousButtonText": "Previa",
+    "nextButtonText": "próxima"
   },
-    "home": {
-      "welcome": "Bienvenidos"
+  "nav": {
+    "home": "Inicio",
+    "rooms": "Habitaciones",
+    "contact": "Contacto",
+    "location": "Ubicación",
+    "callReservation": "Reserva una habitación"
+  },
+
+  "home": {
+    "welcomeSection": {
+      "mainText": "Bienvenidos",
+      "subText": "¡Abrimos las puertas de nuestra casona familiar en el corazón de San Telmo, Argentina! ¡Bienvenidos!"
+    },
+    "servicesSection": {
+      "mainText": "Servicios",
+      "acText": "AIRE ACONDICIONADO",
+      "grillText": "TERRAZA CON PARRILLA",
+      "cleanText": "Servicio de limpieza",
+      "wifiText": "Wifi gratis",
+      "secureText": "Seguridad 24 Horas",
+      "locationText": "Ubicacion Privilegiada",
+      "checkInText": "Check in las 24hs",
+      "toiletText": "Habitaciones en suite",
+      "kitchenText": "Cocina Comunitaria",
+      "balconyText": "Habitaciones con balcon"
+    },
+    "gallerySection": {
+      "mainText": "Galería"
+    },
+    "reviewSection": {
+      "mainText": "Reseñas"
+    }
+  },
+  "rooms": {
+    "rooms": "Habitaciones",
+    "of": "de",
+    "or": "o",
+    "beds": "camas",
+    "privateBathrooms": "baño privado",
+    "airConditioner": "Aire A.",
+    "balcony": "BALCÓN",
+    "cleaningService": "Servicio de limpieza"
+  },
+  "location": {
+    "mainText": "ubicación",
+    "subText": "en el san telmo",
+    "onStreet": "e/",
+    "threeBlocksFrom": "A tres cuadras de la ",
+    "twoBlocksFrom": "A dos cuadras de la ",
+    "sundayFair": "feria de los domingos",
+    "lineC": "estación de subte de la linea C",
+    "nineOfJulyAvenue": "avenida 9 de julio",
+
+    "fromAirport": {
+      "mainText": "DESDE EL AEROPUERTO",
+      "firstTransportationOption": "30 KM en carro o taxi (24 horas)",
+      "secondTransportationOption": "Tenemos servicio de transporte"
+    },
+    "fromAiropark": {
+      "mainText": "DESDE AEROPARQUE",
+      "firstTransportationOption": "",
+      "secondTransportationOption": ""
+    },
+    "fromRetiro": {
+      "mainText": "DESDE RETIRO",
+      "firstTransportationOption": "",
+      "secondTransportationOption": ""
+    },
+    "mapSubText": "TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES"
+  },
+  "contact": {
+    "mainText": "Contacto",
+    "contactForm": {
+      "name": "nombre",
+      "email": "Coreo electronico",
+      "title": "titulo",
+      "message": "mensaje",
+      "submit":"Enviame un Mensaje"
     }
   }
-  
+}
