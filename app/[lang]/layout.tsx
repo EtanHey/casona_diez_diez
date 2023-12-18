@@ -10,6 +10,7 @@ import HeroImage from "./components/HeroImage";
 import MediaFooter from "./components/sections/MediaFooter";
 import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
 import { getDictionary } from "./dictionaries";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -61,6 +62,7 @@ export default async function RootLayout({
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}
           <MediaFooter />
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
