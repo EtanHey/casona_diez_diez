@@ -26,14 +26,16 @@ const HeroImage = ({
   const photo = photos.find(
     (photo) =>
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
-  )
-  console.log(photo ? photo.url : "/hero_image.jpg");
+  ) || {
+    url: "/hero_image.jpg",
+  };
+  // console.log(photo ? photo.url : "/hero_image.jpg");
 
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
-          src={photo ? photo.url : "/hero_image.jpg"}
+          src={photo.url}
           alt="Loby picture"
           fill
           sizes="100vw"
