@@ -23,10 +23,11 @@ const HeroImage = ({
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
   const page = pathname?.split("/")[2] ? pathname?.split("/")[2] : "";
-  const photo = photos.find(
-    (photo) =>
-      photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
-  );
+  const photo =
+    photos.find(
+      (photo) =>
+        photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
+    ) || photos.find((photo) => photo.key.includes("hero_image"));
 
   return (
     <div className="mt-9 h-full w-full">
