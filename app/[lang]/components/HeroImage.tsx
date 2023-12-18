@@ -26,7 +26,8 @@ const HeroImage = ({
   const photo = photos.find(
     (photo) =>
       photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
-  );
+  )
+  console.log(photo ? photo.url : "/hero_image.jpg");
 
   return (
     <div className="mt-9 h-full w-full">
