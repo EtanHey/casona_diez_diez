@@ -23,19 +23,17 @@ const HeroImage = ({
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
   const page = pathname?.split("/")[2] ? pathname?.split("/")[2] : "";
-  const photo = photos.find(
-    (photo) =>
-      photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
-  ) || {
-    key: "",
-    url: "/hero_image.jpg",
-  };
+  const photo =
+    photos.find(
+      (photo) =>
+        photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
+    ) || photos.find((photo) => photo.key.includes("hero_image"));
 
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
-          src={photo.url}
+          src={photo ? photo.url : "/hero_image.jpg"}
           alt="Loby picture"
           fill
           sizes="100vw"
