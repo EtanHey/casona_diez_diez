@@ -1,34 +1,32 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Absolutely, here's the updated version with logos inside the Technologies section:
+
+# Casona Diez Diez
+
+**Welcome to Casona Diez Diez!**
+
+This project is a website for [Casona Diez Diez](https://www.facebook.com/casonadiezdiez), a charming hostel located in San Telmo, Argentina. The design process was initiated by Natalia Aguilera, and the UX/UI components were beautifully crafted by [Dor Zohar](https://www.linkedin.com/in/productdz/). The development work was executed by [Etan Heyman](https://www.linkedin.com/in/etanheyman/), utilizing the following technologies:
+
+## Technologies Used
+
+|      |      |
+| :--: | :--: |
+|[![Next.js Logo](https://nextjs.org/favicon.ico)](https://nextjs.org/) | [![Typescript Logo](https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae)](https://www.typescriptlang.org/) |
+|                 [![Tailwind CSS Logo](https://tailwindcss.com/favicons/favicon-32x32.png?v=3)](https://tailwindcss.com/)                 |                          [![Prisma Logo](https://www.prisma.io/images/favicon-32x32.png)](https://www.prisma.io/)                          |
+| [![Google Maps API Logo](https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico)](https://developers.google.com/maps) |                                               [![Mailgun Logo](https://www.mailgun.com/favicon.ico)](https://www.mailgun.com/)                                               |
+| [![UploadThing Logo](https://uploadthing.com/favicon.ico)](https://uploadthing.com/)                           |
+
+## About Casona Diez Diez
+
+Casona Diez Diez is more than just a hostel; it's a cozy retreat in the heart of San Telmo, offering a unique and welcoming experience for travelers.
+
 ## Getting Started
 
-First, run the development server:
+To explore the Casona Diez Diez website, simply visit [www.casonadiezdiez.com](https://www.casonadiezdiez.com).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Feel free to reach out to the contributors for any inquiries or feedback.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enjoy your virtual journey into the heart of San Telmo!

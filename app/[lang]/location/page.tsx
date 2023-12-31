@@ -40,12 +40,12 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
           {locationDictionary.nineOfJulyAvenue}
         </p>
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="grid sm:grid-cols-3 sm:grid-rows-1 w-full gap-3 grid-rows-3 px-14 sm:gap-6 sm:px-8 md:gap-10 md:px-14">
+        <div className="grid w-full grid-rows-3 gap-3 px-14 sm:grid-cols-3 sm:grid-rows-1 sm:gap-6 sm:px-8 md:gap-10 md:px-14">
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] whitespace-nowrap text-xs sm:text-base text-cdd-red">
-              {locationDictionary.fromAirport.mainText}
+            <h5 className="max-w-[60px] whitespace-nowrap text-xs text-cdd-red sm:text-base">
+              {locationDictionary.fromAirport.mainText} {locationDictionary.fromAirport.distance}
             </h5>
-            <ul className="list-square text-xs">
+            <ul className="list-square h-full flex flex-col text-xs justify-around">
               {" "}
               <li>
                 {" "}
@@ -57,10 +57,10 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
             </ul>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] whitespace-nowrap text-xs sm:text-base text-cdd-red">
-              {locationDictionary.fromRetiro.mainText}
+            <h5 className="max-w-[60px] whitespace-nowrap text-xs text-cdd-red sm:text-base">
+              {locationDictionary.fromRetiro.mainText} {locationDictionary.fromRetiro.distance}
             </h5>
-            <ul className="list-square text-xs">
+            <ul className="list-square h-full flex flex-col text-xs justify-around">
               {" "}
               <li>
                 {" "}
@@ -72,10 +72,10 @@ const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
             </ul>
           </div>
           <div className="flex flex-col gap-1">
-            <h5 className="max-w-[60px] whitespace-nowrap  text-xs sm:text-base text-cdd-red">
-              {locationDictionary.fromAiropark.mainText}
+            <h5 className="max-w-[60px] whitespace-nowrap  text-xs text-cdd-red sm:text-base">
+              {locationDictionary.fromAiropark.mainText} {locationDictionary.fromAiropark.distance}
             </h5>
-            <ul className="list-square text-xs">
+            <ul className="list-square h-full flex flex-col text-xs justify-around">
               {" "}
               <li>
                 {" "}

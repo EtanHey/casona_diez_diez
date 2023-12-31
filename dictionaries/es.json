@@ -60,18 +60,21 @@
 
     "fromAirport": {
       "mainText": "DESDE EL AEROPUERTO",
-      "firstTransportationOption": "30 KM en carro o taxi (24 horas)",
+      "distance":"",
+      "firstTransportationOption": "30 KM - 30 minutos en carro o taxi",
       "secondTransportationOption": "Tenemos servicio de transporte"
     },
     "fromAiropark": {
       "mainText": "DESDE AEROPARQUE",
-      "firstTransportationOption": "",
-      "secondTransportationOption": ""
+      "distance":"",
+      "firstTransportationOption": "11 KM - 50 minutos en tren o 30 minutos en taxi",
+      "secondTransportationOption": "Tenemos servicio de transporte"
     },
     "fromRetiro": {
       "mainText": "DESDE RETIRO",
-      "firstTransportationOption": "",
-      "secondTransportationOption": ""
+      "distance":"",
+      "firstTransportationOption": "3,5 KM - 25 minutos en tren o taxi, 50 minutos caminando",
+      "secondTransportationOption": "Tenemos servicio de transporte"
     },
     "mapSubText": "TE INVITAMOS A CONOCER EL BARRIO MÁS CULTURAL DE BUENOS AIRES"
   },
