@@ -6,11 +6,11 @@ import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { getPhotos } from "./page";
 import { ourFileRouter } from "./api/uploadthing/core";
-import HeroImage from "./components/HeroImage";
-import MediaFooter from "./components/sections/MediaFooter";
-import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
+import MenuStateWrapper from "./components/layouts/stateful_wrapper/MenuStateWrapper";
 import { getDictionary } from "./dictionaries";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import HeroImage from "./components/layouts/HeroImage";
+import MediaFooter from "./components/layouts/MediaFooter";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

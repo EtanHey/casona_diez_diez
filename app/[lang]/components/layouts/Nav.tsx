@@ -3,7 +3,7 @@ import MenuButton from "../buttons/MenuButton";
 import CallReservationButton from "../buttons/CallReservationButton";
 import NavigationMenu from "../NavigationMenu";
 import LocaleSwitcher from "../LocaleSwitcher";
-import { NavDictType } from "../stateful_wrapper/MenuStateWrapper";
+import { NavDictType } from "./stateful_wrapper/MenuStateWrapper";
 
 export type MenuToggleProps = { changeMenuState: () => void };
 

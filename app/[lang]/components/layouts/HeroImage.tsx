@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import CddDarkLogo from "./svgs/CddDarkLogo";
-import ReserveButton from "./buttons/ReserveButton";
-import MainBanner from "./banners/MainBanner";
 import { usePathname } from "next/navigation";
-import { PhotoFromServer } from "../types";
+
 import Link from "next/link";
 import { Offer } from "@prisma/client";
+import { PhotoFromServer } from "../../types";
+import MainBanner from "../banners/MainBanner";
+import ReserveButton from "../buttons/ReserveButton";
+import CddDarkLogo from "../svgs/CddDarkLogo";
 
 const HeroImage = ({
   photos,

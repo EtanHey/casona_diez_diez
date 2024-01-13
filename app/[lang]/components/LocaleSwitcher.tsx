@@ -4,7 +4,6 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { i18n } from "@/i18n.config";
 
-
 export default function LocaleSwitcher() {
   const pathName = usePathname();
   const currentLocale = pathName?.split("/")[1];
@@ -21,7 +20,7 @@ export default function LocaleSwitcher() {
     <select
       onChange={(e) => redirectPath(e.target.value)}
       defaultValue={currentLocale}
-      className="flex gap-x-3 uppercase bg-cdd-black text-center align-middle text-white"
+      className="flex gap-x-3 bg-cdd-black text-center align-middle uppercase text-white sm:text-xs md:text-sm lg:text-base"
     >
       {i18n.locales.map((locale: string) => {
         return (

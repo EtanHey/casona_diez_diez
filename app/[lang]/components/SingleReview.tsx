@@ -51,7 +51,7 @@ const SingleReview = ({
         </div>
         <p
           className={
-            seeMore ? "line-clamp-none" : `line-clamp-5 lg:line-clamp-6 `
+            seeMore ? "line-clamp-none" : `line-clamp-5 lg:line-clamp-6 md:text-base lg:text-lg`
           }
         >
           {review.text.length > 153 && (

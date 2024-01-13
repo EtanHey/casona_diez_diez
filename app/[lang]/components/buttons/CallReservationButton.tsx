@@ -1,7 +1,7 @@
 import React from "react";
 import PhoneLogo from "../svgs/PhoneLogo";
 import Link from "next/link";
-import { NavDictType } from "../stateful_wrapper/MenuStateWrapper";
+import { NavDictType } from "../layouts/stateful_wrapper/MenuStateWrapper";
 
 const CallReservationButton = ({ navDict }: { navDict: NavDictType }) => {
   return (
@@ -11,7 +11,7 @@ const CallReservationButton = ({ navDict }: { navDict: NavDictType }) => {
       target="_blank"
     >
       <PhoneLogo />
-      <div className="m-0 p-0 text-xs font-light text-white">
+      <div className="m-0 p-0 font-light text-white sm:text-xs md:text-sm lg:text-base">
         {navDict.callReservation}
       </div>
     </Link>

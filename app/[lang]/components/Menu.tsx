@@ -2,9 +2,7 @@
 import React from "react";
 import Times from "./svgs/Times";
 import NavigationMenu from "./NavigationMenu";
-import { NavDictType } from "./stateful_wrapper/MenuStateWrapper";
-
-
+import { NavDictType } from "./layouts/stateful_wrapper/MenuStateWrapper";
 
 type MenuProps = {
   menuState: boolean;

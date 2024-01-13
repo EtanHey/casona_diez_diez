@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { NavDictType } from "./stateful_wrapper/MenuStateWrapper";
+import { NavDictType } from "./layouts/stateful_wrapper/MenuStateWrapper";
 
 const NavigationMenu = ({
   changeMenuState,
@@ -17,7 +17,7 @@ const NavigationMenu = ({
     <div
       className={`wrapper scrollbar-none ${
         changeMenuState ? "flex w-full flex-col" : "hidden"
-      } h-0 min-h-full items-center gap-9 overflow-y-scroll text-sm font-normal uppercase text-white md:flex`}
+      } h-0 min-h-full items-center gap-9 overflow-y-scroll font-normal uppercase text-white sm:text-sm md:flex md:text-base lg:text-lg`}
     >
       <Link
         onClick={changeMenuState}

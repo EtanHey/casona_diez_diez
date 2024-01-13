@@ -24,7 +24,7 @@ const HomeServicesSec = async ({ locale }: { locale: string }) => {
       <ColoredBreak bg="bg-cdd-red" />
       <div className="flex flex-col gap-4">
         <Header>{dict.home.servicesSection.mainText}</Header>
-        <div className="mx-4 grid grid-cols-2 justify-center gap-x-14 gap-y-4">
+        <div className="mx-4 grid grid-cols-2 justify-center gap-x-14 md:gap-x-28 md:gap-y-8 gap-y-4">
           <HomeServicesItem>
             <ACLogo />
             <span>{dict.home.servicesSection.acText}</span>
