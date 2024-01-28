@@ -20,7 +20,7 @@ export default function LocaleSwitcher() {
     <select
       onChange={(e) => redirectPath(e.target.value)}
       defaultValue={currentLocale}
-      className="flex gap-x-3 bg-cdd-black text-center align-middle uppercase text-white sm:text-xs md:text-sm lg:text-base"
+    className="flex gap-x-3 bg-cdd-black text-center align-middle uppercase text-white sm:text-xs md:text-sm lg:text-base"
     >
       {i18n.locales.map((locale: string) => {
         return (

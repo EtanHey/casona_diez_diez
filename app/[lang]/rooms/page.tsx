@@ -19,8 +19,8 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
       <Header>{roomsDictionary.rooms}</Header>
       <div className="flex h-full w-full flex-col text-center">
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+        <div className="flex h-full w-full flex-col gap-4 ">
+          <h2 className="text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1, 2{" "}
             {roomsDictionary.or} 3 {roomsDictionary.beds}
           </h2>
@@ -36,7 +36,7 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
         </div>
         <ColoredBreak bg="bg-cdd-green" />
         <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+          <h2 className="text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1, 2, 3, 4{" "}
             {roomsDictionary.or} 5 {roomsDictionary.beds}{" "}
           </h2>
@@ -52,7 +52,7 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
         </div>
         <ColoredBreak bg="bg-cdd-yellow" />
         <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+          <h2 className=" text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1 {roomsDictionary.or}{" "}
             2 {roomsDictionary.beds}{" "}
           </h2>
@@ -67,7 +67,7 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
         </div>
         <ColoredBreak bg="bg-cdd-red" />
         <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+          <h2 className="text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1, 2{" "}
             {roomsDictionary.or} 3 {roomsDictionary.beds}
           </h2>
