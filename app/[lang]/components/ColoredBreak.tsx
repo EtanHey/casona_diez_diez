@@ -4,7 +4,7 @@ const ColoredBreak = ({ bg, small }: { bg: string; small?: boolean }) => {
   return (
     <div
       className={` place-self-center rounded-full ${bg} 
-        ${small ? "w-33.5/40 my-4 h-[1px]" : "w-37/40 h-[5px] mb-6 mt-8"}`}
+        ${small ? "my-4 h-[1px] w-33.5/40" : "mb-6 mt-8 h-[5px] w-37/40"}`}
     ></div>
   );
 };

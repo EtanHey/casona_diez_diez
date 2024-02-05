@@ -1,6 +1,6 @@
 import React from "react";
 
-const MDToiletLogo = ({fill}:{fill:string}) => {
+const MDToiletLogo = ({ fill }: { fill: string }) => {
   return (
     <svg
       width="30"

@@ -21,7 +21,11 @@ const MediaFooter = () => {
         <CddLightLogo />
         <span className="flex w-[260px] items-center gap-2">
           <LocationHallowLogo />
-          <Link target="_blank" href={"https://maps.app.goo.gl/uQHuSuPNJwuMuvH46"} className="text-sm font-medium text-white">
+          <Link
+            target="_blank"
+            href={"https://maps.app.goo.gl/uQHuSuPNJwuMuvH46"}
+            className="text-sm font-medium text-white"
+          >
             Piedras 1010, San telmo, Buenos aires - Capital Federal, Argentina
           </Link>
         </span>

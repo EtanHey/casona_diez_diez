@@ -11,7 +11,7 @@ const UpdateOfferForm = ({ offer }: { offer: Offer }) => {
     const newOffer = ev.target.newOffer.value;
     const result = await fetch("/api/admin/dashboard/offers", {
       method: "POST",
-      body: JSON.stringify({ text: newOffer, id: offer.id, lang:"es" }),
+      body: JSON.stringify({ text: newOffer, id: offer.id, lang: "es" }),
     });
     if (result.status === 200) {
       ev.target.reset();

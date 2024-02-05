@@ -9,7 +9,11 @@ export type NextSliderArrowProps = {
 
 const NextSliderArrow = ({ nextFunc, arrowColor }: NextSliderArrowProps) => {
   return (
-    <button aria-roledescription="next button" className="z-40 h-fit" onClick={nextFunc}>
+    <button
+      aria-roledescription="next button"
+      className="z-40 h-fit"
+      onClick={nextFunc}
+    >
       <NextArrowSVG arrowColor={arrowColor} />
     </button>
   );

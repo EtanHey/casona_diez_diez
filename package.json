@@ -6,7 +6,9 @@
     "dev": "next dev --turbo",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",

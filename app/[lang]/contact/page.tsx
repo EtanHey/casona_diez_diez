@@ -7,8 +7,7 @@ import ContactPhoneLogo from "../components/svgs/contactSVGs/ContactPhoneLogo";
 import ContactWhatsappLogo from "../components/svgs/contactSVGs/ContactWhatsappLogo";
 import { getDictionary } from "../dictionaries";
 
-
-const page = async({ params: { lang } }: { params: { lang: string } }) => {
+const page = async ({ params: { lang } }: { params: { lang: string } }) => {
   const dict = await getDictionary(lang);
   const contactDictionary = dict.contact;
   return (

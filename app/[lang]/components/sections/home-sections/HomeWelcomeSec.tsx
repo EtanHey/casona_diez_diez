@@ -26,7 +26,7 @@ const HomeWelcomeSec = async ({ locale }: { locale: string }) => {
           <HebrewHead />
           <PortugueseHead />
         </div>
-        <p className="text-center md:text-lg sm:text-base text-sm">
+        <p className="text-center text-sm sm:text-base md:text-lg">
           {dict.home.welcomeSection.subText}
         </p>
       </div>

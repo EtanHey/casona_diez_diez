@@ -1,10 +1,6 @@
 "use client";
 import React, { useCallback, useState } from "react";
-import {
-  GoogleMap,
-  useJsApiLoader,
-  Marker,
-} from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 const GoogleApiKey = `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`;
 const containerStyle = {
   minWidth: "400px",
