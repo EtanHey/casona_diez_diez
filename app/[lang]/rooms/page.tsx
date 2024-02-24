@@ -1,6 +1,4 @@
 import React from "react";
-
-import { getPhotos } from "../page";
 import ColoredBreak from "@/app/[lang]/components/ColoredBreak";
 import Header from "@/app/[lang]/components/Header";
 import Gallery from "@/app/[lang]/components/gallery";
@@ -9,6 +7,7 @@ import Balcony from "@/app/[lang]/components/rooms/Balcony";
 import Clean from "@/app/[lang]/components/rooms/Clean";
 import PrivateBathrooms from "@/app/[lang]/components/rooms/PrivateBathrooms";
 import { getDictionary } from "../dictionaries";
+import { getPhotos } from "@/lib/helpers";
 
 const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
   const photos = await getPhotos();
