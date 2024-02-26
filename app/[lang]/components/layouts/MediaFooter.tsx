@@ -13,7 +13,6 @@ import Link from "next/link";
 const MediaFooter = () => {
   return (
     <footer
-      tabIndex={2}
       role="contentinfo"
       className="flex h-full w-full flex-col items-center bg-cdd-black"
     >

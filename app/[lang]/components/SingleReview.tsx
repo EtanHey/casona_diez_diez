@@ -30,7 +30,7 @@ const SingleReview = ({
           height={70}
           width={70}
         />
-        <h4 className="text-lg">{review.author_name}</h4>
+        <h2 className="text-lg">{review.author_name}</h2>
       </div>
       <div className="flex flex-col gap-4 overflow-y-hidden">
         <div className="flex items-center justify-center">

@@ -14,10 +14,14 @@ const PrevSliderArrow = ({
 }: PrevSliderArrowProps) => {
   return (
     <button
-      aria-roledescription={`${prevAriaRoledescription} button`}
+      aria-describedby={`${prevAriaRoledescription} button`}
       className="z-40 h-fit"
       onClick={prevFunc}
     >
+      <label
+        className="sr-only"
+        htmlFor={`${prevAriaRoledescription} button`}
+      >{`${prevAriaRoledescription} button`}</label>
       <PrevArrowSVG arrowColor={arrowColor} />
     </button>
   );

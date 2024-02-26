@@ -7,13 +7,21 @@ export type NextSliderArrowProps = {
   nextAriaRoledescription: string;
 };
 
-const NextSliderArrow = ({ nextFunc, arrowColor }: NextSliderArrowProps) => {
+const NextSliderArrow = ({
+  nextFunc,
+  arrowColor,
+  nextAriaRoledescription,
+}: NextSliderArrowProps) => {
   return (
     <button
-      aria-roledescription="next button"
+      aria-describedby={`${nextAriaRoledescription} button`}
       className="z-40 h-fit"
       onClick={nextFunc}
     >
+      <label
+        className="sr-only"
+        htmlFor={`${nextAriaRoledescription} button`}
+      >{`${nextAriaRoledescription} button`}</label>
       <NextArrowSVG arrowColor={arrowColor} />
     </button>
   );

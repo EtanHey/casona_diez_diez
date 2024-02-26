@@ -1,7 +1,5 @@
 "use client";
-
 import { usePathname, useRouter } from "next/navigation";
-
 import { i18n } from "@/i18n.config";
 
 export default function LocaleSwitcher() {
@@ -17,18 +15,28 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <select
-      onChange={(e) => redirectPath(e.target.value)}
-      defaultValue={currentLocale}
-      className="flex gap-x-3 bg-cdd-black text-center align-middle uppercase text-white sm:text-xs md:text-sm lg:text-base"
-    >
-      {i18n.locales.map((locale: string) => {
-        return (
-          <option value={locale} key={locale}>
-            {locale}
-          </option>
-        );
-      })}
-    </select>
+    <>
+      <select
+        onChange={(e) => redirectPath(e.target.value)}
+        defaultValue={currentLocale}
+        className="flex gap-x-3 bg-cdd-black text-center align-middle uppercase text-white sm:text-xs md:text-sm lg:text-base"
+        id="language_switcher"
+      >
+        {i18n.locales.map((locale: string) => {
+          return (
+            <option
+              aria-description={`pick ${locale} language`}
+              value={locale}
+              key={locale}
+            >
+              {locale}
+            </option>
+          );
+        })}
+      </select>
+      <label htmlFor="language_switcher" className="sr-only">
+        language switcher
+      </label>
+    </>
   );
 }
