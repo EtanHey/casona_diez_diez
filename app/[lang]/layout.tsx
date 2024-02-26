@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  }
+  },
 };
 export const viewport: Viewport = {
   width: "device-width",
@@ -69,6 +69,7 @@ export default async function RootLayout({
         <link rel="apple" href="/apple-touch-icon.png" />
         <link rel="mask-icon" href="" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="robots" content="all" />
       </head>
       <body
         className={`${poppins.className} scrollbar-none h-screen scroll-smooth`}
