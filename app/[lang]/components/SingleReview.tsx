@@ -30,7 +30,7 @@ const SingleReview = ({
           height={70}
           width={70}
         />
-        <h4 className="text-lg">{review.author_name}</h4>
+        <h2 className="text-lg">{review.author_name}</h2>
       </div>
       <div className="flex flex-col gap-4 overflow-y-hidden">
         <div className="flex items-center justify-center">
@@ -51,7 +51,9 @@ const SingleReview = ({
         </div>
         <p
           className={
-            seeMore ? "line-clamp-none" : `line-clamp-5 lg:line-clamp-6 `
+            seeMore
+              ? "line-clamp-none"
+              : `line-clamp-5 md:text-base lg:line-clamp-6 lg:text-lg`
           }
         >
           {review.text.length > 153 && (

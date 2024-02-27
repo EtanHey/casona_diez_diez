@@ -1,16 +1,16 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import { getOffer } from "@/lib/prisma";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
-import { getPhotos } from "./page";
+import { getPhotos } from "@/lib/helpers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ourFileRouter } from "./api/uploadthing/core";
-import HeroImage from "./components/HeroImage";
-import MediaFooter from "./components/sections/MediaFooter";
-import MenuStateWrapper from "./components/stateful_wrapper/MenuStateWrapper";
+import HeroImage from "./components/layouts/HeroImage";
+import MediaFooter from "./components/layouts/MediaFooter";
+import MenuStateWrapper from "./components/layouts/stateful_wrapper/MenuStateWrapper";
 import { getDictionary } from "./dictionaries";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -29,8 +29,27 @@ export const metadata: Metadata = {
     icon: "/favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
-  themeColor: "#ffffff",
+  manifest: "/../site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 10,
+  userScalable: true,
+  themeColor: "#fff",
+  // Also supported by less commonly used
+  // interactiveWidget: 'resizes-visual',
 };
 
 export default async function RootLayout({
@@ -50,6 +69,7 @@ export default async function RootLayout({
         <link rel="apple" href="/apple-touch-icon.png" />
         <link rel="mask-icon" href="" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="robots" content="all" />
       </head>
       <body
         className={`${poppins.className} scrollbar-none h-screen scroll-smooth`}

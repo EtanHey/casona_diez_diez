@@ -1,7 +1,7 @@
-import { getPhotos } from "@/app/[lang]/page";
 import React from "react";
 import AdminPhotoComponent from "./AdminPhotoComponent";
 import { PhotoFromServer } from "@/app/[lang]/types";
+import { getPhotos } from "@/lib/helpers";
 
 export async function handleDeletePhoto(fileKey: string) {
   const res = await fetch("/api/admin/dashboard/images", {

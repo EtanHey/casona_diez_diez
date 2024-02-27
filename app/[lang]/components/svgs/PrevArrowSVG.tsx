@@ -1,9 +1,8 @@
 import React from "react";
 
-const PrevArrowSVG = ({arrowColor}: {arrowColor: string}) => {
+const PrevArrowSVG = ({ arrowColor }: { arrowColor: string }) => {
   return (
     <svg
-    
       width="27"
       height="42"
       viewBox="0 0 27 42"

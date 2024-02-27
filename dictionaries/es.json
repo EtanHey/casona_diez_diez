@@ -3,7 +3,8 @@
     "currentLanguage": "Español",
     "reserveButtonText": "Reservas",
     "previousButtonText": "Previa",
-    "nextButtonText": "próxima"
+    "nextButtonText": "próxima",
+    "CddLogo": "Casona Diez Diez logotipo - Vuelve a pagina inicio"
   },
   "nav": {
     "home": "Inicio",
@@ -60,19 +61,19 @@
 
     "fromAirport": {
       "mainText": "DESDE EL AEROPUERTO",
-      "distance":"",
+      "distance": "",
       "firstTransportationOption": "30 KM - 30 minutos en carro o taxi",
       "secondTransportationOption": "Tenemos servicio de transporte"
     },
     "fromAiropark": {
       "mainText": "DESDE AEROPARQUE",
-      "distance":"",
+      "distance": "",
       "firstTransportationOption": "11 KM - 50 minutos en tren o 30 minutos en taxi",
       "secondTransportationOption": "Tenemos servicio de transporte"
     },
     "fromRetiro": {
       "mainText": "DESDE RETIRO",
-      "distance":"",
+      "distance": "",
       "firstTransportationOption": "3,5 KM - 25 minutos en tren o taxi, 50 minutos caminando",
       "secondTransportationOption": "Tenemos servicio de transporte"
     },
@@ -85,7 +86,7 @@
       "email": "Coreo electronico",
       "title": "titulo",
       "message": "mensaje",
-      "submit":"Enviame un Mensaje"
+      "submit": "Enviame un Mensaje"
     }
   }
 }

@@ -6,10 +6,10 @@ import WazeLogo from "./WazeLogo";
 import WhatsappLogo from "./WhatsappLogo";
 
 export {
-    CddLightLogo,
-    EmailLogo,
-    FacebookLogo,
-    LocationHallowLogo,
-    WazeLogo,
-    WhatsappLogo
-}
+  CddLightLogo,
+  EmailLogo,
+  FacebookLogo,
+  LocationHallowLogo,
+  WazeLogo,
+  WhatsappLogo,
+};

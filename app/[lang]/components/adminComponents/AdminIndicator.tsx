@@ -12,7 +12,7 @@ const AdminIndicator = ({ admin }: { admin: string }) => {
       router.push("/admin/dashboard");
     }
   }, [admin]);
-  if(!admin) return null;
+  if (!admin) return null;
   return (
     <div className="flex items-center gap-2 px-4 text-2xl">
       <span className="text-cdd-red underline">Logged in:</span>

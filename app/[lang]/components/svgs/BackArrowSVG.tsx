@@ -1,7 +1,6 @@
 import React from "react";
 
-const BackArrowSVG
- = () => {
+const BackArrowSVG = () => {
   return (
     <svg
       fill="#000000"
@@ -23,5 +22,4 @@ const BackArrowSVG
   );
 };
 
-export default BackArrowSVG
-;
+export default BackArrowSVG;

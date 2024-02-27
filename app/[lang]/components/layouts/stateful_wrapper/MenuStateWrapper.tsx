@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Nav from "../layouts/Nav";
-import Menu from "../Menu";
+import Nav from "../Nav";
+import Menu from "../../Menu";
 
 export type NavDictType = {
   home: string;

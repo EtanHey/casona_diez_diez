@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import BackArrowSVG from "./svgs/BackArrowSVG";
 import { useRouter } from "next/navigation";

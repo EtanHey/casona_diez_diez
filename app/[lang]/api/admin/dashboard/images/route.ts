@@ -8,7 +8,7 @@ export async function PUT(req: NextRequest) {
       const res = await utapi.renameFile({ fileKey, newName });
       return new Response(JSON.stringify(res), {
         status: 200,
-      })
+      });
     }
     throw new Error("Renaming didn't work out");
   } catch (error: any) {
@@ -26,7 +26,7 @@ export async function DELETE(req: NextRequest) {
       const res = await utapi.deleteFiles(fileKey);
       return new Response(JSON.stringify(res), {
         status: 200,
-      })
+      });
     }
     throw new Error("Deleting didn't work out");
   } catch (error: any) {

@@ -1,6 +1,4 @@
 import React from "react";
-
-import { getPhotos } from "../page";
 import ColoredBreak from "@/app/[lang]/components/ColoredBreak";
 import Header from "@/app/[lang]/components/Header";
 import Gallery from "@/app/[lang]/components/gallery";
@@ -9,6 +7,7 @@ import Balcony from "@/app/[lang]/components/rooms/Balcony";
 import Clean from "@/app/[lang]/components/rooms/Clean";
 import PrivateBathrooms from "@/app/[lang]/components/rooms/PrivateBathrooms";
 import { getDictionary } from "../dictionaries";
+import { getPhotos } from "@/lib/helpers";
 
 const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
   const photos = await getPhotos();
@@ -19,8 +18,8 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
       <Header>{roomsDictionary.rooms}</Header>
       <div className="flex h-full w-full flex-col text-center">
         <ColoredBreak bg="bg-cdd-red" />
-        <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+        <div className="flex h-full w-full flex-col gap-4 ">
+          <h2 className="text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1, 2{" "}
             {roomsDictionary.or} 3 {roomsDictionary.beds}
           </h2>
@@ -36,7 +35,7 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
         </div>
         <ColoredBreak bg="bg-cdd-green" />
         <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+          <h2 className="text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1, 2, 3, 4{" "}
             {roomsDictionary.or} 5 {roomsDictionary.beds}{" "}
           </h2>
@@ -52,7 +51,7 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
         </div>
         <ColoredBreak bg="bg-cdd-yellow" />
         <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+          <h2 className=" text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1 {roomsDictionary.or}{" "}
             2 {roomsDictionary.beds}{" "}
           </h2>
@@ -67,7 +66,7 @@ const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
         </div>
         <ColoredBreak bg="bg-cdd-red" />
         <div className="flex h-full w-full flex-col gap-4">
-          <h2 className="text-lg font-light uppercase">
+          <h2 className="text-lg font-light uppercase sm:text-xl md:text-2xl">
             {roomsDictionary.rooms} {roomsDictionary.of} 1, 2{" "}
             {roomsDictionary.or} 3 {roomsDictionary.beds}
           </h2>

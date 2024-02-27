@@ -5,10 +5,22 @@ const nextConfig = {
     serverComponentsExternalPackages: ["mongodb"],
   },
   images: {
-    domains: [
-      "uploadthing-prod.s3.us-west-2.amazonaws.com",
-      "utfs.io",
-      "lh3.googleusercontent.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        hostname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "uploadthing-prod.s3.us-west-2.amazonaws.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "utfs.io",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -6,13 +6,14 @@
     "dev": "next dev --turbo",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
     "@prisma/client": "^5.7.0",
-    "@react-google-maps/api": "^2.19.2",
-    "@tailwindcss/line-clamp": "^0.4.4",
+    "@react-google-maps/api": "^2.19.3",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
@@ -24,7 +25,7 @@
     "mongodb": "^5.8.0",
     "mongoose": "^7.4.4",
     "negotiator": "^0.6.3",
-    "next": "^13.5.6",
+    "next": "^14.1",
     "postcss": "^8.4.31",
     "react": "18.2.0",
     "react-dom": "18.2.0",
