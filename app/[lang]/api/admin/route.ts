@@ -1,4 +1,3 @@
-import clientPromise from "@/lib/mongodb";
 import { NextRequest } from "next/server";
 import jwt from "jwt-simple";
 import { getUserByLoginInfo } from "@/lib/prisma";
