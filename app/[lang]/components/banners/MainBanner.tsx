@@ -1,7 +1,7 @@
 import { Offer } from "@prisma/client";
 import React from "react";
 
-const MainBanner = async ({
+const MainBanner = ({
   offer: { offer, error },
 }: {
   offer: { offer?: Offer; error?: Error };
