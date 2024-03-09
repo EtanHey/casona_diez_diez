@@ -59,9 +59,11 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
+  let admin = false;
+  if (lang !== "en" && lang !== "es") admin = true;
   const photos = await getPhotos();
   const offer = await getOffer(lang);
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang, admin);
   return (
     <html lang="en">
       <head>

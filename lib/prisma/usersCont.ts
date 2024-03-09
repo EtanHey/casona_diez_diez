@@ -3,7 +3,7 @@ import prisma from ".";
 
 export async function getUserByLoginInfo(
   loginInfo: Pick<User, "username" | "password">,
-) {
+) {  
   try {
     const { username, password } = loginInfo;
     const requestedUser = await prisma.user.findFirst({

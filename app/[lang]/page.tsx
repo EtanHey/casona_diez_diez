@@ -13,7 +13,6 @@ export default async function Home({
   params: { lang: string };
 }) {
   // const photos = await getPhotos();
-  
   const reviews = await getReviews();
   const photos = await getPhotos();
   const dict = await getDictionary(lang);
