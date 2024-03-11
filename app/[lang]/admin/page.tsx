@@ -1,6 +1,6 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
-import { login } from "@/lib/helpers";
+import { login } from "@/lib/actions";
 
 const page = async () => {
   return (

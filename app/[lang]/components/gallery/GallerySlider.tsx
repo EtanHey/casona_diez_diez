@@ -14,11 +14,10 @@ const GallerySlider = ({
       return (
         <Image
           // onClick={changeZoom}
-          className={` transition-opacity duration-700
+          className={` object-cover transition-opacity duration-700
             ${index === currentPhoto ? "opacity-100" : "opacity-0"}`}
           fill
           sizes="( max-width: 768px ) 100vw,"
-          style={{ objectFit: "cover" }}
           key={photo.key}
           src={photo.url}
           alt={photo.key}

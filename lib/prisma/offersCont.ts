@@ -1,19 +1,18 @@
 import { Offer } from "@prisma/client";
 import prisma from ".";
 
-export async function getOffer(lang: string): Promise<{
-  offer?: Offer;
+export async function getOffers(): Promise<{
+  offers: Offer[];
   error?: any;
 }> {
   try {
     const offers = await prisma.offer.findMany();
-    const currentOffer = offers.findIndex((predicate) =>
-      predicate.lang.startsWith(lang),
-    );
-    const offer = offers[currentOffer] || offers[0];
-    return { offer };
+
+    const offer = offers[0];
+    if (offer) return { offers };
+    else return { offers };
   } catch (error) {
-    return { error };
+    return { error, offers: [{ text: "", id: "1", lang: "" }] as Offer[] };
   }
 }
 
@@ -23,7 +22,7 @@ export async function updateOffer(offer: Offer) {
       where: { id: offer.id },
       data: { text: offer.text },
     });
-    return { offer: updatedOffer };
+    return { updatedOffer };
   } catch (error) {
     console.log(error);
 

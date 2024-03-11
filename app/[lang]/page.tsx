@@ -1,11 +1,9 @@
+import { getPhotos, getReviews } from "@/lib/actions";
 import HomeGallerySec from "./components/sections/home-sections/HomeGallerySec";
 import HomeReviewSec from "./components/sections/home-sections/HomeReviewSec";
 import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec";
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
 import { getDictionary } from "./dictionaries";
-import { getPhotos, getReviews } from "@/lib/helpers";
-
-
 
 export default async function Home({
   params: { lang },

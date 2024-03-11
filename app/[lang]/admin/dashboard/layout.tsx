@@ -6,10 +6,9 @@ import AdminIndicator from "@/app/[lang]/components/adminComponents/AdminIndicat
 const secret = process.env.JWT_SECRET;
 const checkAdminCookie = () => {
   const cookie = cookies().get("admin");
-  console.log("cookie", cookie);
-  
   if (!cookie || !secret) return false;
   const admin = jwt.decode(cookie.value, secret);
+
   return admin;
 };
 const layout = async ({ children }: { children: React.ReactNode }) => {
