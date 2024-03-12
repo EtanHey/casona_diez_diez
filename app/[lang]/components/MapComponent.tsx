@@ -1,18 +1,18 @@
-"use client";
-import React, { useCallback, useState } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
-const GoogleApiKey = `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`;
-const containerStyle = {
-  minWidth: "400px",
-  minHeight: "400px",
-  width: "100%",
-  height: "100%",
-};
+// "use client";
+import React from "react";
+// import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+// const GoogleApiKey = `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`;
+// const containerStyle = {
+//   minWidth: "400px",
+//   minHeight: "400px",
+//   width: "100%",
+//   height: "100%",
+// };
 
-const center = {
-  lat: -34.61985,
-  lng: -58.377079,
-};
+// const center = {
+//   lat: -34.61985,
+//   lng: -58.377079,
+// };
 
 function MyComponent() {
   // const { isLoaded } = useJsApiLoader({
