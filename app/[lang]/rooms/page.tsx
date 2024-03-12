@@ -7,7 +7,7 @@ import Balcony from "@/app/[lang]/components/rooms/Balcony";
 import Clean from "@/app/[lang]/components/rooms/Clean";
 import PrivateBathrooms from "@/app/[lang]/components/rooms/PrivateBathrooms";
 import { getDictionary } from "../dictionaries";
-import { getPhotos } from "@/lib/helpers";
+import { getPhotos } from "@/lib/actions";
 
 const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
   const photos = await getPhotos();

@@ -1,54 +1,35 @@
 "use client";
-import React, { BaseSyntheticEvent, useEffect, useState } from "react";
-import { EmailSending } from "../types";
+import React, { useState } from "react";
+import SubmitButton from "./SubmitButton";
+import { ContactDict, EmailSending } from "../../types";
+import { useFormState } from "react-dom";
 
-type ContactDict = {
-  name: string;
-  email: string;
-  title: string;
-  message: string;
-  submit: string;
-};
-const ContactForm = ({ dict }: { dict: ContactDict }) => {
+const ContactForm = ({
+  dict,
+  handleEmailSend,
+}: {
+  dict: ContactDict;
+  handleEmailSend: (
+    currentState: any,
+    formData: FormData,
+  ) => Promise<
+    | {
+        status: number;
+        id: string;
+      }
+    | undefined
+  >;
+}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [emailSent, setEmailSent] = useState<EmailSending>(EmailSending.EMPTY);
-  useEffect(() => {
-    setTimeout(() => setEmailSent(EmailSending.EMPTY), 5000);
-  }, [emailSent]);
-  // to help with lastpass plugin:
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-  if (!isClient) return null;
-  const handleEmailSend = async (ev: BaseSyntheticEvent) => {
-    ev.preventDefault();
-    try {
-      setEmailSent(EmailSending.SENDING);
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ name, email, title, message }),
-      });
-      const { status } = await res.json();
-      if (status === 200) {
-        ev.target.reset();
-        setName("");
-        setEmail("");
-        setTitle("");
-        setMessage("");
-        setEmailSent(EmailSending.SENT);
-      }
-    } catch (error) {
-      console.log(error);
-      setEmailSent(EmailSending.ERROR);
-    }
-  };
+  const [state, formAction] = useFormState(handleEmailSend, null);
+
   return (
     <form
-      onSubmit={handleEmailSend}
+      action={formAction}
       className="flex h-fit w-full flex-col place-items-center gap-4"
     >
       <div className="flex w-full  flex-col gap-2 bg-cdd-green p-4">
@@ -105,18 +86,15 @@ const ContactForm = ({ dict }: { dict: ContactDict }) => {
           />
         </div>
       </div>
-      <button
-        disabled={name && email && title && message ? false : true}
-        type="submit"
-        className={`${
-          name && email && title && message ? "bg-cdd-red" : "bg-cdd-red/40"
-        } w-fit rounded-full px-8 py-[10px] font-semibold text-white`}
-      >
-        {emailSent === EmailSending.ERROR && "x"}
-        {emailSent === EmailSending.SENT && "✓"}
-        {emailSent === EmailSending.SENDING && "..."}
-        {emailSent === EmailSending.EMPTY && `${dict.submit}`}
-      </button>
+      {state !== null && <div>{state?.status}</div>}
+      <SubmitButton
+        emailSent={emailSent}
+        name={name}
+        email={email}
+        title={title}
+        message={message}
+        dict={dict}
+      />
     </form>
   );
 };

@@ -6,9 +6,13 @@ import { getUserByLoginInfo, updateOffer } from "./prisma";
 const secret = process.env.JWT_SECRET;
 import jwt from "jwt-simple";
 import { cookies } from "next/headers";
-
 import { Offer } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { default as mailgunFormData } from "form-data";
+import Mailgun, { MessagesSendResult } from "mailgun.js";
+const mailgun = new Mailgun(mailgunFormData);
+const domain = process.env.MAILGUN_DOMAIN;
+const mailgunKey = process.env.MAILGUN_API_KEY;
 
 export const login = async (formData: FormData) => {
   try {
@@ -89,5 +93,45 @@ export const handleUpdateOffer = async (
   }
   if (updatedOffer) {
     revalidatePath(`/admin/dashboard/offers`);
+  }
+};
+
+export const handleEmailSend = async (
+  currentState: any,
+  formData: FormData,
+) => {
+  try {
+    console.log("handleEmailSend", currentState, formData);
+    const { name, email, title, message } = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      title: formData.get("title") as string,
+      message: formData.get("message") as string,
+    };
+    if (!name || !email || !title || !message || !mailgunKey || !domain) {
+      throw new Error("Missing required fields");
+    }
+    const mg = mailgun.client({
+      username: "api",
+      key: mailgunKey,
+    });
+    const result: MessagesSendResult = await mg.messages.create(domain, {
+      from: `${name}<${email}>`,
+      to: ["etan@heyman.net"],
+      subject: `Alguien te contactó desde CasonaDiezDiez`,
+      text: `${message}`,
+      html: `<h1>${title}</h1>
+        <p>${message}</p>`,
+    });
+    const { status, id } = result;
+    if (!status || !id) {
+      throw new Error("Something went wrong");
+    }
+    return {
+      status,
+      id,
+    };
+  } catch (error) {
+    console.log(error);
   }
 };
