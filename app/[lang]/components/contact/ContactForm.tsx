@@ -26,6 +26,13 @@ const ContactForm = ({
   const [message, setMessage] = useState("");
   const [emailSent, setEmailSent] = useState<EmailSending>(EmailSending.EMPTY);
   const [state, formAction] = useFormState(handleEmailSend, null);
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setTitle("");
+    setMessage("");
+    setEmailSent(EmailSending.EMPTY);
+  };
 
   return (
     <form
@@ -39,6 +46,7 @@ const ContactForm = ({
           </label>
           <input
             onChange={(e) => setName(e.target.value)}
+            value={name}
             required
             className="w-full rounded-full p-[10px] shadow-[0px_1.0px_2.0px_0px] shadow-black/[15%]"
             type="text"
@@ -52,6 +60,7 @@ const ContactForm = ({
           </label>
           <input
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
             required
             className="w-full rounded-full p-[10px] shadow-[0px_1.0px_2.0px_0px] shadow-black/[15%]"
             type="email"
@@ -65,6 +74,7 @@ const ContactForm = ({
           </label>
           <input
             onChange={(e) => setTitle(e.target.value)}
+            value={title}
             required
             className="w-full rounded-full p-[10px] shadow-[0px_1.0px_2.0px_0px] shadow-black/[15%]"
             type="text"
@@ -78,6 +88,7 @@ const ContactForm = ({
           </label>
           <textarea
             onChange={(e) => setMessage(e.target.value)}
+            value={message}
             required
             rows={6}
             className="w-full rounded-3xl p-[10px] shadow-[0px_1.0px_2.0px_0px] shadow-black/[15%]"
@@ -86,14 +97,16 @@ const ContactForm = ({
           />
         </div>
       </div>
-      {state !== null && <div>{state?.status}</div>}
+
       <SubmitButton
+        resetForm={resetForm}
         emailSent={emailSent}
         name={name}
         email={email}
         title={title}
         message={message}
         dict={dict}
+        state={state}
       />
     </form>
   );

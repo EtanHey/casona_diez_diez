@@ -2,30 +2,40 @@ import React, { useEffect } from "react";
 import { ContactDict, EmailSending } from "../../types";
 import { useFormStatus } from "react-dom";
 
-const SubmitButton = (
-  {
-    emailSent,
-    name,
-    email,
-    title,
-    message,
-    dict,
-  }: {
-    emailSent: EmailSending;
-    name: string;
-    email: string;
-    title: string;
-    message: string;
-    dict: ContactDict;
-  },
-  ref: any,
-) => {
+const SubmitButton = ({
+  resetForm,
+  state,
+  emailSent,
+  name,
+  email,
+  title,
+  message,
+  dict,
+}: {
+  state:
+    | {
+        status: number;
+        id: string;
+      }
+    | null
+    | undefined;
+
+  emailSent: EmailSending;
+  name: string;
+  email: string;
+  title: string;
+  message: string;
+  dict: ContactDict;
+  resetForm: () => void;
+}) => {
+  useEffect(() => {
+    if (state?.status === 200) {
+      resetForm();
+    }
+  }, [state?.id]);
   const disabled = name && email && title && message ? false : true;
   const { pending } = useFormStatus();
-  // const { email };
-  useEffect(() => {
-    console.log(ref);
-  }, [ref]);
+  if (emailSent === EmailSending.SENDING && !state) return null;
   return (
     <button
       disabled={disabled}
@@ -35,7 +45,6 @@ const SubmitButton = (
       } w-fit rounded-full px-8 py-[10px] font-semibold text-white`}
     >
       {emailSent === EmailSending.ERROR && "x"}
-      {emailSent === EmailSending.SENT && "✓"}
       {pending && "..."}
       {emailSent === EmailSending.EMPTY && !pending && `${dict.submit}`}
     </button>

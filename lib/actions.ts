@@ -101,7 +101,6 @@ export const handleEmailSend = async (
   formData: FormData,
 ) => {
   try {
-    console.log("handleEmailSend", currentState, formData);
     const { name, email, title, message } = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
