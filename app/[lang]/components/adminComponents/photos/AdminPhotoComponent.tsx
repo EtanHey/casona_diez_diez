@@ -19,7 +19,7 @@ const AdminPhotoComponent = ({ photo }: { photo: PhotoFromServer }) => {
           alt={"photo"}
           fill
           sizes="100%"
-          style={{ objectFit: "contain" }}
+          className="object-contain"
           src={photo.url}
         />
       </div>

@@ -29,12 +29,11 @@ const HeroImage = ({
       (photo) =>
         photo.key.includes(`${page}`) && photo.key.includes("hero_image"),
     ) || photos.find((photo) => photo.key.includes("hero_image"));
-
   return (
     <div className="mt-9 h-full w-full">
       <div className="relative left-1/2 h-[303.552px] w-[458.30400000000003px] -translate-x-1/2 overflow-hidden xs:h-96 xs:w-full">
         <Image
-          src={"/hero_image.jpg"}
+          src={photo ? photo.url : "/hero_image.jpg"}
           alt="Loby picture"
           fill
           priority

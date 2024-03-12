@@ -8,7 +8,6 @@ export async function POST(req: NextRequest) {
     const { username, password } = await req.json();
     const result = await getUserByLoginInfo({ username, password });
     if (result && result.data && secret) {
-      console.log("result.data.username", result.data.username);
       const admin = jwt.encode(result.data.username, secret);
       if (admin) {
         return new Response(JSON.stringify({ ok: true, admin }), {

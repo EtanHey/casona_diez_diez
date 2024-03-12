@@ -97,7 +97,8 @@ const Gallery = ({ dict, photos }: GalleryProps) => {
               ev.stopPropagation();
             }}
             fill
-            objectFit="contain"
+            className="object-contain"
+            sizes="100vw"
           />
         </Modal>
       )}

@@ -20,3 +20,11 @@ export enum EmailSending {
   SENT = "sent",
   ERROR = "error",
 }
+
+export type ContactDict = {
+  name: string;
+  email: string;
+  title: string;
+  message: string;
+  submit: string;
+};
