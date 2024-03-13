@@ -16,8 +16,8 @@ const NavigationMenu = ({
   return (
     <div
       className={`wrapper scrollbar-none ${
-        changeMenuState ? "flex w-full flex-col" : "hidden"
-      } h-0 min-h-full items-center gap-9 overflow-y-scroll font-normal uppercase text-white sm:text-sm md:flex md:text-base lg:text-lg`}
+        changeMenuState ? "flex w-full flex-col overflow-y-scroll" : "hidden overflow-y-clip"
+      } h-0 min-h-full items-center gap-9  font-normal uppercase text-white sm:text-sm md:flex md:text-base lg:text-lg`}
     >
       <Link
         onClick={changeMenuState}
