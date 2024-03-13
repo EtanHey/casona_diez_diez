@@ -1,5 +1,5 @@
 "use client";
-import { PhotoFromServer } from "@/app/types";
+import { PhotoFromServer } from "@/app/[lang]/types";
 import React from "react";
 import { handleDeletePhoto } from "./AdminPhotosLibrary";
 

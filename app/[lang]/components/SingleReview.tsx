@@ -1,4 +1,4 @@
-import { Review } from "@/app/types";
+import { Review } from "@/app/[lang]/types";
 import Image from "next/image";
 import React from "react";
 import StarSvg from "./svgs/StarSvg";

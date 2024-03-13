@@ -1,6 +1,6 @@
 import React from "react";
 import MDCleanLogo from "../svgs/RoomsSVGs/MDCleanLogo";
-import { VariedColorsSVGProps } from "@/app/props";
+import { VariedColorsSVGProps } from "@/app/[lang]/props";
 
 const Clean = ({ text, fill }: VariedColorsSVGProps) => {
   return (

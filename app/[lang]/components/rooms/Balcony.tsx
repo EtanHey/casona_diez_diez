@@ -1,6 +1,6 @@
 import React from "react";
 import MDBalconyLogo from "../svgs/RoomsSVGs/MDBalconyLogo";
-import { VariedColorsSVGProps } from "@/app/props";
+import { VariedColorsSVGProps } from "@/app/[lang]/props";
 
 const Balcony = ({ text, fill }: VariedColorsSVGProps) => {
   return (

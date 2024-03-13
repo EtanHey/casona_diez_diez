@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { PhotoFromServer } from "@/app/types";
+import { PhotoFromServer } from "@/app/[lang]/types";
 import AdminPhotoNameInput from "./AdminPhotoNameInput";
 import AdminPhotoDeleteButton from "./AdminPhotoDeleteButton";
 

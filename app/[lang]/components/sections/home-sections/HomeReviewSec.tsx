@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import Header from "../../Header";
 import ColoredBreak from "../../ColoredBreak";
-import { Review } from "@/app/types";
+import { Review } from "@/app/[lang]/types";
 import PrevSliderArrow from "../../PrevSliderArrow";
 import NextSliderArrow from "../../NextSliderArrow";
 import SingleReview from "../../SingleReview";

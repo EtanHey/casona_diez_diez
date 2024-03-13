@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "@uploadthing/react/styles.css";
-import { UploadButton, UploadDropzone } from "@/app/utils";
+import { UploadButton, UploadDropzone } from "@/app/[lang]/utils";
 const AdminPhotoUploader = () => {
   return (
     <>
