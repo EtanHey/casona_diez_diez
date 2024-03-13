@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 import { Offer } from "@prisma/client";
-import { PhotoFromServer } from "../../types";
+import { PhotoFromServer } from "../../../types";
 import MainBanner from "../banners/MainBanner";
 import ReserveButton from "../buttons/ReserveButton";
 import CddDarkLogo from "../svgs/CddDarkLogo";

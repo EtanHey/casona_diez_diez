@@ -2,7 +2,7 @@
 import React from "react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import ColoredBreak from "../../ColoredBreak";
-import { PhotoFromServer } from "@/app/[lang]/types";
+import { PhotoFromServer } from "@/app/types";
 import Gallery, { GalleryDict } from "../../gallery";
 
 const HomeGallerySec = ({

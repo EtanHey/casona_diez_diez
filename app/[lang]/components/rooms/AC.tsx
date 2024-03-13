@@ -1,6 +1,6 @@
 import React from "react";
 import MDACLogo from "../svgs/RoomsSVGs/MDACLogo";
-import { VariedColorsSVGProps } from "@/app/[lang]/props";
+import { VariedColorsSVGProps } from "@/app/props";
 
 const AC = ({ text, fill }: VariedColorsSVGProps) => {
   return (

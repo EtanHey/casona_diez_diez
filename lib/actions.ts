@@ -125,7 +125,7 @@ export const handleEmailSend = async (
     return {
       status,
       id,
-    } 
+    };
   } catch (error: any) {
     console.log(error, "handleEmailSend error");
     return {

@@ -1,6 +1,6 @@
 import React from "react";
 import MDToiletLogo from "../svgs/RoomsSVGs/MDToiletLogo";
-import { VariedColorsSVGProps } from "@/app/[lang]/props";
+import { VariedColorsSVGProps } from "@/app/props";
 
 const PrivateBathrooms = ({ fill, text }: VariedColorsSVGProps) => {
   return (

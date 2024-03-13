@@ -29,7 +29,7 @@ const ContactForm = ({
     setEmail("");
     setTitle("");
     setMessage("");
-    setEmailSent(EmailSending.EMPTY)
+    setEmailSent(EmailSending.EMPTY);
   };
 
   return (

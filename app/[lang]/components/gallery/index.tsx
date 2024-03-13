@@ -1,5 +1,5 @@
 "use client";
-import { PhotoFromServer } from "@/app/[lang]/types";
+import { PhotoFromServer } from "@/app/types";
 import Image from "next/image";
 import React, { useState } from "react";
 import Header from "../Header";
