@@ -84,7 +84,13 @@
       "email": "E-mail",
       "title": "Title",
       "message": "Message",
-      "submit": "Send me a message"
+      "submit": "Send me a message",
+      "success": "Your message has been sent",
+      "error": {
+        "200": "Your message has been sent",
+        "401": "Forbidden: Missing authorization token",
+        "449": "Missing some fields, please try again"
+      }
     }
   }
 }

@@ -12,6 +12,7 @@ import MenuStateWrapper from "./components/layouts/stateful_wrapper/MenuStateWra
 import { getDictionary } from "./dictionaries";
 import { getPhotos } from "@/lib/actions";
 import { Offer } from "@prisma/client";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -86,6 +87,7 @@ export default async function RootLayout({
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
           <HeroImage offer={{ offer, error }} photos={photos} dict={dict} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
+          <Toaster />
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}
           <MediaFooter />
         </main>

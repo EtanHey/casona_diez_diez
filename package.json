@@ -13,6 +13,7 @@
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
     "@prisma/client": "^5.7.0",
+    "@radix-ui/react-toast": "^1.1.5",
     "@react-google-maps/api": "^2.19.3",
     "@types/node": "20.5.1",
     "@types/react": "^18.2.64",
@@ -20,7 +21,10 @@
     "@uploadthing/react": "^5.7.0",
     "@vercel/speed-insights": "^1.0.2",
     "autoprefixer": "10.4.15",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "jwt-simple": "^0.5.6",
+    "lucide-react": "^0.356.0",
     "mailgun.js": "^9.2.1",
     "mongodb": "^5.8.0",
     "mongoose": "^7.4.4",
@@ -31,7 +35,9 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "sharp": "^0.32.6",
+    "tailwind-merge": "^2.2.1",
     "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.1.6",
     "uploadthing": "^5.7.4"
   },

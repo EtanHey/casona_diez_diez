@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import SubmitButton from "./SubmitButton";
 import { ContactDict, EmailSending } from "../../types";
 import { useFormState } from "react-dom";
+import { MessagesSendResult } from "mailgun.js";
 
 const ContactForm = ({
   dict,
@@ -12,26 +13,23 @@ const ContactForm = ({
   handleEmailSend: (
     currentState: any,
     formData: FormData,
-  ) => Promise<
-    | {
-        status: number;
-        id: string;
-      }
-    | undefined
-  >;
+  ) => Promise<MessagesSendResult>;
 }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [emailSent, setEmailSent] = useState<EmailSending>(EmailSending.EMPTY);
-  const [state, formAction] = useFormState(handleEmailSend, null);
+  const [state, formAction] = useFormState(handleEmailSend, {
+    id: "",
+    status: 0,
+  });
   const resetForm = () => {
     setName("");
     setEmail("");
     setTitle("");
     setMessage("");
-    setEmailSent(EmailSending.EMPTY);
+    setEmailSent(EmailSending.EMPTY)
   };
 
   return (

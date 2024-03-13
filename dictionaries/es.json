@@ -86,7 +86,14 @@
       "email": "Coreo electronico",
       "title": "titulo",
       "message": "mensaje",
-      "submit": "Enviame un Mensaje"
+      "submit": "Enviame un Mensaje",
+      "success": "Su mensaje ha sido enviado",
+
+      "error": {
+        "200": "Su mensaje ha sido enviado",
+        "401": "Prohibido: Falta token de autorización",
+        "449": "Faltan algunos campos, por favor intenta de nuevo"
+      }
     }
   }
 }
