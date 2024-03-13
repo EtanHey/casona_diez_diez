@@ -1,6 +1,6 @@
 "use server";
 
-import { Review } from "@/app/[lang]/types";
+import { MessagesSendStatus, Review } from "@/app/[lang]/types";
 import { UTApi } from "uploadthing/server";
 import { getUserByLoginInfo, updateOffer } from "./prisma";
 const secret = process.env.JWT_SECRET;
@@ -72,11 +72,7 @@ export const getPhotos = async (): Promise<any> => {
   }
 };
 
-export const handleUpdateOffer = async (
-  formData: FormData,
-
-  offer: Offer,
-) => {
+export const handleUpdateOffer = async (formData: FormData, offer: Offer) => {
   const { newOffer, lang } = {
     newOffer: formData.get("newOffer") as string,
     lang: formData.get("lang") as string,
@@ -97,11 +93,10 @@ export const handleUpdateOffer = async (
 };
 
 export const handleEmailSend = async (
-  currentState: any,
+  currentState: Awaited<MessagesSendResult>,
   formData: FormData,
-) => {
+): Promise<MessagesSendResult> => {
   try {
-    console.log("handleEmailSend", currentState, formData);
     const { name, email, title, message } = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
@@ -109,7 +104,7 @@ export const handleEmailSend = async (
       message: formData.get("message") as string,
     };
     if (!name || !email || !title || !message || !mailgunKey || !domain) {
-      throw new Error("Missing required fields");
+      throw new Error(JSON.stringify({ status: MessagesSendStatus[449] }));
     }
     const mg = mailgun.client({
       username: "api",
@@ -125,13 +120,16 @@ export const handleEmailSend = async (
     });
     const { status, id } = result;
     if (!status || !id) {
-      throw new Error("Something went wrong");
+      throw new Error(JSON.stringify({ status: MessagesSendStatus[401] }));
     }
     return {
       status,
       id,
     };
-  } catch (error) {
-    console.log(error);
+  } catch (error: any) {
+    console.log(error, "handleEmailSend error");
+    return {
+      status: error.status,
+    };
   }
 };
