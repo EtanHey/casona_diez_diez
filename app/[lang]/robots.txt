@@ -1,0 +1,6 @@
+
+
+User-Agent: *
+Allow: /
+Disallow: /private/
+Sitemap:https://casona-diez-diez.vercel.app/sitemap.xml
