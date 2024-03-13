@@ -1,6 +1,6 @@
 "use server";
 
-import { MessagesSendStatus, Review } from "@/app/[lang]/types";
+import { MessagesSendStatus, Review } from "@/app/types";
 import { UTApi } from "uploadthing/server";
 import { getUserByLoginInfo, updateOffer } from "./prisma";
 const secret = process.env.JWT_SECRET;

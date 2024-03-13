@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import SubmitButton from "./SubmitButton";
-import { ContactDict, EmailSending } from "../../types";
+import { ContactDict, EmailSending } from "../../../types";
 import { useFormState } from "react-dom";
 import { MessagesSendResult } from "mailgun.js";
 

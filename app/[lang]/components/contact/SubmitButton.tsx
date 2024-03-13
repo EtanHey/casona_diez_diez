@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ContactDict, EmailSending, MessagesSendStatus } from "../../types";
+import { ContactDict, EmailSending, MessagesSendStatus } from "../../../types";
 import { useFormStatus } from "react-dom";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
