@@ -9,7 +9,8 @@ import PrivateBathrooms from "@/app/[lang]/components/rooms/PrivateBathrooms";
 import { getDictionary } from "../dictionaries";
 import { getPhotos } from "@/lib/actions";
 
-const Rooms = async ({ params: { lang } }: { params: { lang: string } }) => {
+const Rooms = async ({ params }: { params: Promise<{ lang: string }> }) => {
+  const { lang } = await params;
   const photos = await getPhotos();
   const dict = await getDictionary(lang);
   const roomsDictionary = dict.rooms;

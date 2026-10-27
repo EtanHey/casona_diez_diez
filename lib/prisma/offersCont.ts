@@ -1,18 +1,17 @@
 import { Offer } from "@prisma/client";
 import prisma from ".";
+import { reportServiceError } from "../service-errors";
 
-export async function getOffers(): Promise<{
+export async function getOffers(
+  readOffers: () => Promise<Offer[]> = () => prisma.offer.findMany(),
+): Promise<{
   offers: Offer[];
-  error?: any;
+  error?: string;
 }> {
   try {
-    const offers = await prisma.offer.findMany();
-
-    const offer = offers[0];
-    if (offer) return { offers };
-    else return { offers };
+    return { offers: await readOffers() };
   } catch (error) {
-    return { error, offers: [{ text: "", id: "1", lang: "" }] as Offer[] };
+    return { error: reportServiceError("offers", error), offers: [] };
   }
 }
 

@@ -1,12 +1,8 @@
 import { Offer } from "@prisma/client";
 import React from "react";
 
-const MainBanner = ({
-  offer: { offer, error },
-}: {
-  offer: { offer?: Offer; error?: Error };
-}) => {
-  if ((error && !offer) || error || !offer) throw error;
+const MainBanner = ({ offer: { offer } }: { offer: { offer?: Offer } }) => {
+  if (!offer?.text) return null;
   return (
     <div className="absolute left-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cdd-black p-4 ">
       <p className="w-full break-words text-center text-sm font-extralight uppercase text-white md:text-base lg:text-lg xl:text-xl">

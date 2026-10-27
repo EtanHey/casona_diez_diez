@@ -6,10 +6,11 @@ import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
 import { getDictionary } from "./dictionaries";
 
 export default async function Home({
-  params: { lang },
+  params,
 }: {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
   // const photos = await getPhotos();
   const reviews = await getReviews();
   const photos = await getPhotos();

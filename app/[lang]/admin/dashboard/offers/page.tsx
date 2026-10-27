@@ -2,12 +2,13 @@ import BackButton from "@/app/[lang]/components/BackButton";
 import UpdateOfferForm from "@/app/[lang]/components/adminComponents/offers/UpdateOfferForm";
 import { handleUpdateOffer } from "@/lib/actions";
 import { getOffers } from "@/lib/prisma";
-import { Offer } from "@prisma/client";
 import React from "react";
 
-const page = async ({ params: { lang } }: { params: { lang: string } }) => {
-  const { offers, error }: { offers: Offer[]; error?: any } = await getOffers();
-  if ((error && offers) || error || !offers) throw error;
+const page = async ({ params }: { params: Promise<{ lang: string }> }) => {
+  const { lang } = await params;
+  const { offers, error } = await getOffers();
+  if (error || offers.length === 0)
+    return <p>Offers are currently unavailable.</p>;
   return (
     <div className="flex w-full flex-col items-center text-center">
       <BackButton />
