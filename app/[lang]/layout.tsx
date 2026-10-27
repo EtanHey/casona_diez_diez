@@ -11,7 +11,6 @@ import MenuStateWrapper from "./components/layouts/stateful_wrapper/MenuStateWra
 import { getDictionary } from "./dictionaries";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { getPhotos } from "@/lib/actions";
-import { Offer } from "@prisma/client";
 import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
@@ -56,15 +55,16 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({
   children,
-  params: { lang },
+  params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
   let admin = false;
   if (lang !== "en" && lang !== "es") admin = true;
   const photos = await getPhotos();
-  const { offers, error }: { offers: Offer[]; error?: any } = await getOffers();
+  const { offers } = await getOffers();
   const currentOffer = offers.findIndex((predicate) =>
     predicate.lang.startsWith(lang),
   );
@@ -85,7 +85,7 @@ export default async function RootLayout({
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <MenuStateWrapper navDict={dict.nav} />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
-          <HeroImage offer={{ offer, error }} photos={photos} dict={dict} />
+          <HeroImage offer={{ offer }} photos={photos} dict={dict} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
           <Toaster />
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}

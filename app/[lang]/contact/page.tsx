@@ -9,7 +9,8 @@ import { handleEmailSend } from "@/lib/actions";
 import ContactForm from "../components/contact/ContactForm";
 import Link from "next/link";
 
-const page = async ({ params: { lang } }: { params: { lang: string } }) => {
+const page = async ({ params }: { params: Promise<{ lang: string }> }) => {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
   const contactDictionary = dict.contact;
 

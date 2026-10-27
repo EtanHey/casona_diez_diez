@@ -18,7 +18,7 @@ const HeroImage = ({
   },
 }: {
   photos: Array<PhotoFromServer>;
-  offer: { offer?: Offer; error?: Error };
+  offer: { offer?: Offer };
   dict: { common: { reserveButtonText: string; CddLogo: string } };
 }) => {
   const pathname = usePathname();

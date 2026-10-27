@@ -6,7 +6,8 @@ import React from "react";
 import { getDictionary } from "../dictionaries";
 import DirectionsSection from "../components/DirectionsSection";
 
-const Location = async ({ params: { lang } }: { params: { lang: string } }) => {
+const Location = async ({ params }: { params: Promise<{ lang: string }> }) => {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   const locationDictionary = dict.location;

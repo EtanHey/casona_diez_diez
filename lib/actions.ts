@@ -10,6 +10,7 @@ import { Offer } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { default as mailgunFormData } from "form-data";
 import Mailgun, { MessagesSendResult } from "mailgun.js";
+import { reportServiceError } from "./service-errors";
 const mailgun = new Mailgun(mailgunFormData);
 const domain = process.env.MAILGUN_DOMAIN;
 const mailgunKey = process.env.MAILGUN_API_KEY;
@@ -33,7 +34,7 @@ export const login = async (formData: FormData) => {
         // set timed cookies
         let date = new Date();
         date.setTime(date.getTime() + 5 * 60 * 1000);
-        cookies().set("admin", admin, { expires: date });
+        (await cookies()).set("admin", admin, { expires: date });
       } else {
         throw new Error("Invalid username or password");
       }
@@ -49,25 +50,31 @@ export async function getReviews(): Promise<Array<Review>> {
     const GoogleKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
     const response = await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${GoogleKey}`,
+      { next: { revalidate: 3600 } },
     );
-    const { result } = await response.json();
-    return result.reviews;
+    const { result, status } = await response.json();
+    if (!response.ok || status !== "OK") {
+      throw new Error(
+        status === "REQUEST_DENIED" ? "API key denied" : "Reviews unavailable",
+      );
+    }
+    return result?.reviews ?? [];
   } catch (error) {
-    console.log(error, "getReviews error");
+    reportServiceError("reviews", error);
     return [];
   }
 }
 
 export const getPhotos = async (): Promise<any> => {
-  const utapi = new UTApi();
   try {
+    const utapi = new UTApi();
     const listPhotos = await utapi.listFiles();
     const imageList = await utapi.getFileUrls(
       listPhotos.map((photo) => photo.key),
     );
     return imageList;
   } catch (error) {
-    console.log(error, "getPhotos error");
+    reportServiceError("photos", error);
     return [];
   }
 };

@@ -6,21 +6,28 @@ import { i18n } from "@/i18n.config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import negotiator from "negotiator";
 
-function getLocale(request: NextRequest): string | undefined {
+function getLocale(request: NextRequest): string {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // @ts-ignore locales are readonly
-  const locales: string[] = i18n.locales;
-  const languages = new negotiator({ headers: negotiatorHeaders }).languages();
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+  const languages = new negotiator({ headers: negotiatorHeaders })
+    .languages()
+    .filter((language) => {
+      try {
+        new Intl.Locale(language);
+        return true;
+      } catch {
+        return false;
+      }
+    });
+  const locale = matchLocale(languages, [...i18n.locales], i18n.defaultLocale);
   return locale;
 }
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const pathnameIsMissingLocale = i18n.locales.every(
-    (locale: any) =>
+    (locale) =>
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
