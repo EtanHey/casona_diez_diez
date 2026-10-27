@@ -1,12 +1,18 @@
 "use client";
-import { RedirectType, redirect } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-const LoginForm = ({ login }: { login: (formData: FormData) => void }) => {
+const LoginForm = ({
+  login,
+}: {
+  login: (formData: FormData) => Promise<boolean>;
+}) => {
+  const pathname = usePathname();
+  const router = useRouter();
   const handleSubmit = async (formData: FormData) => {
-    login(formData);
+    if (!(await login(formData))) return;
     formData.delete("username");
     formData.delete("password");
-    redirect("/admin/dashboard", RedirectType.push);
+    router.push(`${pathname.replace(/\/$/, "")}/dashboard`);
   };
 
   return (

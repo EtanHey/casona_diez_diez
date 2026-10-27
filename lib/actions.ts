@@ -2,10 +2,12 @@
 
 import { MessagesSendStatus, Review } from "@/app/[lang]/types";
 import { UTApi } from "uploadthing/server";
-import { getUserByLoginInfo, updateOffer } from "./prisma";
-const secret = process.env.JWT_SECRET;
-import jwt from "jwt-simple";
-import { cookies } from "next/headers";
+import { updateOffer } from "./prisma";
+import {
+  authenticateAdmin,
+  requireAdminAction,
+  setAdminCookie,
+} from "./admin-auth";
 import { Offer } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { default as mailgunFormData } from "form-data";
@@ -17,30 +19,16 @@ const mailgunKey = process.env.MAILGUN_API_KEY;
 
 export const login = async (formData: FormData) => {
   try {
-    const { username, password } = {
-      username: formData.get("username") as string,
-      password: formData.get("password") as string,
-    };
-    if (!username || !password) {
-      throw new Error("Please enter username and password");
-    }
-    const result = await getUserByLoginInfo({
-      username: username.toLowerCase(),
-      password,
-    });
-    if (result && result.data && secret) {
-      const admin = jwt.encode(result.data.username, secret);
-      if (admin) {
-        // set timed cookies
-        let date = new Date();
-        date.setTime(date.getTime() + 5 * 60 * 1000);
-        (await cookies()).set("admin", admin, { expires: date });
-      } else {
-        throw new Error("Invalid username or password");
-      }
-    }
-  } catch (error) {
-    console.log(error);
+    const username = await authenticateAdmin(
+      formData.get("username"),
+      formData.get("password"),
+    );
+    if (!username) return false;
+    await setAdminCookie(username);
+    return true;
+  } catch {
+    console.error("Admin login unavailable");
+    return false;
   }
 };
 
@@ -80,6 +68,7 @@ export const getPhotos = async (): Promise<any> => {
 };
 
 export const handleUpdateOffer = async (formData: FormData, offer: Offer) => {
+  await requireAdminAction();
   const { newOffer, lang } = {
     newOffer: formData.get("newOffer") as string,
     lang: formData.get("lang") as string,

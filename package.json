@@ -7,7 +7,8 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node --import tsx --test tests/*.test.ts",
+    "test": "node --import tsx --test tests/*.test.ts && npm run test:auth",
+    "test:auth": "vitest run tests/admin-auth.spec.ts --maxWorkers=1",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
@@ -20,11 +21,11 @@
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@uploadthing/react": "^5.7.0",
+    "@uploadthing/shared": "5.2.7",
     "@vercel/speed-insights": "^1.0.2",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "jwt-simple": "^0.5.6",
     "lucide-react": "^0.356.0",
     "mailgun.js": "^9.2.1",
     "mongodb": "^5.8.0",
@@ -50,7 +51,9 @@
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
     "prisma": "^5.7.0",
-    "tsx": "4.23.15"
+    "tsx": "4.23.15",
+    "vite": "6.4.5",
+    "vitest": "3.2.7"
   },
   "overrides": {
     "next": {
