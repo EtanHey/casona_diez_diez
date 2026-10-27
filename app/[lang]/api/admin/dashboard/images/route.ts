@@ -1,10 +1,10 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { utapi } from "uploadthing/server";
 import { getAdminSession } from "@/lib/admin-auth";
 
 export async function PUT(req: NextRequest) {
   if (!(await getAdminSession()))
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   try {
     const { fileKey, newName } = await req.json();
     if (fileKey && newName) {
@@ -24,7 +24,7 @@ export async function PUT(req: NextRequest) {
 
 export async function DELETE(req: NextRequest) {
   if (!(await getAdminSession()))
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   try {
     const { fileKey } = await req.json();
     if (fileKey) {

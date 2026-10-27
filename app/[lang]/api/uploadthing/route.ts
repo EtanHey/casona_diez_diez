@@ -1,5 +1,5 @@
 import { createNextRouteHandler } from "uploadthing/next";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getAdminSession } from "@/lib/admin-auth";
 
 import { ourFileRouter } from "./core";
@@ -16,6 +16,6 @@ export async function POST(req: NextRequest) {
     req.headers.get("uploadthing-hook") !== "callback" &&
     !(await getAdminSession())
   )
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   return handler.POST(req);
 }
