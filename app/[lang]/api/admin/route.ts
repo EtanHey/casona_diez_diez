@@ -1,25 +1,22 @@
-import { NextRequest } from "next/server";
-import jwt from "jwt-simple";
-import { getUserByLoginInfo } from "@/lib/prisma";
-const secret = process.env.JWT_SECRET;
+import { NextRequest, NextResponse } from "next/server";
+import { authenticateAdmin, setAdminCookie } from "@/lib/admin-auth";
 
 export async function POST(req: NextRequest) {
   try {
-    const { username, password } = await req.json();
-    const result = await getUserByLoginInfo({ username, password });
-    if (result && result.data && secret) {
-      const admin = jwt.encode(result.data.username, secret);
-      if (admin) {
-        return new Response(JSON.stringify({ ok: true, admin }), {
-          status: 200,
-        });
-      }
-    }
-    throw new Error("User not found");
-  } catch (error: any) {
-    console.log(error);
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 404,
-    });
+    const input: unknown = await req.json();
+    if (
+      typeof input !== "object" ||
+      input === null ||
+      !("username" in input) ||
+      !("password" in input)
+    )
+      return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+    const username = await authenticateAdmin(input.username, input.password);
+    if (!username)
+      return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+    await setAdminCookie(username);
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json({ error: "Login unavailable" }, { status: 401 });
   }
 }

@@ -3,9 +3,11 @@ import UpdateOfferForm from "@/app/[lang]/components/adminComponents/offers/Upda
 import { handleUpdateOffer } from "@/lib/actions";
 import { getOffers } from "@/lib/prisma";
 import React from "react";
+import { requireAdminPage } from "@/lib/admin-auth";
 
 const page = async ({ params }: { params: Promise<{ lang: string }> }) => {
   const { lang } = await params;
+  await requireAdminPage(lang);
   const { offers, error } = await getOffers();
   if (error || offers.length === 0)
     return <p>Offers are currently unavailable.</p>;

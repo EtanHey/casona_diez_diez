@@ -1,18 +1,15 @@
 import React from "react";
-import jwt from "jwt-simple";
-import { cookies } from "next/headers";
+import { requireAdminPage } from "@/lib/admin-auth";
 import AdminIndicator from "@/app/[lang]/components/adminComponents/AdminIndicator";
 
-const secret = process.env.JWT_SECRET;
-const checkAdminCookie = async () => {
-  const cookie = (await cookies()).get("admin");
-  if (!cookie || !secret) return false;
-  const admin = jwt.decode(cookie.value, secret);
-
-  return admin;
-};
-const layout = async ({ children }: { children: React.ReactNode }) => {
-  const admin = await checkAdminCookie();
+const layout = async ({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}) => {
+  const admin = await requireAdminPage((await params).lang);
 
   return (
     <div className="flex h-full w-full flex-col gap-10">
