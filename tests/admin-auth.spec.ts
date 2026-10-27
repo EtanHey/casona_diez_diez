@@ -142,7 +142,7 @@ describe("server admin boundary", () => {
   }
 
   it("requires a signed session for upload initiation", async () => {
-    await expect(upload()).rejects.toMatchObject({ code: "UNAUTHORIZED" });
+    await expect(upload()).rejects.toMatchObject({ code: "FORBIDDEN" });
     state.cookie = createAdminSession("admin", secret);
     await expect(upload()).resolves.toEqual({ userId: "admin" });
   });

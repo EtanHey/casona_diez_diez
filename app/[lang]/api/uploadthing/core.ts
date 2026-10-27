@@ -11,7 +11,7 @@ export const ourFileRouter = {
     // Set permissions and file types for this FileRoute
     .middleware(async () => {
       const username = await getAdminSession();
-      if (!username) throw new UploadThingError({ code: "UNAUTHORIZED" });
+      if (!username) throw new UploadThingError({ code: "FORBIDDEN" });
       return { userId: username };
     })
     .onUploadComplete(async ({ metadata, file }) => {
