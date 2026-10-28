@@ -1,6 +1,5 @@
-import { getPhotos, getReviews } from "@/lib/actions";
+import { getPhotos } from "@/lib/actions";
 import HomeGallerySec from "./components/sections/home-sections/HomeGallerySec";
-import HomeReviewSec from "./components/sections/home-sections/HomeReviewSec";
 import HomeServicesSec from "./components/sections/home-sections/HomeServicesSec";
 import HomeWelcomeSec from "./components/sections/home-sections/HomeWelcomeSec";
 import { getDictionary } from "./dictionaries";
@@ -11,8 +10,6 @@ export default async function Home({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  // const photos = await getPhotos();
-  const reviews = await getReviews();
   const photos = await getPhotos();
   const dict = await getDictionary(lang);
   return (
@@ -27,16 +24,6 @@ export default async function Home({
             previousButtonText: dict.common.previousButtonText,
           }}
           photos={photos}
-        />
-      )}
-      {reviews && reviews.length > 0 && (
-        <HomeReviewSec
-          dict={{
-            mainText: dict.home.reviewSection.mainText,
-            nextButtonText: dict.common.nextButtonText,
-            previousButtonText: dict.common.previousButtonText,
-          }}
-          reviews={reviews}
         />
       )}
     </>

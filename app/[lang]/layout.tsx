@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
-import { getOffers } from "@/lib/prisma";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -64,11 +63,6 @@ export default async function RootLayout({
   let admin = false;
   if (lang !== "en" && lang !== "es") admin = true;
   const photos = await getPhotos();
-  const { offers } = await getOffers();
-  const currentOffer = offers.findIndex((predicate) =>
-    predicate.lang.startsWith(lang),
-  );
-  const offer = offers[currentOffer];
   const dict = await getDictionary(lang, admin);
   return (
     <html lang="en">
@@ -85,7 +79,7 @@ export default async function RootLayout({
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <MenuStateWrapper navDict={dict.nav} />
         <main className="flex min-h-screen flex-col items-center overflow-x-hidden">
-          <HeroImage offer={{ offer }} photos={photos} dict={dict} />
+          <HeroImage photos={photos} dict={dict} />
           <div className="mb-8 mt-16 w-full px-0">{children}</div>
           <Toaster />
           {/* sm:px-12 md:px-24 lg:px-36 xl:px-48 */}

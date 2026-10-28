@@ -1,15 +1,8 @@
 "use server";
 
-import { MessagesSendStatus, Review } from "@/app/[lang]/types";
+import { MessagesSendStatus } from "@/app/[lang]/types";
 import { UTApi } from "uploadthing/server";
-import { updateOffer } from "./prisma";
-import {
-  authenticateAdmin,
-  requireAdminAction,
-  setAdminCookie,
-} from "./admin-auth";
-import { Offer } from "@prisma/client";
-import { revalidatePath } from "next/cache";
+import { authenticateAdmin, setAdminCookie } from "./admin-auth";
 import { default as mailgunFormData } from "form-data";
 import Mailgun, { MessagesSendResult } from "mailgun.js";
 import { reportServiceError } from "./service-errors";
@@ -32,27 +25,6 @@ export const login = async (formData: FormData) => {
   }
 };
 
-export async function getReviews(): Promise<Array<Review>> {
-  try {
-    const placeId = process.env.PLACE_ID;
-    const GoogleKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-    const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${GoogleKey}`,
-      { next: { revalidate: 3600 } },
-    );
-    const { result, status } = await response.json();
-    if (!response.ok || status !== "OK") {
-      throw new Error(
-        status === "REQUEST_DENIED" ? "API key denied" : "Reviews unavailable",
-      );
-    }
-    return result?.reviews ?? [];
-  } catch (error) {
-    reportServiceError("reviews", error);
-    return [];
-  }
-}
-
 export const getPhotos = async (): Promise<any> => {
   try {
     const utapi = new UTApi();
@@ -64,27 +36,6 @@ export const getPhotos = async (): Promise<any> => {
   } catch (error) {
     reportServiceError("photos", error);
     return [];
-  }
-};
-
-export const handleUpdateOffer = async (formData: FormData, offer: Offer) => {
-  await requireAdminAction();
-  const { newOffer, lang } = {
-    newOffer: formData.get("newOffer") as string,
-    lang: formData.get("lang") as string,
-  };
-  const offerToUpdate = {
-    text: newOffer,
-    id: offer.id,
-    lang,
-  };
-  const { updatedOffer, error } = await updateOffer(offerToUpdate);
-  if (error) {
-    console.log(error);
-    throw new Error("Failed updating offer");
-  }
-  if (updatedOffer) {
-    revalidatePath(`/admin/dashboard/offers`);
   }
 };
 

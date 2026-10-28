@@ -23,7 +23,7 @@ Casona Diez Diez is more than just a hostel; it's a cozy retreat in the heart of
 
 ## Getting Started
 
-To explore the Casona Diez Diez website, simply visit [www.casonadiezdiez.com](https://www.casonadiezdiez.com).
+To explore the Casona Diez Diez website, simply visit [casona-diez-diez.vercel.app](https://casona-diez-diez.vercel.app).
 
 Feel free to reach out to the contributors for any inquiries or feedback.
 

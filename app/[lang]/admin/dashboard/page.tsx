@@ -12,12 +12,6 @@ const page = async ({ params }: { params: Promise<{ lang: string }> }) => {
       >
         Images management
       </Link>
-      <Link
-        className="rounded-full bg-cdd-yellow px-4 py-2"
-        href="/admin/dashboard/offers"
-      >
-        Offers management
-      </Link>
     </div>
   );
 };

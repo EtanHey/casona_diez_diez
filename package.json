@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "node --import tsx --test tests/*.test.ts && npm run test:auth",
-    "test:auth": "vitest run tests/admin-auth.spec.ts --maxWorkers=1",
+    "test:auth": "vitest run --maxWorkers=1",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
