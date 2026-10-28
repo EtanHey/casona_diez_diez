@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createHmac } from "node:crypto";
 import { NextRequest } from "next/server";
 
@@ -60,6 +60,7 @@ beforeEach(() => {
   state.getUserByLoginInfo.mockResolvedValue({ error: "Invalid credentials" });
   vi.stubEnv("JWT_SECRET", secret);
 });
+afterEach(() => vi.restoreAllMocks());
 
 describe("server admin boundary", () => {
   it("redirects an unauthenticated dashboard request before rendering children", async () => {
@@ -155,6 +156,32 @@ describe("server admin boundary", () => {
       ),
     );
     expect(response.status).toBe(401);
+  });
+
+  it.each([
+    { cookie: undefined, status: 401 },
+    { cookie: "forged-cookie", status: 401 },
+    { cookie: createAdminSession("admin", secret), status: 200 },
+  ])("requires admin authorization for callbacks: $status", async ({ cookie, status }) => {
+    vi.stubEnv("UPLOADTHING_SECRET", "test-only-uploadthing-secret");
+    state.cookie = cookie;
+    const resolver = vi.spyOn(ourFileRouter.imageUploader, "resolver");
+    const payload = {
+      file: { url: "https://example.com/file" },
+      metadata: { userId: "test" },
+    };
+    for (const signature of ["", `hmac-sha256=${"0".repeat(64)}`]) {
+      const req = request(
+        payload, "POST", "uploadthing?slug=imageUploader&actionType=failure",
+      );
+      req.headers.set("uploadthing-hook", "callback");
+      if (signature) req.headers.set("x-uploadthing-signature", signature);
+      const response = await uploadApi(req);
+      expect(response.status).toBe(status);
+      expect(req.bodyUsed).toBe(status === 200);
+    }
+    if (status === 401) expect(resolver).not.toHaveBeenCalled();
+    else expect(resolver).toHaveBeenCalledWith(payload);
   });
 });
 

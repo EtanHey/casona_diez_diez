@@ -11,11 +11,8 @@ const handler = createNextRouteHandler({
 
 export const GET = handler.GET;
 export async function POST(req: NextRequest) {
-  // Provider completion callbacks only reach the existing log-only resolver.
-  if (
-    req.headers.get("uploadthing-hook") !== "callback" &&
-    !(await getAdminSession())
-  )
+  // UploadThing 5 callbacks are unsigned, so every POST needs an admin session.
+  if (!(await getAdminSession()))
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   return handler.POST(req);
 }
