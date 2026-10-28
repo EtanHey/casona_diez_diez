@@ -4,21 +4,17 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
-import { Offer } from "@prisma/client";
 import { PhotoFromServer } from "../../types";
-import MainBanner from "../banners/MainBanner";
 import ReserveButton from "../buttons/ReserveButton";
 import CddDarkLogo from "../svgs/CddDarkLogo";
 
 const HeroImage = ({
   photos,
-  offer,
   dict: {
     common: { reserveButtonText, CddLogo },
   },
 }: {
   photos: Array<PhotoFromServer>;
-  offer: { offer?: Offer };
   dict: { common: { reserveButtonText: string; CddLogo: string } };
 }) => {
   const pathname = usePathname();
@@ -56,7 +52,6 @@ const HeroImage = ({
         </Link>
         <ReserveButton text={reserveButtonText} />
       </div>
-      <MainBanner offer={offer} />
     </div>
   );
 };

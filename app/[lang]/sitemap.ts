@@ -21,12 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0,
     },
     {
-      url: "casona-diez-diez.vercel.app/admin/dashboard/offers",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0,
-    },
-    {
       url: "casona-diez-diez.vercel.app/admin/dashboard/images",
       lastModified: new Date(),
       changeFrequency: "yearly",

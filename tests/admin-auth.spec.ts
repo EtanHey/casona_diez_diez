@@ -5,9 +5,7 @@ import { NextRequest } from "next/server";
 const state = vi.hoisted(() => ({
   cookie: undefined as string | undefined,
   setCookie: vi.fn(),
-  updateOffer: vi.fn(async () => ({ updatedOffer: { id: "test" } })),
   getUserByLoginInfo: vi.fn(),
-  getOffers: vi.fn(async () => ({ offers: [] })),
   renameFile: vi.fn(async () => ({ success: true })),
   deleteFiles: vi.fn(async () => ({ success: true })),
 }));
@@ -19,9 +17,7 @@ vi.mock("next/headers", () => ({
 }));
 vi.mock("next/cache", () => ({ revalidatePath: vi.fn() }));
 vi.mock("../lib/prisma", () => ({
-  updateOffer: state.updateOffer,
   getUserByLoginInfo: state.getUserByLoginInfo,
-  getOffers: state.getOffers,
 }));
 vi.mock("uploadthing/server", async (importOriginal) => ({
   ...(await importOriginal<typeof import("uploadthing/server")>()),
@@ -31,12 +27,11 @@ vi.mock("uploadthing/server", async (importOriginal) => ({
 import DashboardLayout from "../app/[lang]/admin/dashboard/layout";
 import Dashboard from "../app/[lang]/admin/dashboard/page";
 import Images from "../app/[lang]/admin/dashboard/images/page";
-import Offers from "../app/[lang]/admin/dashboard/offers/page";
 import { DELETE, PUT } from "../app/[lang]/api/admin/dashboard/images/route";
 import { POST as loginApi } from "../app/[lang]/api/admin/route";
 import { ourFileRouter } from "../app/[lang]/api/uploadthing/core";
 import { POST as uploadApi } from "../app/[lang]/api/uploadthing/route";
-import { handleUpdateOffer, login } from "../lib/actions";
+import { login } from "../lib/actions";
 import { createAdminSession, validateAdminSession } from "../lib/admin-auth";
 
 const secret = "test-only-existing-signing-secret";
@@ -72,16 +67,6 @@ describe("server admin boundary", () => {
     ).rejects.toThrow("NEXT_REDIRECT");
   });
 
-  it("rejects an unauthenticated offer mutation before writing", async () => {
-    const data = new FormData();
-    data.set("newOffer", "attacker-controlled text");
-    data.set("lang", "es");
-    await expect(
-      handleUpdateOffer(data, { id: "test", lang: "es", text: "old" }),
-    ).rejects.toThrow("Unauthorized");
-    expect(state.updateOffer).not.toHaveBeenCalled();
-  });
-
   for (const lang of ["es", "en"]) {
     for (const cookie of [
       undefined,
@@ -90,28 +75,20 @@ describe("server admin boundary", () => {
     ]) {
       it(`protects every ${lang} dashboard page for cookie ${cookie?.slice(0, 8) ?? "missing"}`, async () => {
         state.cookie = cookie;
-        for (const page of [Dashboard, Images, Offers]) {
+        for (const page of [Dashboard, Images]) {
           await expect(page({ params: params(lang) })).rejects.toMatchObject({
             digest: expect.stringContaining(`/${lang}/admin;`),
           });
         }
-        expect(state.getOffers).not.toHaveBeenCalled();
       });
     }
   }
 
-  it("allows a signed session to render protected content and update an offer", async () => {
+  it("allows a signed session to render protected content", async () => {
     state.cookie = createAdminSession("admin", secret);
     await expect(
       DashboardLayout({ children: "protected", params: params() }),
     ).resolves.toBeTruthy();
-    await expect(Offers({ params: params() })).resolves.toBeTruthy();
-    await handleUpdateOffer(new FormData(), {
-      id: "test",
-      text: "old",
-      lang: "es",
-    });
-    expect(state.updateOffer).toHaveBeenCalledOnce();
   });
 
   for (const [method, handler] of [
@@ -162,27 +139,32 @@ describe("server admin boundary", () => {
     { cookie: undefined, status: 401 },
     { cookie: "forged-cookie", status: 401 },
     { cookie: createAdminSession("admin", secret), status: 200 },
-  ])("requires admin authorization for callbacks: $status", async ({ cookie, status }) => {
-    vi.stubEnv("UPLOADTHING_SECRET", "test-only-uploadthing-secret");
-    state.cookie = cookie;
-    const resolver = vi.spyOn(ourFileRouter.imageUploader, "resolver");
-    const payload = {
-      file: { url: "https://example.com/file" },
-      metadata: { userId: "test" },
-    };
-    for (const signature of ["", `hmac-sha256=${"0".repeat(64)}`]) {
-      const req = request(
-        payload, "POST", "uploadthing?slug=imageUploader&actionType=failure",
-      );
-      req.headers.set("uploadthing-hook", "callback");
-      if (signature) req.headers.set("x-uploadthing-signature", signature);
-      const response = await uploadApi(req);
-      expect(response.status).toBe(status);
-      expect(req.bodyUsed).toBe(status === 200);
-    }
-    if (status === 401) expect(resolver).not.toHaveBeenCalled();
-    else expect(resolver).toHaveBeenCalledWith(payload);
-  });
+  ])(
+    "requires admin authorization for callbacks: $status",
+    async ({ cookie, status }) => {
+      vi.stubEnv("UPLOADTHING_SECRET", "test-only-uploadthing-secret");
+      state.cookie = cookie;
+      const resolver = vi.spyOn(ourFileRouter.imageUploader, "resolver");
+      const payload = {
+        file: { url: "https://example.com/file" },
+        metadata: { userId: "test" },
+      };
+      for (const signature of ["", `hmac-sha256=${"0".repeat(64)}`]) {
+        const req = request(
+          payload,
+          "POST",
+          "uploadthing?slug=imageUploader&actionType=failure",
+        );
+        req.headers.set("uploadthing-hook", "callback");
+        if (signature) req.headers.set("x-uploadthing-signature", signature);
+        const response = await uploadApi(req);
+        expect(response.status).toBe(status);
+        expect(req.bodyUsed).toBe(status === 200);
+      }
+      if (status === 401) expect(resolver).not.toHaveBeenCalled();
+      else expect(resolver).toHaveBeenCalledWith(payload);
+    },
+  );
 });
 
 describe("session integrity and login", () => {
